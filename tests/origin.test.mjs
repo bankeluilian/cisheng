@@ -35,9 +35,21 @@ test('new lives persist local names and parents jobs across all 217 economies',(
   const l=make(c.id);assert.equal(validateLife(l),true,c.id);
   assert.ok(l.nameOrigin?.profile,c.id);
   assert.equal(l.people.filter(p=>p.birthWork).length,2,c.id);
+  assert.equal(l.people.filter(p=>p.fullName?.trim()).length,2,c.id);
   assert.deepEqual(JSON.parse(JSON.stringify(l)),make(c.id));
   assert.ok(l.events.some(e=>e.kind==='background'&&e.text.includes('母亲')&&e.text.includes('父亲')),c.id);
  }
+});
+
+test('whole birth draws vary birthplace, identity, parents and resources while retaining earlier lives',()=>{
+ const before=make('JPN',1234),snapshot=structuredClone(before),results=[];
+ for(let seed=1;seed<=80;seed++)results.push(createLife(countries,{seed:seed*31337,year:before.birthYear,mode:before.mode,sampling:before.sampling,pace:before.pace}));
+ for(const l of results){assert.equal(validateLife(l),true);assert.ok(l.people.every(p=>p.fullName&&p.birthWork));}
+ assert.ok(new Set(results.map(l=>l.country.id)).size>10);
+ assert.ok(new Set(results.map(l=>l.name)).size>30);
+ assert.ok(new Set(results.map(l=>l.people.map(p=>p.fullName+p.birthWork.title).join('|'))).size>30);
+ assert.ok(new Set(results.map(l=>l.story.family.tier)).size===3);
+ assert.deepEqual(before,snapshot);
 });
 
 test('parent sector sampling follows actual normalized country employment weights and does not assign jobs by gender',()=>{

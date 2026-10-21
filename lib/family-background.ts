@@ -1,6 +1,7 @@
 import type {Country,Life} from './engine';
 import {employmentSectors,employmentYear} from './data/employment-sectors.ts';
 import {originRandom} from './origin-random.ts';
+import {localName,childName} from './names.ts';
 export type Sector='agriculture'|'industry'|'services';
 export type ParentWork={title:string;sector:Sector|'none';arrangement:'regular'|'self'|'casual'|'care'|'seeking';description:string};
 export type FamilyBackground={basis:'country'|'region'|'world'|'game';key:string;year:number;backfilled:boolean};
@@ -68,10 +69,13 @@ function parentWork(l:Life,id:string):ParentWork{
  return {title:localTitles[l.country.id]?.[job.title]||job.title,sector,arrangement:job.kind,description:job.description};
 }
 export function withParentBackground(source:Life,fresh=false):Life{
- const missing=source.people.some(p=>['mother','father'].includes(p.id)&&!p.birthWork);
+ const missing=source.people.some(p=>['mother','father'].includes(p.id)&&(!p.birthWork||!p.fullName));
  if(source.familyBackground&&!missing)return source;
  const l=structuredClone(source),d=sectorWeights(l.country);
- for(const p of l.people)if(['mother','father'].includes(p.id)&&!p.birthWork)p.birthWork=parentWork(l,p.id);
+ for(const p of l.people)if(['mother','father'].includes(p.id)){
+  if(!p.birthWork)p.birthWork=parentWork(l,p.id);
+  if(!p.fullName){const r=originRandom(l.seed,`parent-name-${p.id}`),seed=Math.floor(r()*4294967296);p.fullName=p.id==='father'?childName(l.country,'男',seed,l.nameOrigin):localName(l.country,'女',seed).text;}
+ }
  l.familyBackground??={basis:d.basis,key:d.key,year:d.year,backfilled:!fresh};return l;
 }
 export const sectorLabels:Record<Sector|'none',string>={agriculture:'农业',industry:'工业',services:'服务业',none:'家庭照料／求职中'};

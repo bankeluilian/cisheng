@@ -90,6 +90,20 @@
 .person-birth-work>p{margin:5px 0 0;font-size:11px}
 .local-name-suggestion{border:1px solid var(--line);border-radius:8px;padding:15px;margin-bottom:20px}
 .local-name-suggestion>p{font-size:11px;margin:12px 0 0}
+.birth-randomizer{display:flex;flex-wrap:wrap;align-items:center;gap:9px 14px;margin:16px 0 22px;padding:15px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.birth-randomizer>span{font-size:11px;color:var(--muted);flex:1;min-width:130px}
+.birth-randomizer>.btn{font-size:11px;min-height:44px;padding:10px 14px;gap:8px}
+.birth-randomizer>small{display:block;width:100%;font-size:10px;color:var(--muted);line-height:1.8}
+.parent-full-name{display:block;overflow-wrap:anywhere;font-family:var(--serif);font-size:16px;font-weight:400;line-height:1.8;margin:5px 0}
+.person-card>.parent-full-name{font-size:16px;color:var(--ink)}
+.birth-comparison{border-top:1px solid var(--line);margin:18px 0 20px;padding-top:5px}
+.birth-comparison>summary{min-height:44px;display:flex;align-items:center;font-size:11px;color:var(--muted);cursor:pointer}
+.birth-saving-overlay{position:fixed;inset:0;z-index:300;background:#fafaf6d9;display:flex;align-items:center;justify-content:center;padding:24px;color:var(--ink);text-align:center;backdrop-filter:blur(3px)}
+.birth-saving-overlay>div{padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:12px;max-width:100%}
+.birth-saving-overlay svg{color:var(--accent);margin-bottom:10px}
+.birth-saving-overlay p{margin:0 0 7px;font-size:14px;color:var(--ink)}
+.birth-saving-overlay small{font-size:11px;color:var(--muted)}
+@media(max-width:520px){.birth-randomizer{padding:14px}.birth-randomizer>span{flex-basis:100%}.birth-randomizer>.btn{width:100%;font-size:12px}}
 @media(max-width:520px){.family-origins{padding:17px}.parent-work-grid{grid-template-columns:1fr}.parent-work{padding:14px}.family-source>summary{min-height:44px}.local-name-suggestion .btn{width:100%}.birth-copy h1{font-size:36px}}
 @media(max-width:800px){.birth-probability{padding:25px}.prob-visual{gap:15px;grid-template-columns:minmax(165px,.8fr) minmax(180px,1fr)}.prob-donut{width:205px}.prob-legend>button{min-height:44px}.prob-heading h2{font-size:25px}}
 @media(max-width:520px){.home-birth-odds{margin-top:27px}.birth-probability{padding:23px 19px}.prob-heading h2{font-size:23px;line-height:1.7}.prob-heading>svg{display:none}.prob-lead{font-size:12px}.prob-visual{grid-template-columns:minmax(0,1fr);gap:13px;margin-top:17px}.prob-donut{width:205px}.prob-legend>button,.prob-legend>div{font-size:12px;padding:8px 7px;min-height:40px}.prob-legend>button{min-height:44px}.prob-country-detail{padding:14px;align-items:flex-start}.prob-country-detail p{font-size:11px}.prob-methods{display:flex}.prob-methods>button{flex:1;min-height:44px;font-size:12px;padding:8px}.prob-search>input{font-size:16px}.prob-all-list>div{font-size:12px;gap:5px 8px}.birth-probability-slot{margin-top:8px}.prob-source{font-size:10px}}
