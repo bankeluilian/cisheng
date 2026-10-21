@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import {pickBirthCountry} from './sampling.ts';
 import {storyChoiceSchema,storySchema} from './story-schema.ts';
 import type {StoryChoice,StoryState} from './story-types';
 import {ensureStory,advanceStoryYear,nextStoryEncounter,applyStoryChoice} from './story-engine.ts';
@@ -31,9 +32,7 @@ function log(l:Life,title:string,text:string,kind='ordinary'){
 }
 function effects(l:Life,e:Partial<Stats>){for(const k of Object.keys(e) as (keyof Stats)[])l.stats[k]=clamp(l.stats[k]+(e[k]||0));}
 function weighted(countries:Country[],value:string,r:number){
-  const weights=countries.map(c=>Math.max(0,(value==='population'?c.population:c.births)||0));
-  const sum=weights.reduce((a,b)=>a+b,0);if(!sum)return countries[Math.floor(r*countries.length)];
-  let n=r*sum;for(let i=0;i<countries.length;i++){n-=weights[i];if(n<=0)return countries[i];}return countries[countries.length-1];
+  return pickBirthCountry(countries,value,r);
 }
 export function createLife(countries:Country[],o:{seed:number;year:number;mode:string;sampling:string;pace:number}):Life{
   if(!countries.length)throw Error('世界数据尚未准备好');
