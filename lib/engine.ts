@@ -15,6 +15,11 @@ export type Life = {
 };
 export const statNames:Record<keyof Stats,string>={health:'健康',happiness:'幸福',knowledge:'知识',social:'人际'};
 export const focusNames:Record<string,string>={balance:'顺其自然',study:'学习与探索',career:'工作与积累',family:'陪伴与关系',health:'健康与生活'};
+export function renameLife(source:Life,input:string):Life{
+  const name=input.trim().replace(/\s+/g,' ');
+  if(!name||Array.from(name).length>20||!/^[\p{L}\p{M}\p{N}· .'\-]+$/u.test(name)||name===source.name)return source;
+  return {...source,name};
+}
 const clamp=(x:number)=>Math.max(0,Math.min(100,Math.round(x)));
 function rand(l:Life){l.rng=(Math.imul(l.rng,1664525)+1013904223)>>>0;return l.rng/4294967296;}
 function pick<T>(l:Life,a:T[]):T{return a[Math.floor(rand(l)*a.length)];}

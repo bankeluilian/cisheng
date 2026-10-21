@@ -1,9 +1,17 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createLife, advanceYear, choose, transact, act, validateLife } from '../lib/engine.ts';
+import { createLife, advanceYear, choose, transact, act, validateLife, renameLife } from '../lib/engine.ts';
 
 const countries = [{id:'CHN',name:'中国',population:1000,births:10,lifeFemale:80,lifeMale:76,gdpPpp:25000}];
 const make = () => createLife(countries,{seed:1234,year:2020,mode:'present',sampling:'births',pace:30});
+test('renaming persists the identity while leaving fate and existing facts untouched',()=>{
+  const a=make();const b=renameLife(a,'  余泽  ');
+  assert.equal(b.name,'余泽');assert.equal(b.id,a.id);assert.equal(b.rng,a.rng);
+  assert.deepEqual(b,{...a,name:'余泽'});assert.equal(validateLife(b),true);
+  assert.deepEqual(renameLife(a,'   '),a);assert.deepEqual(renameLife(a,'<script>'),a);
+  assert.deepEqual(renameLife(a,'很'.repeat(21)),a);
+  assert.equal(renameLife({...a,ended:true},'另一个名字').name,'另一个名字');
+});
 test('same seed and actions reproduce the entire life',()=>{
   let a=make(), b=make();
   for(let i=0;i<90;i++){
