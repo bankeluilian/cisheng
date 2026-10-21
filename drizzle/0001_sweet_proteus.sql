@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `stories_delete_hash_unique` ON `stories` (`delete_hash`);

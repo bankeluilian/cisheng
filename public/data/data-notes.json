@@ -1,0 +1,142 @@
+{
+  "version": "wb-2023-v1",
+  "source": {
+    "organization": "World Bank",
+    "dataset": "World Development Indicators",
+    "api": "https://api.worldbank.org/v2/",
+    "requestedYear": 2023,
+    "retrievedAt": "2026-10-21T10:02:41.525263+00:00",
+    "license": "CC BY 4.0 unless otherwise indicated in source metadata",
+    "licenseUrl": "https://datacatalog.worldbank.org/public-licenses#cc-by",
+    "countryScope": "World Bank non-aggregate economies (region.id != NA)",
+    "urls": {
+      "countries": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+      "population": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2023&format=json&per_page=400",
+      "birthRate": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.CBRT.IN?date=2023&format=json&per_page=400",
+      "lifeFemale": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.FE.IN?format=json&date=2023&per_page=1000",
+      "lifeMale": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.MA.IN?format=json&date=2023&per_page=1000",
+      "gdpPpp": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.PP.CD?date=2023&format=json&per_page=400"
+    }
+  },
+  "countryCount": 217,
+  "coverage": {
+    "population": 217,
+    "birthRate": 217,
+    "births": 217,
+    "lifeFemale": 217,
+    "lifeMale": 217,
+    "gdpPpp": 197
+  },
+  "indicators": {
+    "population": {
+      "id": "SP.POP.TOTL",
+      "unit": "people"
+    },
+    "birthRate": {
+      "id": "SP.DYN.CBRT.IN",
+      "unit": "births per 1,000 people"
+    },
+    "births": {
+      "formula": "round(population * birthRate / 1000)",
+      "unit": "estimated births/year",
+      "derived": true
+    },
+    "lifeFemale": {
+      "id": "SP.DYN.LE00.FE.IN",
+      "unit": "years"
+    },
+    "lifeMale": {
+      "id": "SP.DYN.LE00.MA.IN",
+      "unit": "years"
+    },
+    "gdpPpp": {
+      "id": "NY.GDP.PCAP.PP.CD",
+      "unit": "current international dollars per person"
+    }
+  },
+  "apiResponses": {
+    "countries": {
+      "pages": 1,
+      "total": 296,
+      "lastupdated": null
+    },
+    "population": {
+      "pages": 1,
+      "total": 266,
+      "lastupdated": "2026-10-08"
+    },
+    "birthRate": {
+      "pages": 1,
+      "total": 266,
+      "lastupdated": "2026-10-08"
+    },
+    "lifeFemale": {
+      "pages": 1,
+      "total": 266,
+      "lastupdated": "2026-10-08"
+    },
+    "lifeMale": {
+      "pages": 1,
+      "total": 266,
+      "lastupdated": "2026-10-08"
+    },
+    "gdpPpp": {
+      "pages": 1,
+      "total": 266,
+      "lastupdated": "2026-10-08"
+    }
+  },
+  "notes": [
+    "覆盖世界银行国家目录中的非汇总经济体；其中包括国家和地区，不等同于主权国家清单。",
+    "各项指标均请求 2023 年值；缺失数据为 null，不自动用其他年份替代。",
+    "births 为 population × birthRate ÷ 1000 后四舍五入得到的估算年出生人数，非直接登记出生数。人口为年中估计；该派生值仅适合近似抽样权重。",
+    "lifeFemale/lifeMale 为出生时女性/男性期望寿命（年），是人口层面的时期生命表统计，不是个人寿命预测。",
+    "gdpPpp 为按购买力平价折算的人均 GDP（现价国际元）；用于经济背景展示，不代表个人工资、收入或财富。",
+    "简体中文显示名由运行时 Intl.DisplayNames 的地区名称生成；无 ISO 二字码映射时保留世界银行英文名。",
+    "region 使用世界银行区域划分，不是地理洲别。",
+    "区域归属采用下载时世界银行目录的当前分类，统计指标年份为 2023；两者的时间含义不同。"
+  ],
+  "localization": {
+    "engine": "ECMAScript Intl.DisplayNames",
+    "locale": "zh-Hans",
+    "nodeVersion": "v25.9.0",
+    "icuVersion": "78.2",
+    "nameFallbacks": [],
+    "manualTranslations": {
+      "CHI": {
+        "english": "Channel Islands",
+        "zhHans": "海峡群岛",
+        "reason": "World Bank pseudo ISO2 code JG is unavailable in Intl.DisplayNames"
+      }
+    }
+  },
+  "missingByIndicator": {
+    "population": [],
+    "birthRate": [],
+    "births": [],
+    "lifeFemale": [],
+    "lifeMale": [],
+    "gdpPpp": [
+      "ASM",
+      "CHI",
+      "CUB",
+      "ERI",
+      "GIB",
+      "GUM",
+      "IMN",
+      "LIE",
+      "MAF",
+      "MCO",
+      "MNP",
+      "NCL",
+      "PRK",
+      "PYF",
+      "SSD",
+      "SYR",
+      "VEN",
+      "VGB",
+      "VIR",
+      "YEM"
+    ]
+  }
+}

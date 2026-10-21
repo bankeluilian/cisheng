@@ -1,0 +1,264 @@
+{
+  "version": 1,
+  "format": "webp",
+  "resize_policy": "Preserve full composition and aspect ratio; scenes 1440px wide, thumbnails 500px wide, card original size.",
+  "assets": [
+    {
+      "file": "scene-01.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-01-coastal-town.png",
+      "source_bytes": 2506310,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 273762,
+      "quality": 88
+    },
+    {
+      "file": "thumb-01.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-01-coastal-town.png",
+      "source_bytes": 2506310,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 37414,
+      "quality": 84
+    },
+    {
+      "file": "scene-02.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-02-nursery.png",
+      "source_bytes": 2334784,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 225480,
+      "quality": 88
+    },
+    {
+      "file": "thumb-02.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-02-nursery.png",
+      "source_bytes": 2334784,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 35464,
+      "quality": 84
+    },
+    {
+      "file": "scene-03.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-03-railway-departure.png",
+      "source_bytes": 2506885,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 284286,
+      "quality": 88
+    },
+    {
+      "file": "thumb-03.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-03-railway-departure.png",
+      "source_bytes": 2506885,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 42954,
+      "quality": 84
+    },
+    {
+      "file": "scene-04.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-04-family-dinner.png",
+      "source_bytes": 2687208,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 285276,
+      "quality": 88
+    },
+    {
+      "file": "thumb-04.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-04-family-dinner.png",
+      "source_bytes": 2687208,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 41662,
+      "quality": 84
+    },
+    {
+      "file": "scene-05.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-05-new-city.png",
+      "source_bytes": 2988122,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 362972,
+      "quality": 88
+    },
+    {
+      "file": "thumb-05.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-05-new-city.png",
+      "source_bytes": 2988122,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 52264,
+      "quality": 84
+    },
+    {
+      "file": "scene-06.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-06-coastal-window-room.png",
+      "source_bytes": 2942155,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 322264,
+      "quality": 88
+    },
+    {
+      "file": "thumb-06.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-06-coastal-window-room.png",
+      "source_bytes": 2942155,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 45554,
+      "quality": 84
+    },
+    {
+      "file": "scene-07.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-07-writing-desk.png",
+      "source_bytes": 2914837,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 332682,
+      "quality": 88
+    },
+    {
+      "file": "thumb-07.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-07-writing-desk.png",
+      "source_bytes": 2914837,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 45426,
+      "quality": 84
+    },
+    {
+      "file": "scene-08.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-08-bicycle-by-sea.png",
+      "source_bytes": 3121071,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 438724,
+      "quality": 88
+    },
+    {
+      "file": "thumb-08.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-08-bicycle-by-sea.png",
+      "source_bytes": 3121071,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 62080,
+      "quality": 84
+    },
+    {
+      "file": "card-example.webp",
+      "source": "F:/codex project/此生/art/concepts/人生总结卡片-v2.png",
+      "source_bytes": 2229015,
+      "source_dimensions": [
+        1086,
+        1448
+      ],
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "bytes": 270426,
+      "quality": 90
+    }
+  ],
+  "total_asset_bytes": 3158690,
+  "total_original_bytes": 24230387
+}
