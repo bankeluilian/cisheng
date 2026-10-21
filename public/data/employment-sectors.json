@@ -1,0 +1,1189 @@
+{
+  "version": "wb-ilo-employment-2023-v1",
+  "year": 2023,
+  "source": {
+    "label": "World Bank / ILO modeled estimates",
+    "organization": "World Bank",
+    "dataset": "World Development Indicators",
+    "underlyingSource": "International Labour Organization, ILO Modelled Estimates database (ILOEST), ILOSTAT",
+    "year": 2023,
+    "retrievedAt": "2026-10-21T18:18:41.905Z",
+    "unit": "percent of total employment",
+    "license": "CC BY 4.0",
+    "urls": {
+      "agriculture": "https://api.worldbank.org/v2/country/all/indicator/SL.AGR.EMPL.ZS?date=2023&format=json&per_page=400",
+      "industry": "https://api.worldbank.org/v2/country/all/indicator/SL.IND.EMPL.ZS?date=2023&format=json&per_page=400",
+      "services": "https://api.worldbank.org/v2/country/all/indicator/SL.SRV.EMPL.ZS?date=2023&format=json&per_page=400"
+    },
+    "indicatorPages": {
+      "agriculture": "https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS",
+      "industry": "https://data.worldbank.org/indicator/SL.IND.EMPL.ZS",
+      "services": "https://data.worldbank.org/indicator/SL.SRV.EMPL.ZS"
+    },
+    "apiMetadata": {
+      "agriculture": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 400,
+        "total": 266,
+        "sourceid": "2",
+        "lastupdated": "2026-10-08"
+      },
+      "industry": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 400,
+        "total": 266,
+        "sourceid": "2",
+        "lastupdated": "2026-10-08"
+      },
+      "services": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 400,
+        "total": 266,
+        "sourceid": "2",
+        "lastupdated": "2026-10-08"
+      }
+    }
+  },
+  "countries": {
+    "ABW": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "AFG": {
+      "agriculture": 51.2913264558988,
+      "industry": 19.2101817019298,
+      "services": 29.4984918421715
+    },
+    "AGO": {
+      "agriculture": 52.4066285799356,
+      "industry": 7.06703901240925,
+      "services": 40.5263400343568
+    },
+    "ALB": {
+      "agriculture": 32.0385825807416,
+      "industry": 21.6488726713231,
+      "services": 46.3125447479353
+    },
+    "AND": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "ARE": {
+      "agriculture": 1.51613932797365,
+      "industry": 30.7827300526736,
+      "services": 67.7011452667683
+    },
+    "ARG": {
+      "agriculture": 7.36522999791843,
+      "industry": 21.4115045495218,
+      "services": 71.2232606251736
+    },
+    "ARM": {
+      "agriculture": 28.0666154479176,
+      "industry": 20.4688283550424,
+      "services": 51.464636561186
+    },
+    "ASM": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "ATG": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "AUS": {
+      "agriculture": 2.14974802026124,
+      "industry": 19.6802287144108,
+      "services": 78.170023265328
+    },
+    "AUT": {
+      "agriculture": 3.11719371426899,
+      "industry": 25.7210270134619,
+      "services": 71.1617792722691
+    },
+    "AZE": {
+      "agriculture": 35.1385583811186,
+      "industry": 15.40463914718,
+      "services": 49.4568024717014
+    },
+    "BDI": {
+      "agriculture": 85.5878986197762,
+      "industry": 3.07746838824348,
+      "services": 11.3346329919803
+    },
+    "BEL": {
+      "agriculture": 1.08549455456598,
+      "industry": 20.1484135056687,
+      "services": 78.7661117864497
+    },
+    "BEN": {
+      "agriculture": 41.8570674785988,
+      "industry": 18.3030821147503,
+      "services": 39.8398666470266
+    },
+    "BFA": {
+      "agriculture": 52.6974361025137,
+      "industry": 16.5607659480594,
+      "services": 30.7417979494269
+    },
+    "BGD": {
+      "agriculture": 45.3663393707013,
+      "industry": 17.625867147727,
+      "services": 37.0078031657165
+    },
+    "BGR": {
+      "agriculture": 6.24514892446081,
+      "industry": 29.5905328513096,
+      "services": 64.1643182242296
+    },
+    "BHR": {
+      "agriculture": 0.88100328928879,
+      "industry": 35.1413180087999,
+      "services": 63.9777911177961
+    },
+    "BHS": {
+      "agriculture": 0.830583581150505,
+      "industry": 14.8871356861254,
+      "services": 84.2827333668283
+    },
+    "BIH": {
+      "agriculture": 17.5725491192176,
+      "industry": 30.6296289316473,
+      "services": 51.7978219491351
+    },
+    "BLR": {
+      "agriculture": 10.1121848020227,
+      "industry": 30.980111095046,
+      "services": 58.907725554821
+    },
+    "BLZ": {
+      "agriculture": 16.8366703651402,
+      "industry": 15.3822876739964,
+      "services": 67.7810419608634
+    },
+    "BMU": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "BOL": {
+      "agriculture": 25.0789048195618,
+      "industry": 20.1135460348867,
+      "services": 54.807564526608
+    },
+    "BRA": {
+      "agriculture": 8.20281833943009,
+      "industry": 20.171570324784,
+      "services": 71.6256113357859
+    },
+    "BRB": {
+      "agriculture": 1.36969851092086,
+      "industry": 16.231527789551,
+      "services": 82.3987736995281
+    },
+    "BRN": {
+      "agriculture": 1.27134852951104,
+      "industry": 20.450034877703,
+      "services": 78.2786165927859
+    },
+    "BTN": {
+      "agriculture": 43.8134865324974,
+      "industry": 15.254769044031,
+      "services": 40.9314872628336
+    },
+    "BWA": {
+      "agriculture": 17.9988800848586,
+      "industry": 15.7904620560458,
+      "services": 66.2106578590955
+    },
+    "CAF": {
+      "agriculture": 65.8703779143077,
+      "industry": 13.5120230345657,
+      "services": 20.6175990511266
+    },
+    "CAN": {
+      "agriculture": 1.27154303625992,
+      "industry": 19.2138940692638,
+      "services": 79.5145677542417
+    },
+    "CHE": {
+      "agriculture": 2.24192024656799,
+      "industry": 19.9140536785394,
+      "services": 77.8440260748926
+    },
+    "CHI": {
+      "agriculture": 2.16110987900742,
+      "industry": 12.9555703407999,
+      "services": 84.8845518838865
+    },
+    "CHL": {
+      "agriculture": 6.20836594247335,
+      "industry": 22.1060875466725,
+      "services": 71.6855465108541
+    },
+    "CHN": {
+      "agriculture": 22.8008772042629,
+      "industry": 31.4267217641686,
+      "services": 45.7723935112505
+    },
+    "CIV": {
+      "agriculture": 47.0773577999683,
+      "industry": 13.7922381949167,
+      "services": 39.1304040051151
+    },
+    "CMR": {
+      "agriculture": 42.9033266786034,
+      "industry": 14.5710045641327,
+      "services": 42.5256687572639
+    },
+    "COD": {
+      "agriculture": 59.5242688719329,
+      "industry": 7.97752878481026,
+      "services": 32.4982023432569
+    },
+    "COG": {
+      "agriculture": 37.1038479033576,
+      "industry": 19.6306874217558,
+      "services": 43.2654143570793
+    },
+    "COL": {
+      "agriculture": 14.3964971136151,
+      "industry": 19.9926020656988,
+      "services": 65.6109008206861
+    },
+    "COM": {
+      "agriculture": 34.6186380938954,
+      "industry": 14.7483434371916,
+      "services": 50.633018468913
+    },
+    "CPV": {
+      "agriculture": 9.89973189517566,
+      "industry": 22.7160723418104,
+      "services": 67.3841957630139
+    },
+    "CRI": {
+      "agriculture": 13.4111451573441,
+      "industry": 20.2061259917745,
+      "services": 66.3827288508814
+    },
+    "CUB": {
+      "agriculture": 16.1387817096919,
+      "industry": 17.0777578221626,
+      "services": 66.7834604681456
+    },
+    "CUW": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "CYM": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "CYP": {
+      "agriculture": 2.46077857284256,
+      "industry": 16.1298941128752,
+      "services": 81.4093273142822
+    },
+    "CZE": {
+      "agriculture": 2.90760214870837,
+      "industry": 36.5052539158177,
+      "services": 60.5871625686937
+    },
+    "DEU": {
+      "agriculture": 1.21168390188867,
+      "industry": 26.3957028467134,
+      "services": 72.3926155732498
+    },
+    "DJI": {
+      "agriculture": 1.23839983222356,
+      "industry": 6.33251192785613,
+      "services": 92.4285639385519
+    },
+    "DMA": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "DNK": {
+      "agriculture": 2.02027441199317,
+      "industry": 19.2575538598929,
+      "services": 78.7221717281139
+    },
+    "DOM": {
+      "agriculture": 7.38570740116142,
+      "industry": 19.1777587856683,
+      "services": 73.4365338131703
+    },
+    "DZA": {
+      "agriculture": 9.8478645435881,
+      "industry": 31.9607938815742,
+      "services": 58.1913415748377
+    },
+    "ECU": {
+      "agriculture": 29.9978106319384,
+      "industry": 17.4666997356192,
+      "services": 52.5354896324424
+    },
+    "EGY": {
+      "agriculture": 18.2880136371241,
+      "industry": 29.199388245451,
+      "services": 52.5125919126401
+    },
+    "ERI": {
+      "agriculture": 56.3553533946063,
+      "industry": 12.6054051848929,
+      "services": 31.0392414205008
+    },
+    "ESP": {
+      "agriculture": 3.49782243390975,
+      "industry": 20.0267520644379,
+      "services": 76.475420743869
+    },
+    "EST": {
+      "agriculture": 2.5942553951329,
+      "industry": 27.3721862263263,
+      "services": 70.0335583785408
+    },
+    "ETH": {
+      "agriculture": 62.1745084426461,
+      "industry": 6.36148510906765,
+      "services": 31.4640006362268
+    },
+    "FIN": {
+      "agriculture": 3.61668081097713,
+      "industry": 21.3671841746729,
+      "services": 75.0161350143499
+    },
+    "FJI": {
+      "agriculture": 36.7644428791935,
+      "industry": 12.5827832790845,
+      "services": 50.6527738417219
+    },
+    "FRA": {
+      "agriculture": 2.50551207357095,
+      "industry": 19.245754578992,
+      "services": 78.2487367442902
+    },
+    "FRO": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "FSM": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "GAB": {
+      "agriculture": 29.3150261549517,
+      "industry": 18.2791046275334,
+      "services": 52.4057146830885
+    },
+    "GBR": {
+      "agriculture": 0.876663094174889,
+      "industry": 15.9171060665142,
+      "services": 83.2062219244254
+    },
+    "GEO": {
+      "agriculture": 35.6338894910963,
+      "industry": 16.1027578488239,
+      "services": 48.2633526600798
+    },
+    "GHA": {
+      "agriculture": 36.0071785301449,
+      "industry": 17.6354156979607,
+      "services": 46.3573976923314
+    },
+    "GIB": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "GIN": {
+      "agriculture": 49.0242038204544,
+      "industry": 13.9586503818969,
+      "services": 37.0171693809915
+    },
+    "GMB": {
+      "agriculture": 29.0675172421552,
+      "industry": 18.5957910014514,
+      "services": 52.3366917563934
+    },
+    "GNB": {
+      "agriculture": 62.2114830124493,
+      "industry": 9.65075088317818,
+      "services": 28.1377661043725
+    },
+    "GNQ": {
+      "agriculture": 55.4355406072575,
+      "industry": 10.1187978276969,
+      "services": 34.4458158479388
+    },
+    "GRC": {
+      "agriculture": 11.4759495085773,
+      "industry": 15.9526314447748,
+      "services": 72.5713945343447
+    },
+    "GRD": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "GRL": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "GTM": {
+      "agriculture": 29.8079302323534,
+      "industry": 22.5148985440343,
+      "services": 47.6771712236122
+    },
+    "GUM": {
+      "agriculture": 1.66462432361729,
+      "industry": 19.4701840862465,
+      "services": 78.8651915901362
+    },
+    "GUY": {
+      "agriculture": 13.1731100679107,
+      "industry": 28.315665656239,
+      "services": 58.5115796431402
+    },
+    "HKG": {
+      "agriculture": 0.191104185514937,
+      "industry": 14.0265540796666,
+      "services": 85.7823146393718
+    },
+    "HND": {
+      "agriculture": 22.9822436621164,
+      "industry": 21.7870265831879,
+      "services": 55.2307297546957
+    },
+    "HRV": {
+      "agriculture": 4.65998285274505,
+      "industry": 27.4427983052614,
+      "services": 67.8972188419936
+    },
+    "HTI": {
+      "agriculture": 46.6744946970709,
+      "industry": 9.11310676815788,
+      "services": 44.2123985347712
+    },
+    "HUN": {
+      "agriculture": 4.42777980045488,
+      "industry": 31.0319467829846,
+      "services": 64.5402734165606
+    },
+    "IDN": {
+      "agriculture": 28.7792280576249,
+      "industry": 21.951549784263,
+      "services": 49.2692149419358
+    },
+    "IMN": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "IND": {
+      "agriculture": 43.5135811245793,
+      "industry": 25.0292115986201,
+      "services": 31.4572072768006
+    },
+    "IRL": {
+      "agriculture": 4.63227712600625,
+      "industry": 17.2768822949357,
+      "services": 78.0908405790581
+    },
+    "IRN": {
+      "agriculture": 14.0724777665032,
+      "industry": 35.0039654425064,
+      "services": 50.9235642909999
+    },
+    "IRQ": {
+      "agriculture": 8.36063691123896,
+      "industry": 26.6212558216565,
+      "services": 65.0181172620081
+    },
+    "ISL": {
+      "agriculture": 3.77673183894094,
+      "industry": 18.2479457198495,
+      "services": 77.9753224412096
+    },
+    "ISR": {
+      "agriculture": 0.812389286822541,
+      "industry": 15.4236915100251,
+      "services": 83.7639192031524
+    },
+    "ITA": {
+      "agriculture": 3.59437585162293,
+      "industry": 26.6374968010209,
+      "services": 69.7681231887873
+    },
+    "JAM": {
+      "agriculture": 14.5503141401867,
+      "industry": 17.2435814566797,
+      "services": 68.2061044031337
+    },
+    "JOR": {
+      "agriculture": 3.27855772336101,
+      "industry": 16.3691939436539,
+      "services": 80.3522103383423
+    },
+    "JPN": {
+      "agriculture": 3.00513467595088,
+      "industry": 23.7088479999434,
+      "services": 73.2860158386442
+    },
+    "KAZ": {
+      "agriculture": 12.0248423569605,
+      "industry": 19.8082307083233,
+      "services": 68.1669269347162
+    },
+    "KEN": {
+      "agriculture": 47.1556460778454,
+      "industry": 12.1595903826143,
+      "services": 40.6847771202981
+    },
+    "KGZ": {
+      "agriculture": 16.7709655704674,
+      "industry": 26.0018677091588,
+      "services": 57.2271667203738
+    },
+    "KHM": {
+      "agriculture": 35.304617697339,
+      "industry": 27.5630254285235,
+      "services": 37.1323568741375
+    },
+    "KIR": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "KNA": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "KOR": {
+      "agriculture": 5.32432842202518,
+      "industry": 23.9914232241802,
+      "services": 70.684251824038
+    },
+    "KWT": {
+      "agriculture": 1.95050631842064,
+      "industry": 25.2040679334938,
+      "services": 72.8453906954066
+    },
+    "LAO": {
+      "agriculture": 69.3876980673051,
+      "industry": 7.24890970605785,
+      "services": 23.3633634152757
+    },
+    "LBN": {
+      "agriculture": 3.51300056008433,
+      "industry": 20.123353070803,
+      "services": 76.3636463691127
+    },
+    "LBR": {
+      "agriculture": 42.5856167455119,
+      "industry": 8.20136751969499,
+      "services": 49.2130157347932
+    },
+    "LBY": {
+      "agriculture": 10.5958299038723,
+      "industry": 18.2844566866298,
+      "services": 71.1197134094979
+    },
+    "LCA": {
+      "agriculture": 9.92923784197954,
+      "industry": 15.0730157299319,
+      "services": 74.9977464280885
+    },
+    "LIE": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "LKA": {
+      "agriculture": 26.456025466166,
+      "industry": 26.2644369729241,
+      "services": 47.2795375609099
+    },
+    "LSO": {
+      "agriculture": 31.5398786752197,
+      "industry": 32.975112652797,
+      "services": 35.4850086719833
+    },
+    "LTU": {
+      "agriculture": 5.05918982976292,
+      "industry": 25.808480303668,
+      "services": 69.132329866569
+    },
+    "LUX": {
+      "agriculture": 0.946506466671769,
+      "industry": 9.00283156041938,
+      "services": 90.0506619729089
+    },
+    "LVA": {
+      "agriculture": 5.83522321186928,
+      "industry": 23.3245439712967,
+      "services": 70.840232816834
+    },
+    "MAC": {
+      "agriculture": 0.389049698277977,
+      "industry": 11.3312564391895,
+      "services": 88.2796938625325
+    },
+    "MAF": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "MAR": {
+      "agriculture": 29.0971569760556,
+      "industry": 23.2572707500458,
+      "services": 47.6455722738986
+    },
+    "MCO": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "MDA": {
+      "agriculture": 51.1234637436782,
+      "industry": 13.3162782781413,
+      "services": 35.5602579781805
+    },
+    "MDG": {
+      "agriculture": 69.8915361196731,
+      "industry": 9.83592011719846,
+      "services": 20.2725437631284
+    },
+    "MDV": {
+      "agriculture": 12.0213918806311,
+      "industry": 16.9472362300527,
+      "services": 71.0313718893162
+    },
+    "MEX": {
+      "agriculture": 11.9647587557082,
+      "industry": 25.0311265830107,
+      "services": 63.0041249209599
+    },
+    "MHL": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "MKD": {
+      "agriculture": 7.77077360538756,
+      "industry": 31.0401708738092,
+      "services": 61.1889090240533
+    },
+    "MLI": {
+      "agriculture": 63.8459121625936,
+      "industry": 8.64283764374913,
+      "services": 27.5112501936573
+    },
+    "MLT": {
+      "agriculture": 1.110399242324,
+      "industry": 18.0198750670279,
+      "services": 80.8697256906481
+    },
+    "MMR": {
+      "agriculture": 45.2453969645892,
+      "industry": 18.7442239550243,
+      "services": 36.0103699401709
+    },
+    "MNE": {
+      "agriculture": 4.45928847447194,
+      "industry": 18.4340814876454,
+      "services": 77.1062500712437
+    },
+    "MNG": {
+      "agriculture": 28.3916817018137,
+      "industry": 22.6331829068751,
+      "services": 48.9751353913113
+    },
+    "MNP": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "MOZ": {
+      "agriculture": 73.051175428303,
+      "industry": 6.40173501323427,
+      "services": 20.5470822426707
+    },
+    "MRT": {
+      "agriculture": 33.4051155296335,
+      "industry": 14.8268032180022,
+      "services": 51.7680812523643
+    },
+    "MUS": {
+      "agriculture": 5.07173696446363,
+      "industry": 21.1577548987047,
+      "services": 73.7705081368316
+    },
+    "MWI": {
+      "agriculture": 65.2994551680775,
+      "industry": 7.3286639879322,
+      "services": 27.3718673513721
+    },
+    "MYS": {
+      "agriculture": 9.74966658350567,
+      "industry": 25.9966868796068,
+      "services": 64.2536465368875
+    },
+    "NAM": {
+      "agriculture": 22.9420926400213,
+      "industry": 16.3923920439261,
+      "services": 60.6654022907959
+    },
+    "NCL": {
+      "agriculture": 1.80951395713719,
+      "industry": 21.8814117484784,
+      "services": 76.3090742943844
+    },
+    "NER": {
+      "agriculture": 74.1907785749458,
+      "industry": 9.21317430646188,
+      "services": 16.5960471185924
+    },
+    "NGA": {
+      "agriculture": 34.7048013096805,
+      "industry": 16.8218871130116,
+      "services": 48.473302204451
+    },
+    "NIC": {
+      "agriculture": 31.0024502588875,
+      "industry": 16.9165438460527,
+      "services": 52.0810058950598
+    },
+    "NLD": {
+      "agriculture": 1.81273534650406,
+      "industry": 14.3319176387723,
+      "services": 83.855356988618
+    },
+    "NOR": {
+      "agriculture": 2.39527456618795,
+      "industry": 18.717207713094,
+      "services": 78.8875177207181
+    },
+    "NPL": {
+      "agriculture": 23.9506972536467,
+      "industry": 30.8488008839251,
+      "services": 45.2005018624282
+    },
+    "NRU": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "NZL": {
+      "agriculture": 5.61135048894207,
+      "industry": 20.537665966941,
+      "services": 73.8510179512156
+    },
+    "OMN": {
+      "agriculture": 6.14304055766337,
+      "industry": 39.719182609371,
+      "services": 54.137736798552
+    },
+    "PAK": {
+      "agriculture": 36.7740398149604,
+      "industry": 25.1521795336545,
+      "services": 38.073780651385
+    },
+    "PAN": {
+      "agriculture": 14.70766439641,
+      "industry": 17.4619960017847,
+      "services": 67.8303396018053
+    },
+    "PER": {
+      "agriculture": 23.9668308634872,
+      "industry": 16.3581011845248,
+      "services": 59.6750679519879
+    },
+    "PHL": {
+      "agriculture": 22.0370920130941,
+      "industry": 18.9439273601805,
+      "services": 59.0189887451559
+    },
+    "PLW": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "PNG": {
+      "agriculture": 38.0781683493322,
+      "industry": 7.53068981812036,
+      "services": 54.3911418325475
+    },
+    "POL": {
+      "agriculture": 8.48668356607559,
+      "industry": 29.5362902481394,
+      "services": 61.9770367351684
+    },
+    "PRI": {
+      "agriculture": 1.20377201311698,
+      "industry": 15.1687098698539,
+      "services": 83.6275181170291
+    },
+    "PRK": {
+      "agriculture": 54.4932584747515,
+      "industry": 22.656464540092,
+      "services": 22.8502652043192
+    },
+    "PRT": {
+      "agriculture": 3.10706416299277,
+      "industry": 25.4765752478187,
+      "services": 71.4163605891885
+    },
+    "PRY": {
+      "agriculture": 17.1714177631387,
+      "industry": 18.009812150778,
+      "services": 64.8187700860833
+    },
+    "PSE": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "PYF": {
+      "agriculture": 2.0675331510145,
+      "industry": 14.4774309960811,
+      "services": 83.4550358529044
+    },
+    "QAT": {
+      "agriculture": 1.69064484512151,
+      "industry": 38.9613045866694,
+      "services": 59.3480505682091
+    },
+    "ROU": {
+      "agriculture": 11.914744119708,
+      "industry": 33.1646621771703,
+      "services": 54.9205809741838
+    },
+    "RUS": {
+      "agriculture": 5.4592687891054,
+      "industry": 25.9426079241619,
+      "services": 68.5981232867327
+    },
+    "RWA": {
+      "agriculture": 51.869092379053,
+      "industry": 14.2311095344851,
+      "services": 33.8998187109295
+    },
+    "SAU": {
+      "agriculture": 2.74111369312152,
+      "industry": 23.0569908594811,
+      "services": 74.2019143925251
+    },
+    "SDN": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "SEN": {
+      "agriculture": 31.4642947647286,
+      "industry": 22.2534331304009,
+      "services": 46.2822899759848
+    },
+    "SGP": {
+      "agriculture": 0.0795801860241645,
+      "industry": 13.8432992197459,
+      "services": 86.0771205942299
+    },
+    "SLB": {
+      "agriculture": 43.0379473134167,
+      "industry": 7.76292238759355,
+      "services": 49.1991302989898
+    },
+    "SLE": {
+      "agriculture": 45.5559970491456,
+      "industry": 11.210434836656,
+      "services": 43.2335681141984
+    },
+    "SLV": {
+      "agriculture": 14.2303167942656,
+      "industry": 23.3019703166168,
+      "services": 62.4677128891176
+    },
+    "SMR": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "SOM": {
+      "agriculture": 30.5261001792167,
+      "industry": 17.6952453105698,
+      "services": 51.7786545102134
+    },
+    "SRB": {
+      "agriculture": 18.4539281735717,
+      "industry": 27.6230736287523,
+      "services": 53.922998197676
+    },
+    "SSD": {
+      "agriculture": 63.7605031614144,
+      "industry": 1.67202046929201,
+      "services": 34.5674763692935
+    },
+    "STP": {
+      "agriculture": 12.480668618999,
+      "industry": 22.5889243526044,
+      "services": 64.9304070283966
+    },
+    "SUR": {
+      "agriculture": 7.2091276543092,
+      "industry": 26.1490971766963,
+      "services": 66.6417751689945
+    },
+    "SVK": {
+      "agriculture": 3.12353260529978,
+      "industry": 34.6834393505543,
+      "services": 62.193028044146
+    },
+    "SVN": {
+      "agriculture": 4.02423309323114,
+      "industry": 32.1154950731268,
+      "services": 63.860271833642
+    },
+    "SWE": {
+      "agriculture": 1.76882294206255,
+      "industry": 17.2817107652127,
+      "services": 80.9494472010676
+    },
+    "SWZ": {
+      "agriculture": 15.2459544084511,
+      "industry": 26.0966259912797,
+      "services": 58.6570538144149
+    },
+    "SXM": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "SYC": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "SYR": {
+      "agriculture": 16.5692768227914,
+      "industry": 25.7531214685477,
+      "services": 57.6776017086609
+    },
+    "TCA": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "TCD": {
+      "agriculture": 71.9284339110386,
+      "industry": 8.62912059617787,
+      "services": 19.4424454927835
+    },
+    "TGO": {
+      "agriculture": 38.805696721505,
+      "industry": 18.1832060347853,
+      "services": 43.0110972437097
+    },
+    "THA": {
+      "agriculture": 30.2203833465474,
+      "industry": 21.9241712091058,
+      "services": 47.8554430043835
+    },
+    "TJK": {
+      "agriculture": 45.0625065545736,
+      "industry": 16.8133535660091,
+      "services": 38.1241398794172
+    },
+    "TKM": {
+      "agriculture": 22.2639025833169,
+      "industry": 29.074295010846,
+      "services": 48.6618024058371
+    },
+    "TLS": {
+      "agriculture": 48.3871832415824,
+      "industry": 3.10149336746489,
+      "services": 48.5113233909527
+    },
+    "TON": {
+      "agriculture": 24.7806624888093,
+      "industry": 23.0378991345867,
+      "services": 52.181438376604
+    },
+    "TTO": {
+      "agriculture": 4.62360166765392,
+      "industry": 24.8002584806891,
+      "services": 70.5762815625611
+    },
+    "TUN": {
+      "agriculture": 12.84771276379,
+      "industry": 33.3168762548639,
+      "services": 53.8354109813461
+    },
+    "TUR": {
+      "agriculture": 14.6426868701889,
+      "industry": 27.5933277392277,
+      "services": 57.7639762862523
+    },
+    "TUV": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "TZA": {
+      "agriculture": 65.1616409810771,
+      "industry": 8.04453818145295,
+      "services": 26.7938240159534
+    },
+    "UGA": {
+      "agriculture": 65.8927506516622,
+      "industry": 7.18398773652279,
+      "services": 26.9232663241872
+    },
+    "UKR": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "URY": {
+      "agriculture": 8.56640858566501,
+      "industry": 18.7931621310847,
+      "services": 72.6403679570717
+    },
+    "USA": {
+      "agriculture": 1.5696095192715,
+      "industry": 19.3356581942933,
+      "services": 79.0947316958393
+    },
+    "UZB": {
+      "agriculture": 26.1279176228967,
+      "industry": 24.1341945506432,
+      "services": 49.7378951792477
+    },
+    "VCT": {
+      "agriculture": 9.62491475335303,
+      "industry": 21.002500568311,
+      "services": 69.372584678336
+    },
+    "VEN": {
+      "agriculture": 9.18092202736474,
+      "industry": 17.3276921466437,
+      "services": 73.4913759782388
+    },
+    "VGB": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "VIR": {
+      "agriculture": 1.67326532381585,
+      "industry": 17.1054532843973,
+      "services": 81.2212813917868
+    },
+    "VNM": {
+      "agriculture": 26.9827056291982,
+      "industry": 33.467876483268,
+      "services": 39.5494160842561
+    },
+    "VUT": {
+      "agriculture": 44.6286672715774,
+      "industry": 10.5694410074514,
+      "services": 44.8018917209712
+    },
+    "WSM": {
+      "agriculture": 29.1876413511345,
+      "industry": 14.1807105858321,
+      "services": 56.6316480630335
+    },
+    "XKX": {
+      "agriculture": null,
+      "industry": null,
+      "services": null
+    },
+    "YEM": {
+      "agriculture": 31.9626197586213,
+      "industry": 11.6130243342292,
+      "services": 56.4243401985256
+    },
+    "ZAF": {
+      "agriculture": 5.49732948486909,
+      "industry": 20.5773773387953,
+      "services": 73.9253046339629
+    },
+    "ZMB": {
+      "agriculture": 55.9688338193251,
+      "industry": 9.9236380116809,
+      "services": 34.107528168994
+    },
+    "ZWE": {
+      "agriculture": 55.4494320997712,
+      "industry": 11.3921702410775,
+      "services": 33.1583806866399
+    }
+  },
+  "regions": {
+    "EAS": {
+      "agriculture": 22.7461937750377,
+      "industry": 28.1801280863117,
+      "services": 49.0736724935395
+    },
+    "ECS": {
+      "agriculture": 7.0353298955197,
+      "industry": 23.8544546542071,
+      "services": 69.1102149348989
+    },
+    "SSF": {
+      "agriculture": 50.5910726073975,
+      "industry": 11.9198795583272,
+      "services": 37.4890461409986
+    },
+    "LCN": {
+      "agriculture": 13.1411594144542,
+      "industry": 20.628244596186,
+      "services": 66.2305983109629
+    },
+    "MEA": {
+      "agriculture": 22.1107094280119,
+      "industry": 26.6437009096505,
+      "services": 51.2455901002424
+    },
+    "SAS": {
+      "agriculture": 43.2806177425893,
+      "industry": 24.2819316276988,
+      "services": 32.4374515485147
+    },
+    "NAC": {
+      "agriculture": 1.53618048439214,
+      "industry": 19.3220019886658,
+      "services": 79.1418175476202
+    },
+    "WLD": {
+      "agriculture": 26.5559920191478,
+      "industry": 23.5140534163634,
+      "services": 49.9299526778755
+    }
+  },
+  "notes": [
+    "三项指标均为 2023 年就业人口中的部门占比（ILO 模型估计），并非所有居民或所有父母的职业分布。",
+    "三项指标不区分父母性别、年龄、具体职业，也不说明某位父母一定就业；具体职业与是否就业属于游戏生成规则。",
+    "固定采用 2023 年截面，不能据此声称还原较早或未来出生年份的真实就业结构。",
+    "保留官方数值精度及 null，不补零、不插值、不换年；各部门之和可能存在微小舍入误差。",
+    "仅当同一经济体三项数值均非 null 且合计大于零时使用本国整组数据；否则整组回退到对应世界银行区域，再回退到 WLD。不要把不同层级的部门数值拼接。",
+    "国家与区域的对应关系沿用现有 countries.json 中的 regionId，属于目录下载时的世界银行区域分类，不是地理洲别。",
+    "若本国、区域、全球均缺少完整三项，允许游戏使用农业/工业/服务业等权 1/3 的显式游戏规则；该均分不是真实统计，未写入原始数值。",
+    "用于随机权重时，可在选定的一组真实占比内部按合计归一化；数据资产本身保持原值。"
+  ]
+}

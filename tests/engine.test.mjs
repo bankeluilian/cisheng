@@ -9,7 +9,7 @@ test('renaming persists the identity while leaving fate and existing facts untou
   assert.equal(b.name,'余泽');assert.equal(b.id,a.id);assert.equal(b.rng,a.rng);
   assert.deepEqual(b,{...a,name:'余泽'});assert.equal(validateLife(b),true);
   assert.deepEqual(renameLife(a,'   '),a);assert.deepEqual(renameLife(a,'<script>'),a);
-  assert.deepEqual(renameLife(a,'很'.repeat(21)),a);
+  assert.deepEqual(renameLife(a,'很'.repeat(31)),a);
   assert.equal(renameLife({...a,ended:true},'另一个名字').name,'另一个名字');
 });
 test('same seed and actions reproduce the entire life',()=>{

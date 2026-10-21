@@ -1,0 +1,1285 @@
+{
+  "version": "wb-ilo-employment-2023-v1",
+  "source": {
+    "label": "World Bank / ILO modeled estimates",
+    "organization": "World Bank",
+    "dataset": "World Development Indicators",
+    "underlyingSource": "International Labour Organization, ILO Modelled Estimates database (ILOEST), ILOSTAT",
+    "year": 2023,
+    "retrievedAt": "2026-10-21T18:18:41.905Z",
+    "unit": "percent of total employment",
+    "license": "CC BY 4.0",
+    "urls": {
+      "agriculture": "https://api.worldbank.org/v2/country/all/indicator/SL.AGR.EMPL.ZS?date=2023&format=json&per_page=400",
+      "industry": "https://api.worldbank.org/v2/country/all/indicator/SL.IND.EMPL.ZS?date=2023&format=json&per_page=400",
+      "services": "https://api.worldbank.org/v2/country/all/indicator/SL.SRV.EMPL.ZS?date=2023&format=json&per_page=400"
+    },
+    "indicatorPages": {
+      "agriculture": "https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS",
+      "industry": "https://data.worldbank.org/indicator/SL.IND.EMPL.ZS",
+      "services": "https://data.worldbank.org/indicator/SL.SRV.EMPL.ZS"
+    },
+    "apiMetadata": {
+      "agriculture": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 400,
+        "total": 266,
+        "sourceid": "2",
+        "lastupdated": "2026-10-08"
+      },
+      "industry": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 400,
+        "total": 266,
+        "sourceid": "2",
+        "lastupdated": "2026-10-08"
+      },
+      "services": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 400,
+        "total": 266,
+        "sourceid": "2",
+        "lastupdated": "2026-10-08"
+      }
+    }
+  },
+  "indicators": {
+    "agriculture": "SL.AGR.EMPL.ZS",
+    "industry": "SL.IND.EMPL.ZS",
+    "services": "SL.SRV.EMPL.ZS"
+  },
+  "coverage": {
+    "countryCount": 217,
+    "completeCountries": 184,
+    "countryByIndicator": {
+      "agriculture": 184,
+      "industry": 184,
+      "services": 184
+    },
+    "completeRegions": [
+      "EAS",
+      "ECS",
+      "SSF",
+      "LCN",
+      "MEA",
+      "SAS",
+      "NAC",
+      "WLD"
+    ],
+    "fallbackLevels": {
+      "country": 184,
+      "region": 33,
+      "world": 0,
+      "game-equal": 0
+    }
+  },
+  "missingCountries": {
+    "agriculture": [
+      "ABW",
+      "AND",
+      "ASM",
+      "ATG",
+      "BMU",
+      "CUW",
+      "CYM",
+      "DMA",
+      "FRO",
+      "FSM",
+      "GIB",
+      "GRD",
+      "GRL",
+      "IMN",
+      "KIR",
+      "KNA",
+      "LIE",
+      "MAF",
+      "MCO",
+      "MHL",
+      "MNP",
+      "NRU",
+      "PLW",
+      "PSE",
+      "SDN",
+      "SMR",
+      "SXM",
+      "SYC",
+      "TCA",
+      "TUV",
+      "UKR",
+      "VGB",
+      "XKX"
+    ],
+    "industry": [
+      "ABW",
+      "AND",
+      "ASM",
+      "ATG",
+      "BMU",
+      "CUW",
+      "CYM",
+      "DMA",
+      "FRO",
+      "FSM",
+      "GIB",
+      "GRD",
+      "GRL",
+      "IMN",
+      "KIR",
+      "KNA",
+      "LIE",
+      "MAF",
+      "MCO",
+      "MHL",
+      "MNP",
+      "NRU",
+      "PLW",
+      "PSE",
+      "SDN",
+      "SMR",
+      "SXM",
+      "SYC",
+      "TCA",
+      "TUV",
+      "UKR",
+      "VGB",
+      "XKX"
+    ],
+    "services": [
+      "ABW",
+      "AND",
+      "ASM",
+      "ATG",
+      "BMU",
+      "CUW",
+      "CYM",
+      "DMA",
+      "FRO",
+      "FSM",
+      "GIB",
+      "GRD",
+      "GRL",
+      "IMN",
+      "KIR",
+      "KNA",
+      "LIE",
+      "MAF",
+      "MCO",
+      "MHL",
+      "MNP",
+      "NRU",
+      "PLW",
+      "PSE",
+      "SDN",
+      "SMR",
+      "SXM",
+      "SYC",
+      "TCA",
+      "TUV",
+      "UKR",
+      "VGB",
+      "XKX"
+    ]
+  },
+  "regionByCountry": {
+    "ABW": "LCN",
+    "AFG": "MEA",
+    "AGO": "SSF",
+    "ALB": "ECS",
+    "AND": "ECS",
+    "ARE": "MEA",
+    "ARG": "LCN",
+    "ARM": "ECS",
+    "ASM": "EAS",
+    "ATG": "LCN",
+    "AUS": "EAS",
+    "AUT": "ECS",
+    "AZE": "ECS",
+    "BDI": "SSF",
+    "BEL": "ECS",
+    "BEN": "SSF",
+    "BFA": "SSF",
+    "BGD": "SAS",
+    "BGR": "ECS",
+    "BHR": "MEA",
+    "BHS": "LCN",
+    "BIH": "ECS",
+    "BLR": "ECS",
+    "BLZ": "LCN",
+    "BMU": "NAC",
+    "BOL": "LCN",
+    "BRA": "LCN",
+    "BRB": "LCN",
+    "BRN": "EAS",
+    "BTN": "SAS",
+    "BWA": "SSF",
+    "CAF": "SSF",
+    "CAN": "NAC",
+    "CHE": "ECS",
+    "CHI": "ECS",
+    "CHL": "LCN",
+    "CHN": "EAS",
+    "CIV": "SSF",
+    "CMR": "SSF",
+    "COD": "SSF",
+    "COG": "SSF",
+    "COL": "LCN",
+    "COM": "SSF",
+    "CPV": "SSF",
+    "CRI": "LCN",
+    "CUB": "LCN",
+    "CUW": "LCN",
+    "CYM": "LCN",
+    "CYP": "ECS",
+    "CZE": "ECS",
+    "DEU": "ECS",
+    "DJI": "MEA",
+    "DMA": "LCN",
+    "DNK": "ECS",
+    "DOM": "LCN",
+    "DZA": "MEA",
+    "ECU": "LCN",
+    "EGY": "MEA",
+    "ERI": "SSF",
+    "ESP": "ECS",
+    "EST": "ECS",
+    "ETH": "SSF",
+    "FIN": "ECS",
+    "FJI": "EAS",
+    "FRA": "ECS",
+    "FRO": "ECS",
+    "FSM": "EAS",
+    "GAB": "SSF",
+    "GBR": "ECS",
+    "GEO": "ECS",
+    "GHA": "SSF",
+    "GIB": "ECS",
+    "GIN": "SSF",
+    "GMB": "SSF",
+    "GNB": "SSF",
+    "GNQ": "SSF",
+    "GRC": "ECS",
+    "GRD": "LCN",
+    "GRL": "ECS",
+    "GTM": "LCN",
+    "GUM": "EAS",
+    "GUY": "LCN",
+    "HKG": "EAS",
+    "HND": "LCN",
+    "HRV": "ECS",
+    "HTI": "LCN",
+    "HUN": "ECS",
+    "IDN": "EAS",
+    "IMN": "ECS",
+    "IND": "SAS",
+    "IRL": "ECS",
+    "IRN": "MEA",
+    "IRQ": "MEA",
+    "ISL": "ECS",
+    "ISR": "MEA",
+    "ITA": "ECS",
+    "JAM": "LCN",
+    "JOR": "MEA",
+    "JPN": "EAS",
+    "KAZ": "ECS",
+    "KEN": "SSF",
+    "KGZ": "ECS",
+    "KHM": "EAS",
+    "KIR": "EAS",
+    "KNA": "LCN",
+    "KOR": "EAS",
+    "KWT": "MEA",
+    "LAO": "EAS",
+    "LBN": "MEA",
+    "LBR": "SSF",
+    "LBY": "MEA",
+    "LCA": "LCN",
+    "LIE": "ECS",
+    "LKA": "SAS",
+    "LSO": "SSF",
+    "LTU": "ECS",
+    "LUX": "ECS",
+    "LVA": "ECS",
+    "MAC": "EAS",
+    "MAF": "LCN",
+    "MAR": "MEA",
+    "MCO": "ECS",
+    "MDA": "ECS",
+    "MDG": "SSF",
+    "MDV": "SAS",
+    "MEX": "LCN",
+    "MHL": "EAS",
+    "MKD": "ECS",
+    "MLI": "SSF",
+    "MLT": "MEA",
+    "MMR": "EAS",
+    "MNE": "ECS",
+    "MNG": "EAS",
+    "MNP": "EAS",
+    "MOZ": "SSF",
+    "MRT": "SSF",
+    "MUS": "SSF",
+    "MWI": "SSF",
+    "MYS": "EAS",
+    "NAM": "SSF",
+    "NCL": "EAS",
+    "NER": "SSF",
+    "NGA": "SSF",
+    "NIC": "LCN",
+    "NLD": "ECS",
+    "NOR": "ECS",
+    "NPL": "SAS",
+    "NRU": "EAS",
+    "NZL": "EAS",
+    "OMN": "MEA",
+    "PAK": "MEA",
+    "PAN": "LCN",
+    "PER": "LCN",
+    "PHL": "EAS",
+    "PLW": "EAS",
+    "PNG": "EAS",
+    "POL": "ECS",
+    "PRI": "LCN",
+    "PRK": "EAS",
+    "PRT": "ECS",
+    "PRY": "LCN",
+    "PSE": "MEA",
+    "PYF": "EAS",
+    "QAT": "MEA",
+    "ROU": "ECS",
+    "RUS": "ECS",
+    "RWA": "SSF",
+    "SAU": "MEA",
+    "SDN": "SSF",
+    "SEN": "SSF",
+    "SGP": "EAS",
+    "SLB": "EAS",
+    "SLE": "SSF",
+    "SLV": "LCN",
+    "SMR": "ECS",
+    "SOM": "SSF",
+    "SRB": "ECS",
+    "SSD": "SSF",
+    "STP": "SSF",
+    "SUR": "LCN",
+    "SVK": "ECS",
+    "SVN": "ECS",
+    "SWE": "ECS",
+    "SWZ": "SSF",
+    "SXM": "LCN",
+    "SYC": "SSF",
+    "SYR": "MEA",
+    "TCA": "LCN",
+    "TCD": "SSF",
+    "TGO": "SSF",
+    "THA": "EAS",
+    "TJK": "ECS",
+    "TKM": "ECS",
+    "TLS": "EAS",
+    "TON": "EAS",
+    "TTO": "LCN",
+    "TUN": "MEA",
+    "TUR": "ECS",
+    "TUV": "EAS",
+    "TZA": "SSF",
+    "UGA": "SSF",
+    "UKR": "ECS",
+    "URY": "LCN",
+    "USA": "NAC",
+    "UZB": "ECS",
+    "VCT": "LCN",
+    "VEN": "LCN",
+    "VGB": "LCN",
+    "VIR": "LCN",
+    "VNM": "EAS",
+    "VUT": "EAS",
+    "WSM": "EAS",
+    "XKX": "ECS",
+    "YEM": "MEA",
+    "ZAF": "SSF",
+    "ZMB": "SSF",
+    "ZWE": "SSF"
+  },
+  "fallbackResolution": {
+    "ABW": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "AFG": {
+      "level": "country",
+      "id": "AFG"
+    },
+    "AGO": {
+      "level": "country",
+      "id": "AGO"
+    },
+    "ALB": {
+      "level": "country",
+      "id": "ALB"
+    },
+    "AND": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "ARE": {
+      "level": "country",
+      "id": "ARE"
+    },
+    "ARG": {
+      "level": "country",
+      "id": "ARG"
+    },
+    "ARM": {
+      "level": "country",
+      "id": "ARM"
+    },
+    "ASM": {
+      "level": "region",
+      "id": "EAS"
+    },
+    "ATG": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "AUS": {
+      "level": "country",
+      "id": "AUS"
+    },
+    "AUT": {
+      "level": "country",
+      "id": "AUT"
+    },
+    "AZE": {
+      "level": "country",
+      "id": "AZE"
+    },
+    "BDI": {
+      "level": "country",
+      "id": "BDI"
+    },
+    "BEL": {
+      "level": "country",
+      "id": "BEL"
+    },
+    "BEN": {
+      "level": "country",
+      "id": "BEN"
+    },
+    "BFA": {
+      "level": "country",
+      "id": "BFA"
+    },
+    "BGD": {
+      "level": "country",
+      "id": "BGD"
+    },
+    "BGR": {
+      "level": "country",
+      "id": "BGR"
+    },
+    "BHR": {
+      "level": "country",
+      "id": "BHR"
+    },
+    "BHS": {
+      "level": "country",
+      "id": "BHS"
+    },
+    "BIH": {
+      "level": "country",
+      "id": "BIH"
+    },
+    "BLR": {
+      "level": "country",
+      "id": "BLR"
+    },
+    "BLZ": {
+      "level": "country",
+      "id": "BLZ"
+    },
+    "BMU": {
+      "level": "region",
+      "id": "NAC"
+    },
+    "BOL": {
+      "level": "country",
+      "id": "BOL"
+    },
+    "BRA": {
+      "level": "country",
+      "id": "BRA"
+    },
+    "BRB": {
+      "level": "country",
+      "id": "BRB"
+    },
+    "BRN": {
+      "level": "country",
+      "id": "BRN"
+    },
+    "BTN": {
+      "level": "country",
+      "id": "BTN"
+    },
+    "BWA": {
+      "level": "country",
+      "id": "BWA"
+    },
+    "CAF": {
+      "level": "country",
+      "id": "CAF"
+    },
+    "CAN": {
+      "level": "country",
+      "id": "CAN"
+    },
+    "CHE": {
+      "level": "country",
+      "id": "CHE"
+    },
+    "CHI": {
+      "level": "country",
+      "id": "CHI"
+    },
+    "CHL": {
+      "level": "country",
+      "id": "CHL"
+    },
+    "CHN": {
+      "level": "country",
+      "id": "CHN"
+    },
+    "CIV": {
+      "level": "country",
+      "id": "CIV"
+    },
+    "CMR": {
+      "level": "country",
+      "id": "CMR"
+    },
+    "COD": {
+      "level": "country",
+      "id": "COD"
+    },
+    "COG": {
+      "level": "country",
+      "id": "COG"
+    },
+    "COL": {
+      "level": "country",
+      "id": "COL"
+    },
+    "COM": {
+      "level": "country",
+      "id": "COM"
+    },
+    "CPV": {
+      "level": "country",
+      "id": "CPV"
+    },
+    "CRI": {
+      "level": "country",
+      "id": "CRI"
+    },
+    "CUB": {
+      "level": "country",
+      "id": "CUB"
+    },
+    "CUW": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "CYM": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "CYP": {
+      "level": "country",
+      "id": "CYP"
+    },
+    "CZE": {
+      "level": "country",
+      "id": "CZE"
+    },
+    "DEU": {
+      "level": "country",
+      "id": "DEU"
+    },
+    "DJI": {
+      "level": "country",
+      "id": "DJI"
+    },
+    "DMA": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "DNK": {
+      "level": "country",
+      "id": "DNK"
+    },
+    "DOM": {
+      "level": "country",
+      "id": "DOM"
+    },
+    "DZA": {
+      "level": "country",
+      "id": "DZA"
+    },
+    "ECU": {
+      "level": "country",
+      "id": "ECU"
+    },
+    "EGY": {
+      "level": "country",
+      "id": "EGY"
+    },
+    "ERI": {
+      "level": "country",
+      "id": "ERI"
+    },
+    "ESP": {
+      "level": "country",
+      "id": "ESP"
+    },
+    "EST": {
+      "level": "country",
+      "id": "EST"
+    },
+    "ETH": {
+      "level": "country",
+      "id": "ETH"
+    },
+    "FIN": {
+      "level": "country",
+      "id": "FIN"
+    },
+    "FJI": {
+      "level": "country",
+      "id": "FJI"
+    },
+    "FRA": {
+      "level": "country",
+      "id": "FRA"
+    },
+    "FRO": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "FSM": {
+      "level": "region",
+      "id": "EAS"
+    },
+    "GAB": {
+      "level": "country",
+      "id": "GAB"
+    },
+    "GBR": {
+      "level": "country",
+      "id": "GBR"
+    },
+    "GEO": {
+      "level": "country",
+      "id": "GEO"
+    },
+    "GHA": {
+      "level": "country",
+      "id": "GHA"
+    },
+    "GIB": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "GIN": {
+      "level": "country",
+      "id": "GIN"
+    },
+    "GMB": {
+      "level": "country",
+      "id": "GMB"
+    },
+    "GNB": {
+      "level": "country",
+      "id": "GNB"
+    },
+    "GNQ": {
+      "level": "country",
+      "id": "GNQ"
+    },
+    "GRC": {
+      "level": "country",
+      "id": "GRC"
+    },
+    "GRD": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "GRL": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "GTM": {
+      "level": "country",
+      "id": "GTM"
+    },
+    "GUM": {
+      "level": "country",
+      "id": "GUM"
+    },
+    "GUY": {
+      "level": "country",
+      "id": "GUY"
+    },
+    "HKG": {
+      "level": "country",
+      "id": "HKG"
+    },
+    "HND": {
+      "level": "country",
+      "id": "HND"
+    },
+    "HRV": {
+      "level": "country",
+      "id": "HRV"
+    },
+    "HTI": {
+      "level": "country",
+      "id": "HTI"
+    },
+    "HUN": {
+      "level": "country",
+      "id": "HUN"
+    },
+    "IDN": {
+      "level": "country",
+      "id": "IDN"
+    },
+    "IMN": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "IND": {
+      "level": "country",
+      "id": "IND"
+    },
+    "IRL": {
+      "level": "country",
+      "id": "IRL"
+    },
+    "IRN": {
+      "level": "country",
+      "id": "IRN"
+    },
+    "IRQ": {
+      "level": "country",
+      "id": "IRQ"
+    },
+    "ISL": {
+      "level": "country",
+      "id": "ISL"
+    },
+    "ISR": {
+      "level": "country",
+      "id": "ISR"
+    },
+    "ITA": {
+      "level": "country",
+      "id": "ITA"
+    },
+    "JAM": {
+      "level": "country",
+      "id": "JAM"
+    },
+    "JOR": {
+      "level": "country",
+      "id": "JOR"
+    },
+    "JPN": {
+      "level": "country",
+      "id": "JPN"
+    },
+    "KAZ": {
+      "level": "country",
+      "id": "KAZ"
+    },
+    "KEN": {
+      "level": "country",
+      "id": "KEN"
+    },
+    "KGZ": {
+      "level": "country",
+      "id": "KGZ"
+    },
+    "KHM": {
+      "level": "country",
+      "id": "KHM"
+    },
+    "KIR": {
+      "level": "region",
+      "id": "EAS"
+    },
+    "KNA": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "KOR": {
+      "level": "country",
+      "id": "KOR"
+    },
+    "KWT": {
+      "level": "country",
+      "id": "KWT"
+    },
+    "LAO": {
+      "level": "country",
+      "id": "LAO"
+    },
+    "LBN": {
+      "level": "country",
+      "id": "LBN"
+    },
+    "LBR": {
+      "level": "country",
+      "id": "LBR"
+    },
+    "LBY": {
+      "level": "country",
+      "id": "LBY"
+    },
+    "LCA": {
+      "level": "country",
+      "id": "LCA"
+    },
+    "LIE": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "LKA": {
+      "level": "country",
+      "id": "LKA"
+    },
+    "LSO": {
+      "level": "country",
+      "id": "LSO"
+    },
+    "LTU": {
+      "level": "country",
+      "id": "LTU"
+    },
+    "LUX": {
+      "level": "country",
+      "id": "LUX"
+    },
+    "LVA": {
+      "level": "country",
+      "id": "LVA"
+    },
+    "MAC": {
+      "level": "country",
+      "id": "MAC"
+    },
+    "MAF": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "MAR": {
+      "level": "country",
+      "id": "MAR"
+    },
+    "MCO": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "MDA": {
+      "level": "country",
+      "id": "MDA"
+    },
+    "MDG": {
+      "level": "country",
+      "id": "MDG"
+    },
+    "MDV": {
+      "level": "country",
+      "id": "MDV"
+    },
+    "MEX": {
+      "level": "country",
+      "id": "MEX"
+    },
+    "MHL": {
+      "level": "region",
+      "id": "EAS"
+    },
+    "MKD": {
+      "level": "country",
+      "id": "MKD"
+    },
+    "MLI": {
+      "level": "country",
+      "id": "MLI"
+    },
+    "MLT": {
+      "level": "country",
+      "id": "MLT"
+    },
+    "MMR": {
+      "level": "country",
+      "id": "MMR"
+    },
+    "MNE": {
+      "level": "country",
+      "id": "MNE"
+    },
+    "MNG": {
+      "level": "country",
+      "id": "MNG"
+    },
+    "MNP": {
+      "level": "region",
+      "id": "EAS"
+    },
+    "MOZ": {
+      "level": "country",
+      "id": "MOZ"
+    },
+    "MRT": {
+      "level": "country",
+      "id": "MRT"
+    },
+    "MUS": {
+      "level": "country",
+      "id": "MUS"
+    },
+    "MWI": {
+      "level": "country",
+      "id": "MWI"
+    },
+    "MYS": {
+      "level": "country",
+      "id": "MYS"
+    },
+    "NAM": {
+      "level": "country",
+      "id": "NAM"
+    },
+    "NCL": {
+      "level": "country",
+      "id": "NCL"
+    },
+    "NER": {
+      "level": "country",
+      "id": "NER"
+    },
+    "NGA": {
+      "level": "country",
+      "id": "NGA"
+    },
+    "NIC": {
+      "level": "country",
+      "id": "NIC"
+    },
+    "NLD": {
+      "level": "country",
+      "id": "NLD"
+    },
+    "NOR": {
+      "level": "country",
+      "id": "NOR"
+    },
+    "NPL": {
+      "level": "country",
+      "id": "NPL"
+    },
+    "NRU": {
+      "level": "region",
+      "id": "EAS"
+    },
+    "NZL": {
+      "level": "country",
+      "id": "NZL"
+    },
+    "OMN": {
+      "level": "country",
+      "id": "OMN"
+    },
+    "PAK": {
+      "level": "country",
+      "id": "PAK"
+    },
+    "PAN": {
+      "level": "country",
+      "id": "PAN"
+    },
+    "PER": {
+      "level": "country",
+      "id": "PER"
+    },
+    "PHL": {
+      "level": "country",
+      "id": "PHL"
+    },
+    "PLW": {
+      "level": "region",
+      "id": "EAS"
+    },
+    "PNG": {
+      "level": "country",
+      "id": "PNG"
+    },
+    "POL": {
+      "level": "country",
+      "id": "POL"
+    },
+    "PRI": {
+      "level": "country",
+      "id": "PRI"
+    },
+    "PRK": {
+      "level": "country",
+      "id": "PRK"
+    },
+    "PRT": {
+      "level": "country",
+      "id": "PRT"
+    },
+    "PRY": {
+      "level": "country",
+      "id": "PRY"
+    },
+    "PSE": {
+      "level": "region",
+      "id": "MEA"
+    },
+    "PYF": {
+      "level": "country",
+      "id": "PYF"
+    },
+    "QAT": {
+      "level": "country",
+      "id": "QAT"
+    },
+    "ROU": {
+      "level": "country",
+      "id": "ROU"
+    },
+    "RUS": {
+      "level": "country",
+      "id": "RUS"
+    },
+    "RWA": {
+      "level": "country",
+      "id": "RWA"
+    },
+    "SAU": {
+      "level": "country",
+      "id": "SAU"
+    },
+    "SDN": {
+      "level": "region",
+      "id": "SSF"
+    },
+    "SEN": {
+      "level": "country",
+      "id": "SEN"
+    },
+    "SGP": {
+      "level": "country",
+      "id": "SGP"
+    },
+    "SLB": {
+      "level": "country",
+      "id": "SLB"
+    },
+    "SLE": {
+      "level": "country",
+      "id": "SLE"
+    },
+    "SLV": {
+      "level": "country",
+      "id": "SLV"
+    },
+    "SMR": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "SOM": {
+      "level": "country",
+      "id": "SOM"
+    },
+    "SRB": {
+      "level": "country",
+      "id": "SRB"
+    },
+    "SSD": {
+      "level": "country",
+      "id": "SSD"
+    },
+    "STP": {
+      "level": "country",
+      "id": "STP"
+    },
+    "SUR": {
+      "level": "country",
+      "id": "SUR"
+    },
+    "SVK": {
+      "level": "country",
+      "id": "SVK"
+    },
+    "SVN": {
+      "level": "country",
+      "id": "SVN"
+    },
+    "SWE": {
+      "level": "country",
+      "id": "SWE"
+    },
+    "SWZ": {
+      "level": "country",
+      "id": "SWZ"
+    },
+    "SXM": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "SYC": {
+      "level": "region",
+      "id": "SSF"
+    },
+    "SYR": {
+      "level": "country",
+      "id": "SYR"
+    },
+    "TCA": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "TCD": {
+      "level": "country",
+      "id": "TCD"
+    },
+    "TGO": {
+      "level": "country",
+      "id": "TGO"
+    },
+    "THA": {
+      "level": "country",
+      "id": "THA"
+    },
+    "TJK": {
+      "level": "country",
+      "id": "TJK"
+    },
+    "TKM": {
+      "level": "country",
+      "id": "TKM"
+    },
+    "TLS": {
+      "level": "country",
+      "id": "TLS"
+    },
+    "TON": {
+      "level": "country",
+      "id": "TON"
+    },
+    "TTO": {
+      "level": "country",
+      "id": "TTO"
+    },
+    "TUN": {
+      "level": "country",
+      "id": "TUN"
+    },
+    "TUR": {
+      "level": "country",
+      "id": "TUR"
+    },
+    "TUV": {
+      "level": "region",
+      "id": "EAS"
+    },
+    "TZA": {
+      "level": "country",
+      "id": "TZA"
+    },
+    "UGA": {
+      "level": "country",
+      "id": "UGA"
+    },
+    "UKR": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "URY": {
+      "level": "country",
+      "id": "URY"
+    },
+    "USA": {
+      "level": "country",
+      "id": "USA"
+    },
+    "UZB": {
+      "level": "country",
+      "id": "UZB"
+    },
+    "VCT": {
+      "level": "country",
+      "id": "VCT"
+    },
+    "VEN": {
+      "level": "country",
+      "id": "VEN"
+    },
+    "VGB": {
+      "level": "region",
+      "id": "LCN"
+    },
+    "VIR": {
+      "level": "country",
+      "id": "VIR"
+    },
+    "VNM": {
+      "level": "country",
+      "id": "VNM"
+    },
+    "VUT": {
+      "level": "country",
+      "id": "VUT"
+    },
+    "WSM": {
+      "level": "country",
+      "id": "WSM"
+    },
+    "XKX": {
+      "level": "region",
+      "id": "ECS"
+    },
+    "YEM": {
+      "level": "country",
+      "id": "YEM"
+    },
+    "ZAF": {
+      "level": "country",
+      "id": "ZAF"
+    },
+    "ZMB": {
+      "level": "country",
+      "id": "ZMB"
+    },
+    "ZWE": {
+      "level": "country",
+      "id": "ZWE"
+    }
+  },
+  "notes": [
+    "三项指标均为 2023 年就业人口中的部门占比（ILO 模型估计），并非所有居民或所有父母的职业分布。",
+    "三项指标不区分父母性别、年龄、具体职业，也不说明某位父母一定就业；具体职业与是否就业属于游戏生成规则。",
+    "固定采用 2023 年截面，不能据此声称还原较早或未来出生年份的真实就业结构。",
+    "保留官方数值精度及 null，不补零、不插值、不换年；各部门之和可能存在微小舍入误差。",
+    "仅当同一经济体三项数值均非 null 且合计大于零时使用本国整组数据；否则整组回退到对应世界银行区域，再回退到 WLD。不要把不同层级的部门数值拼接。",
+    "国家与区域的对应关系沿用现有 countries.json 中的 regionId，属于目录下载时的世界银行区域分类，不是地理洲别。",
+    "若本国、区域、全球均缺少完整三项，允许游戏使用农业/工业/服务业等权 1/3 的显式游戏规则；该均分不是真实统计，未写入原始数值。",
+    "用于随机权重时，可在选定的一组真实占比内部按合计归一化；数据资产本身保持原值。"
+  ]
+}

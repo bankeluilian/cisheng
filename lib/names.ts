@@ -1,0 +1,114 @@
+import type {Country} from './engine';
+import {originRandom} from './origin-random.ts';
+export const PERSON_NAME_LIMIT=30;
+export type NameOrigin={profile:string;scope:'country'|'regional';surname:string;given:string;variant:number};
+type Profile={id:string;label:string;family:string[];male:string[];female:string[];order:'family'|'given'|'full';femaleFamily?:string[];joiner:string};
+const profiles:Record<string,Profile>={};
+function catalog(id:string,label:string,family:string,male:string,female:string,order:Profile['order']='given',joiner=' ',femaleFamily?:string){profiles[id]={id,label,family:family.split('|'),male:male.split('|'),female:female.split('|'),order,joiner,femaleFamily:femaleFamily?.split('|')};}
+// Small fictional-example catalogs, not a claim about national name frequencies or ethnicity.
+catalog('zh','中文','林|陈|许|江|周|温|叶|沈','子轩|宇航|浩然|一凡|明远|泽宇','雨桐|若宁|欣怡|安然|诗涵|思妍','family','');
+catalog('zh-trad','繁体中文','林|陳|許|張|黃|李','子軒|浩然|家朗|俊熙','嘉欣|穎彤|詠晴|思穎','family','');
+catalog('ja','日语','佐藤|鈴木|高橋|田中|伊藤|渡辺|山本|中村','蓮|陽翔|悠真|湊|大和|樹','陽菜|結衣|葵|凛|美咲|さくら','family','');
+catalog('ko','韩语','김|이|박|최|정|강','민준|서준|도윤|지호','서연|지우|하윤|수아','family','');
+catalog('vi','越南语','Nguyễn|Trần|Lê|Phạm|Hoàng','Minh|Đức Anh|Quang|Gia Huy','Linh|Ngọc Anh|Mai|Thu Hà','family');
+catalog('th','泰语转写','Saetang|Srisai|Jaidee|Wongchai','Niran|Somchai|Anan|Kittisak','Mali|Siriporn|Anong|Nattaya');
+catalog('id','印尼语示例','','Arif Pratama|Budi Santoso|Dimas Saputra|Rizky Ramadhan','Sari Wulandari|Dewi Lestari|Ayu Permata|Putri Utami','full');
+catalog('ms','马来语示例','','Ahmad Farid|Muhammad Hakim|Amir Hafiz|Azlan Ismail','Nur Aisyah|Siti Aminah|Nur Farah|Alya Hana','full');
+catalog('fil','菲律宾语境','Santos|Reyes|Cruz|Ramos|Garcia','Miguel|Paolo|Jose|Rafael','Maria|Isabel|Angela|Sofia');
+catalog('my','缅甸语转写','','Aung Min|Kyaw Soe|Htet Aung|Zaw Lin','Thandar|Su Su|May Thazin|Khin Hnin','full');
+catalog('km','高棉语转写','Sok|Chan|Chea|Heng','Dara|Vannak|Sophal|Rithy','Sophea|Sreyneang|Bopha|Sreypov','family');
+catalog('lo','老挝语转写','Phomma|Vongsa|Sengchan|Khampheng','Somchai|Bounmy|Khamla|Somphone','Mali|Sounita|Khamla|Manivanh');
+catalog('mn','蒙古语转写示例','','Bat-Erdene|Temuulen|Bilguun|Munkh-Erdene','Bolormaa|Saruul|Khulan|Anu','full');
+catalog('hi','印地语语境','Sharma|Verma|Gupta|Kumar','Aarav|Arjun|Rohan|Vivek','Ananya|Diya|Aditi|Kavya');
+catalog('ta','泰米尔语转写示例','','Arun Raman|Karthik Kumar|Vijay Rajan|Suresh Anand','Priya Raman|Divya Kumar|Kavitha Rajan|Anitha Anand','full');
+catalog('bn','孟加拉语转写','Rahman|Islam|Ahmed|Chowdhury','Arif|Hasan|Rafiq|Tanvir','Nusrat|Farhana|Ayesha|Sumaiya');
+catalog('ur','乌尔都语转写','Khan|Ahmed|Ali|Malik','Aamir|Bilal|Hamza|Hassan','Ayesha|Fatima|Zainab|Sana');
+catalog('ne','尼泊尔语转写','Shrestha|Thapa|Gurung|Karki','Suman|Bikash|Prakash|Rajan','Sita|Anita|Sunita|Sarita');
+catalog('si','僧伽罗语转写','Perera|Silva|Fernando|Jayasinghe','Nimal|Kasun|Tharindu|Dinesh','Nimali|Dilini|Tharushi|Ishara');
+catalog('dv','迪维希语转写示例','','Ahmed Hassan|Mohamed Ali|Ibrahim Rasheed|Hassan Adam','Aishath Ahmed|Fathimath Ali|Mariyam Hassan|Aminath Rasheed','full');
+catalog('dz','不丹语境示例','','Tashi Dorji|Karma Wangchuk|Sonam Tobgay|Pema Tshering','Pema Choden|Sonam Wangmo|Dechen Lhamo|Karma Dema','full');
+catalog('ps','阿富汗语境转写','Ahmadi|Rahimi|Hosseini|Karimi','Ahmad|Farid|Omar|Hamid','Maryam|Laila|Zahra|Soraya');
+catalog('ar','阿拉伯语转写','Hassan|Mansour|Khalil|Nasser|Saleh','Omar|Youssef|Ali|Karim','Maryam|Layla|Nour|Salma');
+catalog('fa','波斯语转写','Ahmadi|Karimi|Rezaei|Hosseini','Amir|Reza|Ali|Arash','Sara|Niloofar|Zahra|Shirin');
+catalog('he','希伯来语转写','Cohen|Levi|Mizrahi|Peretz','Noam|Daniel|Eitan|Ariel','Tamar|Yael|Maya|Shira');
+catalog('tr','土耳其语','Yılmaz|Kaya|Demir|Şahin','Emir|Deniz|Kerem|Mert','Elif|Zeynep|Defne|Ece');
+catalog('en','英语','Williams|Brown|Wilson|Taylor|Morgan|Miller','James|Oliver|Daniel|Samuel|Noah','Emma|Sophie|Amelia|Maya|Grace');
+catalog('fr','法语','Martin|Bernard|Dubois|Moreau|Laurent','Louis|Gabriel|Hugo|Arthur','Camille|Léa|Chloé|Manon');
+catalog('de','德语','Müller|Schmidt|Weber|Fischer|Wagner','Lukas|Jonas|Felix|Paul','Emma|Hannah|Mia|Clara');
+catalog('es','西班牙语','García|López|Martínez|González|Pérez','Mateo|Santiago|Diego|Javier','Lucía|Sofía|Valentina|Camila');
+catalog('pt','葡萄牙语','Silva|Santos|Oliveira|Costa|Pereira','João|Pedro|Lucas|Miguel','Ana|Beatriz|Mariana|Sofia');
+catalog('it','意大利语','Rossi|Russo|Ferrari|Romano|Conti','Lorenzo|Matteo|Luca|Marco','Giulia|Sofia|Alice|Chiara');
+catalog('nl','荷兰语','de Vries|Jansen|Bakker|Visser','Daan|Lars|Milan|Bram','Emma|Julia|Sophie|Lotte');
+catalog('sv','瑞典语','Andersson|Johansson|Karlsson|Lindberg','Erik|Elias|Oscar|Axel','Elsa|Astrid|Alma|Linnea');
+catalog('no','挪威语','Hansen|Johansen|Olsen|Larsen','Jakob|Emil|Magnus|Henrik','Nora|Ingrid|Sofie|Thea');
+catalog('da','丹麦语','Nielsen|Jensen|Hansen|Pedersen','William|Emil|Oliver|Mikkel','Freja|Ida|Clara|Alma');
+catalog('fi','芬兰语','Korhonen|Virtanen|Mäkinen|Nieminen','Elias|Eino|Onni|Leo','Aino|Sofia|Helmi|Eevi');
+catalog('is','冰岛语转写','Jónsson|Sigurðsson|Einarsson','Aron|Einar|Björn|Gunnar','Anna|Katrín|Eva|Helga','given',' ','Jónsdóttir|Sigurðardóttir|Einarsdóttir');
+catalog('ga','爱尔兰语境','Murphy|Kelly|O’Brien|Walsh','Liam|Seán|Cian|Finn','Aoife|Saoirse|Niamh|Orla');
+catalog('pl','波兰语','Kowalski|Nowak|Wiśniewski|Wójcik','Jan|Jakub|Adam|Piotr','Anna|Zofia|Julia|Maja','given',' ','Kowalska|Nowak|Wiśniewska|Wójcik');
+catalog('cs','捷克语','Novák|Svoboda|Dvořák|Černý','Jan|Jakub|Tomáš|Adam','Anna|Eliška|Tereza|Eva','given',' ','Nováková|Svobodová|Dvořáková|Černá');
+catalog('sk','斯洛伐克语','Horváth|Kováč|Varga|Novák','Jakub|Samuel|Martin|Peter','Sofia|Nina|Ema|Laura','given',' ','Horváthová|Kováčová|Vargová|Nováková');
+catalog('hu','匈牙利语','Nagy|Kovács|Tóth|Szabó','Bence|Máté|Ádám|Dávid','Hanna|Anna|Lili|Réka','family');
+catalog('ro','罗马尼亚语','Popa|Popescu|Ionescu|Stan','Andrei|Alexandru|Ștefan|Mihai','Maria|Elena|Ioana|Ana');
+catalog('ru','俄语','Иванов|Петров|Смирнов|Волков','Алексей|Иван|Дмитрий|Михаил','Анна|Елена|Ольга|Наталья','given',' ','Иванова|Петрова|Смирнова|Волкова');
+catalog('uk','乌克兰语','Шевченко|Коваленко|Бондаренко|Мельник','Олексій|Андрій|Іван|Максим','Олена|Катерина|Софія|Анна');
+catalog('bg','保加利亚语转写','Ivanov|Petrov|Dimitrov|Georgiev','Ivan|Georgi|Nikolay|Dimitar','Maria|Elena|Viktoria|Anna','given',' ','Ivanova|Petrova|Dimitrova|Georgieva');
+catalog('south-slavic','南斯拉夫语言转写','Petrović|Jovanović|Marković|Kovač','Luka|Marko|Nikola|Ivan','Ana|Mila|Sara|Petra');
+catalog('sq','阿尔巴尼亚语','Hoxha|Krasniqi|Berisha|Gashi','Arben|Dritan|Ilir|Luan','Elira|Arta|Besa|Drita');
+catalog('el','希腊语转写','Georgiou|Nikolaou|Pappas|Ioannou','Nikos|Giorgos|Dimitris|Andreas','Maria|Eleni|Sofia|Anna');
+catalog('hy','亚美尼亚语转写','Sargsyan|Grigoryan|Hakobyan|Petrosyan','Aram|Hayk|Narek|Tigran','Ani|Mariam|Nare|Lilit');
+catalog('ka','格鲁吉亚语转写','Beridze|Kapanadze|Gelashvili|Giorgadze','Giorgi|Davit|Luka|Irakli','Nino|Mariam|Ana|Tamar');
+catalog('az','阿塞拜疆语转写','Aliyev|Huseynov|Mammadov|Hasanov','Ali|Murad|Emil|Rashad','Aysel|Leyla|Nigar|Lala','given',' ','Aliyeva|Huseynova|Mammadova|Hasanova');
+catalog('central-asia','中亚转写示例','Karimov|Rahimov|Ismailov|Sharipov','Timur|Aziz|Rustam|Alisher','Dilnoza|Malika|Zarina|Madina','given',' ','Karimova|Rahimova|Ismailova|Sharipova');
+catalog('kk','哈萨克语转写','Omarov|Suleimenov|Iskakov|Akhmetov','Alikhan|Dias|Daniyar|Arman','Amina|Aisha|Aruzhan|Dana','given',' ','Omarova|Suleimenova|Iskakova|Akhmetova');
+catalog('lt','立陶宛语示例','Kazlauskas|Petrauskas|Jankauskas','Jonas|Lukas|Mantas|Tomas','Gabija|Ieva|Austėja|Eglė','given',' ','Kazlauskaitė|Petrauskaitė|Jankauskaitė');
+catalog('lv','拉脱维亚语示例','Bērziņš|Kalniņš|Ozoliņš','Jānis|Roberts|Artūrs|Kārlis','Anna|Elīna|Laura|Marta','given',' ','Bērziņa|Kalniņa|Ozoliņa');
+catalog('et','爱沙尼亚语','Tamm|Saar|Sepp|Mägi','Karl|Rasmus|Martin|Markus','Sofia|Laura|Liis|Anna');
+catalog('yo','约鲁巴语示例','Adeyemi|Adebayo|Olawale|Ogunleye','Tunde|Ayo|Babatunde|Femi','Bisi|Folake|Yetunde|Sade');
+catalog('ig','伊博语示例','Okafor|Okeke|Eze|Nwosu','Chinedu|Emeka|Obinna|Ikenna','Adaeze|Amaka|Chiamaka|Ngozi');
+catalog('ha','豪萨语示例','Bello|Musa|Ibrahim|Abubakar','Aliyu|Usman|Sani|Yusuf','Amina|Zainab|Hauwa|Fatima');
+catalog('ak','阿坎语示例','Mensah|Owusu|Boateng|Asante','Kwame|Kofi|Yaw|Kojo','Ama|Akua|Abena|Efua');
+catalog('sw','东非斯瓦希里语境','Mwangi|Otieno|Kamau|Njoroge','David|Joseph|Daniel|Peter','Grace|Mary|Amina|Wanjiku');
+catalog('tz','坦桑尼亚语境','Juma|Said|Mushi|Massawe','Hamisi|Baraka|Juma|Abdallah','Asha|Neema|Rehema|Zawadi');
+catalog('rw','卢旺达语示例','','Jean Niyonzima|Eric Habimana|Emmanuel Mugisha|Paul Nsengiyumva','Alice Mukamana|Diane Uwimana|Marie Ingabire|Aline Uwera','full');
+catalog('am','埃塞俄比亚语转写示例','','Dawit Tesfaye|Abel Bekele|Yonas Alemu|Daniel Tadesse','Hana Tesfaye|Sara Bekele|Selam Alemu|Tigist Tadesse','full');
+catalog('so','索马里语转写示例','','Ahmed Hassan|Mohamed Ali|Abdi Omar|Yusuf Ibrahim','Amina Hassan|Fadumo Ali|Hodan Omar|Sahra Ibrahim','full');
+catalog('west-africa','西非区域示例','Diallo|Traoré|Koné|Keita','Moussa|Ibrahim|Amadou|Oumar','Aminata|Mariam|Fatoumata|Aïssata');
+catalog('sn','塞内加尔语境','Ndiaye|Diop|Fall|Sarr','Mamadou|Ibrahima|Cheikh|Ousmane','Fatou|Aminata|Awa|Mariama');
+catalog('central-africa','中非区域示例','Mbala|Nkosi|Mbuyi|Kabasele','Jean|Paul|Patrick|Joseph','Marie|Aline|Esther|Nadine');
+catalog('za','南非语境示例','Dlamini|Nkosi|Mokoena|Ndlovu','Sipho|Thabo|Themba|Sibusiso','Nomsa|Lerato|Thandi|Naledi');
+catalog('ts','茨瓦纳语境示例','Molefe|Modise|Kgosi|Dube','Kabelo|Thabo|Tshepo|Mpho','Naledi|Lorato|Dineo|Mpho');
+catalog('ny','马拉维语境示例','Banda|Phiri|Mwale|Tembo','Joseph|Peter|John|Chisomo','Grace|Mary|Thandiwe|Memory');
+catalog('mg','马达加斯加语示例','Rakoto|Rabe|Ranaivo|Raso','Hery|Andry|Faly|Tiana','Fara|Mialy|Hasina|Voahirana');
+catalog('samoa','萨摩亚语示例','Tui|Leota|Sio|Fale','Tavita|Ioane|Sione|Peni','Mele|Sina|Lani|Ana');
+catalog('tonga','汤加语示例','Tupou|Latu|Fifita|Moala','Sione|Tevita|Pita|Manu','Mele|Sela|Ana|Luse');
+catalog('pacific','太平洋区域示例','Tui|Ravu|Sio|Kila','Peter|John|David|Peni','Mary|Ana|Lani|Mere');
+const mappings:Record<string,string[]>={};
+function map(ids:string,keys:string){for(const id of ids.split(' '))mappings[id]=keys.split(' ');}
+map('CHN','zh');map('HKG MAC','zh-trad');map('JPN','ja');map('KOR PRK','ko');map('VNM','vi');map('THA','th');map('IDN','id');map('MYS SGP','ms zh ta');map('BRN','ms');map('PHL','fil');map('MMR','my');map('KHM','km');map('LAO','lo');map('MNG','mn');
+map('IND','hi ta bn');map('BGD','bn');map('PAK','ur');map('NPL','ne');map('LKA','si ta');map('MDV','dv');map('BTN','dz');map('AFG','ps');map('IRN','fa');map('ISR','he');map('TUR','tr');
+map('ARE BHR DZA EGY IRQ JOR KWT LBN LBY MAR OMN PSE QAT SAU SDN SYR TUN YEM MRT','ar');
+map('USA CAN AUS NZL GBR IRL CHI IMN GIB BMU GUM MNP JAM BHS BRB ATG DMA GRD KNA LCA VCT TCA CYM TTO GUY BLZ VGB VIR LBR SLE','en');map('IRL','ga en');map('CAN','en fr');
+map('FRA MCO MAF NCL PYF HTI','fr');map('DEU AUT LIE','de');map('CHE','de fr it');map('BEL','nl fr');map('LUX','fr de');
+map('ESP ARG BOL CHL COL CRI CUB DOM ECU GTM HND MEX NIC PAN PER PRI PRY SLV URY VEN GNQ','es');map('BRA PRT AGO MOZ CPV GNB STP TLS','pt');map('NLD ABW CUW SXM SUR','nl');map('ITA SMR','it');map('AND','es fr');
+map('SWE','sv');map('NOR','no');map('DNK FRO GRL','da');map('FIN','fi');map('ISL','is');map('POL','pl');map('CZE','cs');map('SVK','sk');map('HUN','hu');map('ROU MDA','ro');map('RUS BLR','ru');map('UKR','uk');map('BGR','bg');map('SRB HRV BIH MNE MKD SVN','south-slavic');map('ALB XKX','sq');map('GRC CYP','el');map('MLT','en');map('ARM','hy');map('GEO','ka');map('AZE','az');map('UZB TJK TKM KGZ','central-asia');map('KAZ','kk');map('LTU','lt');map('LVA','lv');map('EST','et');
+map('NGA','yo ig ha');map('GHA','ak');map('KEN','sw');map('TZA','tz');map('UGA','sw');map('RWA BDI','rw');map('ETH ERI','am');map('SOM DJI','so');map('SEN GMB','sn');map('ZAF SWZ','za');map('BWA LSO NAM','ts');map('ZMB ZWE MWI','ny');map('MDG','mg');map('COM','ar');map('MUS SYC','fr');
+map('ASM WSM','samoa');map('TON','tonga');
+const regional:Record<string,string[]>={SSF:['west-africa','central-africa'],LCN:['es','en'],ECS:['en','fr'],MEA:['ar'],SAS:['hi','bn'],EAS:['pacific'],NAC:['en']};
+const regionalOverrides:Record<string,string[]>={BEN:['west-africa'],BFA:['west-africa'],CIV:['west-africa'],GIN:['west-africa'],MLI:['west-africa'],NER:['ha','west-africa'],CMR:['central-africa'],GAB:['central-africa'],COD:['central-africa'],COG:['central-africa'],CAF:['central-africa'],TCD:['ar','central-africa'],SSD:['central-africa'],TGO:['west-africa'],FJI:['pacific','hi'],FSM:['pacific'],KIR:['pacific'],MHL:['pacific'],NRU:['pacific'],PLW:['pacific'],PNG:['pacific'],SLB:['pacific'],TUV:['pacific'],VUT:['pacific']};
+const unit=(x:number)=>Math.max(0,Math.min(1-Number.EPSILON,x));
+export function nameProfileFor(country:Pick<Country,'id'>&{regionId?:string},roll=0){const exact=mappings[country.id],keys=exact||regionalOverrides[country.id]||regional[country.regionId||'']||['en'];const n=unit(roll)*keys.length;return {profile:profiles[keys[Math.floor(n)]],scope:exact?'country' as const:'regional' as const,remainder:n%1};}
+export function nameForCountry(country:Pick<Country,'id'>&{regionId?:string},sex:string,a:number,b:number){
+ const {profile:p,scope,remainder}=nameProfileFor(country,a),given=(sex==='女'?p.female:p.male)[Math.floor(unit(b)*(sex==='女'?p.female.length:p.male.length))];
+ const families=sex==='女'&&p.femaleFamily?p.femaleFamily:p.family,surname=p.order==='full'?'':families[Math.floor(remainder*families.length)];
+ const text=p.order==='full'?given:p.order==='family'?surname+p.joiner+given:given+p.joiner+surname;
+ return {text,profile:p.id,label:p.label,scope,surname,given};
+}
+export function localName(country:Pick<Country,'id'>&{regionId?:string},sex:string,seed:number,variant=0){const r=originRandom(seed,`local-name-${country.id}-${variant}`);return nameForCountry(country,sex,r(),r());}
+export function childName(country:Country,sex:string,seed:number,origin?:NameOrigin){
+ const n=localName(country,sex,seed),p=origin&&profiles[origin.profile];if(!p||!origin.surname||p.order==='full')return n.text;
+ const r=originRandom(seed,'child-given'),pool=sex==='女'?p.female:p.male,given=pool[Math.floor(r()*pool.length)];
+ const index=Math.max(p.family.indexOf(origin.surname),p.femaleFamily?.indexOf(origin.surname)??-1),families=sex==='女'&&p.femaleFamily?p.femaleFamily:p.family,surname=index>=0?families[index]:origin.surname;
+ return p.order==='family'?surname+p.joiner+given:given+p.joiner+surname;
+}
+export function nameOriginNote(country:Country,origin?:NameOrigin){const p=origin?profiles[origin.profile]:undefined;return origin?`${origin.scope==='regional'?'区域示例名库':'出生地示例名库'}${p?` · ${p.label}`:''}。姓名为虚构，不代表当地全部语言或族群。`:`保留自定或早期版本姓名；可生成${country.name}对应的示例姓名，也可自行修改。`;}
