@@ -1,0 +1,8 @@
+import {z} from 'zod';
+const short=z.string().max(120),number=z.number().finite();
+const stats=z.object({health:number.min(-100).max(100).optional(),happiness:number.min(-100).max(100).optional(),knowledge:number.min(-100).max(100).optional(),social:number.min(-100).max(100).optional()}).strict();
+const job=z.enum(['school','employed','unemployed','independent','retired']);
+const queue=z.object({after:number.int().min(1).max(20),id:short}).strict();
+const result=z.object({text:z.string().max(1000),effects:stats.optional(),cash:number.min(-100000).max(100000).optional(),flag:short.optional(),job:job.optional(),multiplier:number.min(.1).max(5).optional(),queue:queue.optional()}).strict();
+export const storyChoiceSchema=z.object({flag:short.optional(),removeFlag:short.optional(),job:job.optional(),multiplier:number.min(.1).max(5).optional(),familyDelta:number.min(-100).max(100).optional(),queue:queue.optional(),risk:z.object({base:number.min(0).max(1),stat:z.enum(['health','happiness','knowledge','social']),success:result,failure:result}).strict().optional()}).strict();
+export const storySchema=z.object({version:z.literal(2),family:z.object({tier:z.enum(['tight','steady','comfortable']),support:number.min(0).max(100)}).strict(),opportunity:number.min(0).max(1),schoolQuality:number.min(0).max(1),job,jobMultiplier:number.min(.4).max(2.5),energy:number.int().min(0).max(3),flags:z.array(short).max(200),seen:z.record(short,number.int().min(0).max(110)),queue:z.array(z.object({due:number.int().min(0).max(130),id:short}).strict()).max(30),lastOutcome:z.object({title:short,text:z.string().max(1000),age:number.int().min(0).max(110)}).strict().optional(),waiting:short.optional()}).strict();

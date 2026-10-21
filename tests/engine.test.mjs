@@ -15,16 +15,16 @@ test('renaming persists the identity while leaving fate and existing facts untou
 test('same seed and actions reproduce the entire life',()=>{
   let a=make(), b=make();
   for(let i=0;i<90;i++){
-    a=a.pending?choose(a,a.pending.options[0].id,'a'+i):advanceYear(a);
-    b=b.pending?choose(b,b.pending.options[0].id,'a'+i):advanceYear(b);
+    a=a.pending?choose(a,a.pending.options.find(o=>(o.cost||0)<=a.cash).id,'a'+i):advanceYear(a);
+    b=b.pending?choose(b,b.pending.options.find(o=>(o.cost||0)<=b.cash).id,'a'+i):advanceYear(b);
   }
   assert.deepEqual(a,b);
 });
 test('a pending choice blocks the clock and a command settles only once',()=>{
   let a=make(); while(!a.pending && !a.ended)a=advanceYear(a);
   assert.deepEqual(advanceYear(a),a);
-  const b=choose(a,a.pending.options[0].id,'unique');
-  assert.deepEqual(choose(b,a.pending.options[0].id,'unique'),b);
+  const b=choose(a,a.pending.options.find(o=>(o.cost||0)<=a.cash).id,'unique');
+  assert.deepEqual(choose(b,a.pending.options.find(o=>(o.cost||0)<=a.cash).id,'unique'),b);
 });
 test('investment moves funds, rejection and repeat commands cannot create money',()=>{
   let a=make(); a={...a,age:25,cash:1000};
@@ -39,7 +39,7 @@ test('stats stay bounded, interactions have one yearly settlement, dead lives st
   const a=make(); const b=act(a,'family','once');
   assert.deepEqual(act(b,'family','twice'),b);
   const dead={...b,ended:true,pending:null};assert.deepEqual(advanceYear(dead),dead);
-  let c=make();for(let i=0;i<240&&!c.ended;i++)c=c.pending?choose(c,c.pending.options[0].id,'c'+i):advanceYear(c);
+  let c=make();for(let i=0;i<240&&!c.ended;i++)c=c.pending?choose(c,c.pending.options.find(o=>(o.cost||0)<=c.cash).id,'c'+i):advanceYear(c);
   for(const v of Object.values(c.stats))assert.ok(v>=0&&v<=100);
   assert.ok(c.ended);assert.equal(validateLife(c),true);
 });
