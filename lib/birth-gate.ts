@@ -6,6 +6,13 @@ const gateSchema=z.discriminatedUnion('stage',[
 ]);
 export type BirthOptions=z.infer<typeof optionsSchema>;
 export type BirthGate=z.infer<typeof gateSchema>;
+export const BIRTH_YEAR_MIN=1966;
+export const BIRTH_YEAR_MAX=2026;
+export function drawBirthYear(entropy:()=>number=()=>crypto.getRandomValues(new Uint32Array(1))[0]):number{
+ const count=BIRTH_YEAR_MAX-BIRTH_YEAR_MIN+1,limit=4294967296-(4294967296%count);
+ let value:number;do{value=entropy();}while(value>=limit);
+ return BIRTH_YEAR_MIN+(value%count);
+}
 const defaults:BirthOptions={year:2026,mode:'present',sampling:'births',pace:30};
 export function waitingBirth(options:{year:number;mode:string;sampling:string;pace:number}=defaults):BirthGate{
  const parsed=optionsSchema.safeParse(options);return {stage:'waiting',options:parsed.success?parsed.data:{...defaults}};

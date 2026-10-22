@@ -25,6 +25,11 @@
 .hero-birth-odds .prob-all{order:5;margin:0}
 .hero-birth-odds .prob-source{order:6;margin:0}
 .start-settings{margin-top:24px;padding:24px 0}
+.birth-year-setting{align-items:center}
+.birth-year-setting>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.birth-year-label{font-size:14px;color:var(--muted)}
+.birth-year-setting strong{font-size:16px;font-weight:500;line-height:1.7;color:var(--ink)}
+.birth-year-setting small{font-size:12px;line-height:1.7;color:var(--muted)}
 .setup-note{margin-top:20px;justify-content:center;text-align:center}
 .intro-section{margin-top:48px}
 .section-heading{align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:16px}
@@ -40,6 +45,9 @@
 
 /* The birth page has full-width rows; long profiles cannot strand the art. */
 .birth-revealed.birth-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--layout-gap);align-items:stretch}
+.birth-personal-card{display:grid;gap:var(--layout-gap);min-width:0;padding:28px;border:2px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-radius:20px;background:var(--surface)}
+.birth-personal-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.birth-personal-heading>span:last-child{font-size:14px;line-height:1.8;color:var(--muted)}
 .birth-hero{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--layout-gap);align-items:stretch}
 .birth-hero>.birth-art{margin:0;position:relative;min-height:380px;align-self:stretch;overflow:hidden;border-radius:var(--panel-radius)}
 .birth-hero>.birth-art>img{position:absolute;inset:0;width:100%;height:100%;border-radius:0;object-position:center;object-fit:cover}
@@ -49,8 +57,15 @@
 .birth-intro-copy .lead{margin:0 0 16px}
 .birth-intro-copy .rename-birth{margin:0;justify-content:center}
 .birth-name-note{font-size:13px;line-height:1.9;max-width:40ch;margin:16px 0 0;text-wrap:balance}
-.birth-fact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:var(--layout-gap);margin:0;padding:0}
-.birth-fact-card{margin:0;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 18px;border:1px solid var(--line);background:var(--surface);border-radius:var(--panel-radius)}
+.birth-facts-panel{position:relative;isolation:isolate;min-width:0;padding:26px;border:1px solid color-mix(in srgb,var(--accent) 65%,var(--line));border-radius:18px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 5%,var(--surface)),var(--surface) 42%,color-mix(in srgb,var(--accent) 3%,var(--surface)));box-shadow:0 8px 24px #57402009,inset 0 0 0 4px var(--surface)}
+.birth-facts-panel::before{content:"";position:absolute;inset:6px;border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:12px;pointer-events:none;z-index:-1}
+.birth-facts-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 2px 18px;color:var(--accent);border-bottom:1px solid color-mix(in srgb,var(--accent) 22%,var(--line))}
+.birth-facts-heading>span:first-child{font-family:var(--serif);font-size:20px;letter-spacing:3px}
+.birth-facts-heading>span:last-child{font-size:12px;letter-spacing:1px}
+.birth-facts-footer{margin:0;padding:18px 0 0;border-top:1px solid color-mix(in srgb,var(--accent) 22%,var(--line));text-align:center;color:var(--muted);font-family:var(--serif);font-size:13px;letter-spacing:1px;line-height:1.8}
+.birth-fact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0;padding:0}
+.birth-fact-card{margin:0;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 18px;border:0;border-radius:0;background:transparent}
+.birth-fact-card+ .birth-fact-card{border-left:1px solid color-mix(in srgb,var(--accent) 18%,var(--line))}
 .birth-fact-card dt{display:flex;align-items:center;justify-content:center;gap:9px;font-size:14px;color:var(--muted);line-height:1.8}
 .birth-fact-card dt>svg{color:var(--accent);flex-shrink:0}
 .birth-fact-card dd{margin:12px 0;font-family:var(--serif);font-size:20px;line-height:1.7;overflow-wrap:anywhere}
@@ -83,11 +98,11 @@
 .birth-waiting>.birth-copy{padding:32px;border:1px solid var(--line);border-radius:var(--panel-radius);background:var(--surface);text-align:center}
 .birth-waiting .birth-empty-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:20px 0}
 .birth-waiting .birth-empty-fields>div{display:flex;flex-direction:column;gap:10px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:9px}
-.birth-waiting .birth-empty-fields>div:first-child{grid-column:1/-1}
+.birth-waiting .birth-empty-fields>div:first-child{grid-column:auto}
 .birth-waiting .birth-empty-fields dt{justify-content:center;flex-wrap:wrap;gap:8px}
 
 /* Center the identity header and give every fact the same track. */
-.life-identity.game-title{display:grid;grid-template-columns:minmax(0,1fr);justify-items:stretch;gap:24px;padding:28px;border:1px solid var(--line);background:var(--surface);border-radius:var(--panel-radius);text-align:center;margin:0 0 24px}
+.life-identity.game-title{display:grid;grid-template-columns:minmax(0,1fr);justify-items:stretch;gap:24px;padding:28px;border:2px solid color-mix(in srgb,var(--accent) 45%,var(--line));background:var(--surface);border-radius:var(--panel-radius);text-align:center;margin:0 0 24px}
 .identity-title-row{justify-content:center;flex-direction:column;gap:12px}
 .life-identity .identity-caption{margin-top:12px}
 .identity-facts{grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;padding-top:24px;border-top:1px solid var(--line)}
@@ -158,6 +173,8 @@
  .hero h1{font-size:52px}
  .hero-buttons{grid-template-columns:minmax(0,1fr)}
  .birth-fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .birth-fact-card:nth-child(odd){border-left:0}
+ .birth-fact-card:nth-child(n+3){border-top:1px solid color-mix(in srgb,var(--accent) 18%,var(--line))}
  .birth-hero>.birth-intro-copy{padding:24px}
  .birth-hero>.birth-art,.birth-hero>.birth-intro-copy{min-height:360px}
 }
@@ -174,7 +191,10 @@
  .intro-section{margin-top:32px}
  .feature-grid{gap:var(--layout-gap)}
  .birth-fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .birth-fact-card:nth-child(odd){border-left:0}
+ .birth-fact-card:nth-child(n+3){border-top:1px solid color-mix(in srgb,var(--accent) 18%,var(--line))}
  .birth-hero{grid-template-columns:minmax(0,1fr)}
+ .birth-personal-card{padding:20px;border-radius:18px}
  .birth-hero>.birth-art{min-height:0;height:260px}
  .birth-hero>.birth-intro-copy{min-height:0;padding:28px}
  .birth-actions{gap:var(--layout-gap)}
@@ -206,12 +226,19 @@
  .hero-birth-odds .prob-donut{width:190px}
  .hero-birth-odds .birth-probability{padding:22px 18px}
  .birth-hero>.birth-art{height:220px}
+ .birth-personal-card{padding:16px;border-radius:16px}
+ .birth-personal-heading{gap:10px;padding-bottom:14px;flex-wrap:wrap}
  .birth-hero>.birth-intro-copy{padding:26px 20px}
  .birth-intro-copy .birth-greeting{font-size:34px}
- .birth-fact-card{padding:20px 12px}
- .birth-fact-card dt{gap:6px;flex-direction:column;font-size:13px}
- .birth-fact-card dd{font-size:18px}
- .birth-fact-card>.birth-fact-note{font-size:13px}
+ .birth-facts-panel{padding:20px 14px;border-radius:16px}
+ .birth-facts-heading{padding-bottom:14px;gap:8px}
+ .birth-facts-heading>span:first-child{font-size:18px;letter-spacing:2px}
+ .birth-facts-heading>span:last-child{font-size:11px;letter-spacing:0}
+ .birth-fact-card{padding:20px 10px}
+ .birth-fact-card dt{gap:7px;flex-direction:column;font-size:13px;line-height:1.7}
+ .birth-fact-card dd{font-size:17px;line-height:1.8;margin:10px 0 14px}
+ .birth-fact-card>.birth-fact-note{font-size:12px;line-height:1.8;margin:auto 0 0}
+ .birth-facts-footer{font-size:12px;letter-spacing:0;padding-top:14px}
  .birth-revealed .parent-work-grid{grid-template-columns:minmax(0,1fr)}
  .birth-revealed .family-origin-heading{gap:10px}
  .birth-revealed .family-origin-heading>span{flex-basis:100%}
