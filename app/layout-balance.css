@@ -3,15 +3,15 @@
 .site-header,.site-footer,.hero,.start-settings,.setup-note,.intro-section,.closing-banner,.inner-page,.game-page,.birth-layout,.ending-page{width:min(var(--page-width),calc(100% - 2*var(--page-gutter)));margin-left:auto;margin-right:auto}
 .site-header,.site-footer{padding-left:0;padding-right:0}
 .hero,.birth-layout,.inner-page,.game-page,.ending-page{margin-top:40px;margin-bottom:40px}
-.hero{align-items:stretch;gap:var(--layout-gap)}
-.hero-copy{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border:1px solid var(--line);background:var(--soft);padding:40px 28px;border-radius:var(--panel-radius)}
-.hero-kicker,.hero-note,.hero-buttons{justify-content:center}
-.hero-buttons{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-.hero-buttons .btn{width:100%;padding-left:12px;padding-right:12px}
-.hero-copy>p{max-width:none;text-wrap:balance}
-.hero-birth-odds{align-self:stretch;display:flex}
-.hero-birth-odds .birth-probability{width:100%;height:100%;border-radius:var(--panel-radius)}
-.hero-birth-odds .prob-visual{grid-template-columns:repeat(2,minmax(0,1fr));align-items:center}
+.hero{align-items:center;gap:36px}
+.hero-copy{display:block;text-align:left;border:0;background:transparent;padding:30px 0;border-radius:0}
+.hero-kicker,.hero-note,.hero-buttons{justify-content:flex-start}
+.hero-buttons{width:auto;display:flex;flex-wrap:wrap}
+.hero-buttons .btn{width:auto;padding-left:20px;padding-right:20px}
+.hero-copy>p{max-width:none;text-wrap:wrap}
+.hero-birth-odds{align-self:start;display:block}
+.hero-birth-odds .birth-probability{width:100%;height:auto;border-radius:var(--panel-radius)}
+.hero-birth-odds .prob-visual{grid-template-columns:minmax(130px,.8fr) minmax(0,1fr);align-items:center}
 .start-settings{margin-top:24px;padding:24px 0}
 .setup-note{margin-top:20px;justify-content:center;text-align:center}
 .intro-section{margin-top:48px}
@@ -140,9 +140,9 @@
  .brand-sub{display:none}
  .top-nav{gap:18px}
  .top-nav button{font-size:14px}
- .hero-birth-odds .prob-visual{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero-birth-odds .prob-visual{grid-template-columns:minmax(130px,.8fr) minmax(0,1fr)}
  .hero-birth-odds .prob-donut{width:145px}
- .hero-copy{padding:28px 20px}
+ .hero-copy{padding:25px 0}
  .hero h1{font-size:52px}
  .hero-buttons{grid-template-columns:minmax(0,1fr)}
  .birth-fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -153,7 +153,7 @@
  :root{--page-gutter:22px;--layout-gap:20px}
  .hero,.birth-layout,.inner-page,.game-page,.ending-page{margin-top:24px;margin-bottom:32px}
  .hero{grid-template-columns:minmax(0,1fr);gap:var(--layout-gap)}
- .hero-copy{padding:32px 24px}
+ .hero-copy{padding:20px 0}
  .hero-birth-odds{margin:0}
  .hero-birth-odds .prob-visual{grid-template-columns:repeat(2,minmax(0,1fr))}
  .start-settings{margin-top:20px}
@@ -184,9 +184,10 @@
 }
 @media(max-width:520px){
  :root{--page-gutter:18px;--layout-gap:16px}
- .hero-copy{padding:28px 20px}
+ .hero-copy{padding:16px 0 8px}
  .hero h1{font-size:48px}
  .hero-buttons{grid-template-columns:minmax(0,1fr)}
+ .hero-buttons .btn{width:100%}
  .hero-birth-odds .prob-visual{grid-template-columns:minmax(0,1fr)}
  .hero-birth-odds .birth-probability{padding:22px 18px}
  .birth-hero>.birth-art{height:220px}
