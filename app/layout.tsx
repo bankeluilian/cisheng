@@ -3,8 +3,8 @@ import "./globals.css";
 export const viewport:Viewport={width:'device-width',initialScale:1,viewportFit:'cover'};
 
 export const metadata: Metadata = {
-  title: "此生 · 每一次出生，都是一个世界",
-  description: "一次随机的出生，一段由你选择的人生。体验成长、相遇与告别，留下一张属于此生的卡片。",
+  title: "此生 · 随机人生模拟",
+  description: "如果重来，你会是谁？随机出生、家庭处境与跨年的选择后果，陪你从人生起点走到最后一张总结卡片。",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

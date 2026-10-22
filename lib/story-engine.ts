@@ -1,6 +1,7 @@
 import type {Life,Stats,Option,Decision,Entry} from './engine';
 import type {StoryState,StoryChoice,StoryResult,Encounter} from './story-types';
 import {encounters,followups} from './encounters.ts';
+import {scheduleCommitment,settleCommitments,decisionOptions} from './commitments.ts';
 const bound=(n:number,a:number,b:number)=>Math.max(a,Math.min(b,n));
 const clamp=(n:number)=>Math.round(bound(n,0,100));
 function roll(l:Life){l.rng=(Math.imul(l.rng,1664525)+1013904223)>>>0;return l.rng/4294967296;}
@@ -25,7 +26,7 @@ export function ensureStory(l:Life,fresh=false):StoryState{
 }
 const familyAlive=(l:Life)=>l.people.some(p=>p.role==='家人'&&p.alive);
 function eligible(e:Encounter,l:Life,s:StoryState){return l.age>=e.min&&l.age<=e.max&&(!e.when||e.when(l,s))&&(!e.once||s.seen[e.id]===undefined)&&(s.seen[e.id]===undefined||l.age-s.seen[e.id]>=(e.cooldown||7));}
-function materialize(e:Encounter,l:Life):Decision{const s=ensureStory(l);s.seen[e.id]=l.age;return {id:`encounter-${e.id}-${l.age}`,title:e.title,text:e.text(l,s),options:e.options(l,s)};}
+function materialize(e:Encounter,l:Life):Decision{const s=ensureStory(l);s.seen[e.id]=l.age;s.seen['_last-encounter']=l.age;return {id:`encounter-${e.id}-${l.age}`,title:e.title,text:e.text(l,s),options:decisionOptions(l,e.options(l,s))};}
 export function nextStoryEncounter(l:Life):Decision|null{
  const s=ensureStory(l);
  const due=s.queue.filter(q=>q.due<=l.age);
@@ -37,9 +38,10 @@ export function nextStoryEncounter(l:Life):Decision|null{
    if(e)add(l,`原先的安排有了变化：${e.title}`,'这几年，生活条件已经改变。原先约好的这件事最终没能继续，你重新安排了下一步。','followup');
   }
  }
- const chance=l.age<4?.42:l.age<18?.72:l.age<65?.78:.62;
- if(roll(l)>chance)return null;
  const candidates=encounters.filter(e=>eligible(e,l,s));if(!candidates.length)return null;
+ const chance=l.age<4?.68:l.age<18?.88:l.age<65?.90:.78;
+ const last=s.seen['_last-encounter']??Math.max(0,...l.events.filter(e=>e.kind==='choice').map(e=>e.age));
+ if(l.age-last<3&&roll(l)>chance)return null;
  const weightOf=(e:Encounter)=>e.weight*(s.job==='unemployed'&&e.options(l,s).some(o=>o.story?.job==='employed'||o.story?.risk?.success.job==='employed')?2.5:1)*(l.focus==='study'&&/study|training|scholarship/.test(e.id)?1.5:1);
  let weight=roll(l)*candidates.reduce((n,e)=>n+weightOf(e),0);
  const selected=candidates.find(e=>(weight-=weightOf(e))<=0)||candidates[candidates.length-1];return materialize(selected,l);
@@ -53,6 +55,7 @@ function quietYear(l:Life){const s=l.story!;const recent=new Set(l.events.slice(
 }
 export function advanceStoryYear(source:Life):Life{
  if(source.ended||source.pending)return source;const l=structuredClone(source);const s=ensureStory(l);l.age++;s.energy=3;l.yearActions=[];
+ const annual=settleCommitments(l);
  affect(l,{health:l.age>55?-2:roll(l)<.4?-1:0,happiness:roll(l)<.48?-1:1,social:l.focus==='family'?2:-1,knowledge:l.age<18?Math.max(1,Math.round(s.schoolQuality*3)):0});
  if(l.focus==='study')affect(l,{knowledge:3,happiness:-1});if(l.focus==='career')affect(l,{knowledge:1,health:-1});if(l.focus==='family')affect(l,{happiness:2});if(l.focus==='health')affect(l,{health:3,happiness:1});if(s.flags.includes('health-routine'))affect(l,{health:1});if(s.flags.includes('overworked'))affect(l,{health:-1});
  if(l.age===6){l.education='基础教育';l.career='学生';add(l,'到了上学的年纪',s.family.tier==='tight'?'家人反复算过学费和生活费，仍希望尽力让你继续读书。':'家里为你准备了上学的东西。教室外面，生活还有许多不同的路。','milestone');}
@@ -61,7 +64,9 @@ export function advanceStoryYear(source:Life):Life{
  if(l.age>=65&&s.job!=='retired'){s.job='retired';l.career='退休';add(l,'把时间重新安排',`工作的章节暂时合上。你要重新安排收入、日常和与人的联系。`,'milestone');}
  const base=localBaseline(l);const earning=s.job==='employed'?base*(.6+l.stats.knowledge*.017)*s.jobMultiplier*(l.focus==='career'?1.15:1)*(l.stats.health<35?.6:1):s.job==='independent'?base*(.35+roll(l)*1.0)*s.jobMultiplier:s.job==='retired'?base*.43:s.job==='school'&&familyAlive(l)?base*s.family.support/100*.55:0;
  l.income=l.age<16?0:Math.round(earning*(s.flags.includes('extra-hours')?1.12:1)+(s.job==='unemployed'&&s.flags.includes('extra-hours')?base*.25:0));l.expense=l.age<16?0:Math.round((base*(l.age<18?.24:.62)*(l.place.includes('新城市')?1.2:1)+(l.people.some(p=>p.role==='孩子'&&p.alive)?base*.18:0)+(s.job==='school'&&l.age>=18?base*.22:0))*(s.flags.includes('debt-plan')||s.flags.includes('retirement-budget')?.9:1));
+ l.income=Math.max(0,l.income+annual.income);l.expense=Math.max(0,l.expense+annual.expense);
  const net=l.income-l.expense;if(net>=0){const repay=Math.min(l.debt,net);l.debt-=repay;l.cash+=net-repay;}else transfer(l,net);
+ if(annual.notes.length)add(l,annual.completed.length?'有些安排，走完了约定的时间':'之前的决定，仍在影响这一年',annual.notes.join(''),'commitment');
  l.debt=Math.round(l.debt*1.025);l.invested=Math.max(0,Math.round(l.invested*(.92+roll(l)*.20)));l.settlements.push(l.age);
  if(l.debt>base*2)affect(l,{happiness:-3,health:-1});if(s.job==='unemployed'&&l.age>=18)affect(l,{happiness:-2});
  for(const p of l.people){if(!p.alive)continue;p.bond=clamp(p.bond+(l.focus==='family'?2:-1));if(p.role==='家人'&&l.age>40&&roll(l)<.025){p.alive=false;p.memory=`${l.birthYear+l.age} 年，你们最后一次认真告别。`;add(l,`与${p.name}告别`,'你开始学着，在想念中继续把自己的生活过下去。','relationship');affect(l,{happiness:-9});}}
@@ -74,13 +79,15 @@ export function advanceStoryYear(source:Life):Life{
  for(const p of l.peers){p.age=l.age;p.role=l.age<6?'正在长大':l.age<18?'正在学习':l.age<25?'寻找方向':l.age<65?['工作与生活','照顾家人','在新城市生活','学习新的事物'][l.peers.indexOf(p)]:'慢慢生活';}
  return l;
 }
-function applyResult(l:Life,r:StoryResult){const s=l.story!;affect(l,r.effects);if(r.cash)transfer(l,r.cash);if(r.flag&&!s.flags.includes(r.flag))s.flags.push(r.flag);if(r.job)s.job=r.job;if(r.multiplier)s.jobMultiplier=bound(s.jobMultiplier*r.multiplier,.4,2.5);if(r.queue)s.queue.push({due:l.age+r.queue.after,id:r.queue.id});return r.text;}
+function familySupport(s:StoryState,delta:number){s.family.support=clamp(s.family.support+delta);s.schoolQuality=bound(s.opportunity*.55+s.family.support/100*.45,.1,.95);}
+function planNote(l:Life,p:NonNullable<StoryChoice['commitment']>){return scheduleCommitment(l,p)?`从下一年起，“${p.label}”将持续 ${p.years} 年，可在“正在影响我的生活”中查看。`:'';}
+function applyResult(l:Life,r:StoryResult){const s=l.story!;affect(l,r.effects);if(r.cash)transfer(l,r.cash);if(r.flag&&!s.flags.includes(r.flag))s.flags.push(r.flag);if(r.job)s.job=r.job;if(r.multiplier)s.jobMultiplier=bound(s.jobMultiplier*r.multiplier,.4,2.5);if(r.familyDelta)familySupport(s,r.familyDelta);if(r.queue)s.queue.push({due:l.age+r.queue.after,id:r.queue.id});return r.text+(r.commitment?planNote(l,r.commitment):'');}
 export function applyStoryChoice(l:Life,o:Option,event:Entry,before?:Life){
  const s=ensureStory(l),x=(o as Option&{story?:StoryChoice}).story;
  if(o.education==='高等教育'){s.job='school';s.seen['_education-start']=l.age;}
  if(o.career&&o.career!=='学生'&&!x?.job)s.job='employed';
  let result='你为接下来的生活作了新的安排。';
- if(x){if(x.flag&&!s.flags.includes(x.flag))s.flags.push(x.flag);if(x.removeFlag)s.flags=s.flags.filter(f=>f!==x.removeFlag);if(x.job)s.job=x.job;if(x.multiplier)s.jobMultiplier=bound(s.jobMultiplier*x.multiplier,.4,2.5);if(x.familyDelta)s.family.support=clamp(s.family.support+x.familyDelta);if(x.queue)s.queue.push({due:l.age+x.queue.after,id:x.queue.id});
+ if(x){if(x.flag&&!s.flags.includes(x.flag))s.flags.push(x.flag);if(x.removeFlag)s.flags=s.flags.filter(f=>f!==x.removeFlag);if(x.job)s.job=x.job;if(x.multiplier)s.jobMultiplier=bound(s.jobMultiplier*x.multiplier,.4,2.5);if(x.familyDelta)familySupport(s,x.familyDelta);if(x.queue)s.queue.push({due:l.age+x.queue.after,id:x.queue.id});
   if(x.risk){const chance=bound(x.risk.base+(l.stats[x.risk.stat]-50)/180+(s.opportunity-.5)*.20,.08,.92);result=applyResult(l,roll(l)<chance?x.risk.success:x.risk.failure);}
   else if(x.queue)result=`决定已作出。接下来的 ${x.queue.after} 年里，这件事还会有后续。`;
   else if(x.job==='unemployed')result='你暂时离开了原来的工作。下一年的收入和生活安排会随之改变。';
@@ -96,6 +103,7 @@ export function applyStoryChoice(l:Life,o:Option,event:Entry,before?:Life){
  if(o.education==='高等教育')result='你进入了高等教育阶段。接下来四年的学习、家庭支持与生活费，都将进入账本。';
  if(o.partner)result='你们决定正式相伴。这个人会留在关系中，也会影响之后的家庭选择。';
  if(o.id==='child')result='家里多了一位需要照顾的人。往后的生活开支和牵挂也增加了。';
+ if(x?.commitment)result+=planNote(l,x.commitment);
  const keepsakes:Record<string,string>={'school-friendship':'一张写着同学名字的纸条','scholarship-prepared':'一份修改了很多次的申请稿','training-enrolled':'一张课程报名单','business-open':'第一本进货账本','moved-for-work':'一张出发的车票','training-placed':'一封新岗位的录用通知'};
  for(const [flag,name] of Object.entries(keepsakes))if(s.flags.includes(flag)&&!before?.story?.flags.includes(flag)&&!l.keepsakes.some(k=>k.name===name))l.keepsakes.push({name,eventId:event.id});
  if(o.partner&&!l.keepsakes.some(k=>k.name==='一页关于未来的约定'))l.keepsakes.push({name:'一页关于未来的约定',eventId:event.id});

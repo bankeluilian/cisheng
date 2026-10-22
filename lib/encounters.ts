@@ -1,4 +1,5 @@
 import type {Life, Stats} from './engine';
+import {contextEncounters,contextFollowups} from './context-encounters.ts';
 import type {Encounter, StoryChoice, StoryOption} from './story-types';
 
 // Original fiction. Costs use the game's living coins, not a country's currency.
@@ -11,7 +12,7 @@ const child = (l:Life) => l.people.find(p=>p.alive&&p.role==='孩子');
 const working = (s:{job:string}) => s.job==='employed'||s.job==='independent';
 const flag = (s:{flags:string[]},key:string) => s.flags.includes(key);
 
-export const encounters:Encounter[] = [
+const baseEncounters:Encounter[] = [
   {
     id:'care-shifts',min:0,max:5,weight:8,once:true,when:l=>!!family(l),
     title:'谁来接住哭声',text:(l,s)=>`${family(l)!.name}把你抱起来。${s.family.support<45?'家里能轮换照料的人不多，大人的眼睛里有红血丝。':'家里排了一张轮班表，但每个人都有别的事要忙。'}`,
@@ -390,7 +391,7 @@ export const encounters:Encounter[] = [
   },
 ];
 
-export const followups:Record<string,Encounter> = {
+const baseFollowups:Record<string,Encounter> = {
   'training-offer':{
     id:'training-offer',min:18,max:70,weight:1,once:true,
     when:(l,s)=>flag(s,'training-enrolled')&&s.job!=='retired'&&l.age<65,
@@ -482,3 +483,6 @@ export const followups:Record<string,Encounter> = {
     ],
   },
 };
+
+export const encounters:Encounter[]=[...baseEncounters,...contextEncounters];
+export const followups:Record<string,Encounter>={...baseFollowups,...contextFollowups};
