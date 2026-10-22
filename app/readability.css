@@ -1,0 +1,218 @@
+/* Reading sizes and layout safety apply after the original visual theme. */
+:root{--muted:#626f65}
+body{font-size:16px;line-height:1.8}
+button>svg,a>svg,dt>svg,.birth-facts svg,.birth-background>svg,.family-origin-heading>svg{flex:0 0 auto}
+.btn{font-size:16px;min-height:52px;gap:12px;white-space:normal;line-height:1.6}
+.text-link{font-size:14px;line-height:1.7;gap:9px}
+.eyebrow,.hero-kicker{font-size:13px;line-height:1.8;letter-spacing:1.5px}
+.brand-sub{font-size:13px}
+.top-nav button{font-size:15px}
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;min-height:0;align-items:center}
+.hero-copy{min-width:0;padding:30px 0}
+.hero h1{font-size:clamp(52px,5.7vw,80px);line-height:1.3;letter-spacing:1px;white-space:normal;margin:24px 0 28px}
+.hero-copy>p{font-size:18px;line-height:1.95;letter-spacing:0;margin-bottom:30px}
+.hero-note{font-size:15px;line-height:1.8}
+.hero-buttons{flex-wrap:wrap;gap:14px}
+.hero-buttons .btn{font-size:16px;padding:13px 20px}
+.hero-birth-odds{min-width:0;padding-left:0}
+.hero-birth-odds .birth-probability{padding:26px}
+.hero-birth-odds .prob-heading h2,.prob-heading h2{font-size:28px;line-height:1.5}
+.hero-birth-odds .prob-lead,.prob-lead{font-size:15px;line-height:1.9}
+.prob-methods{max-width:100%;flex-wrap:wrap}
+.prob-methods>button{font-size:14px;min-height:46px;padding:10px 15px}
+.hero-birth-odds .prob-visual{grid-template-columns:minmax(130px,.8fr) minmax(0,1fr);gap:14px}
+.hero-birth-odds .prob-legend>button,.hero-birth-odds .prob-legend>div,.prob-legend>button,.prob-legend>div{font-size:14px;min-height:44px;gap:10px}
+.prob-legend>button>span,.prob-legend>div>span{min-width:0;overflow-wrap:anywhere}
+.hero-birth-odds .prob-legend strong,.prob-legend strong{font-size:14px;flex-shrink:0}
+.prob-source,.hero-birth-odds .prob-source,.prob-basis{font-size:13px;line-height:1.85}
+.prob-all>summary{font-size:14px;gap:12px;line-height:1.8}
+.prob-country-detail p,.prob-all-list>div{font-size:14px}
+.prob-center small{font-size:12px}
+.setting-card label{font-size:13px;letter-spacing:0}
+.setting-card select{font-size:15px;min-height:42px;line-height:1.7;white-space:normal}
+.setting-card>svg:last-child{display:none}
+.setup-note,.setup-note .text-link{font-size:13px;line-height:1.9}
+.section-heading h2{font-size:clamp(27px,2.7vw,38px);line-height:1.5}
+.section-heading>p,.feature-card p,.closing-banner p{font-size:16px;line-height:1.9}
+.feature-card .eyebrow{font-size:13px}
+.feature-card h3{font-size:25px;line-height:1.6}
+.page-heading p,.subtle,.fine-print{font-size:14px;line-height:1.9}
+.birth-copy{min-width:0}
+.birth-copy h1{font-size:clamp(36px,3.6vw,54px);line-height:1.4;letter-spacing:0}
+.birth-greeting{display:flex;flex-direction:column;gap:10px;margin:25px 0 18px}
+.birth-copy h1>.birth-hello{font-size:22px;line-height:1.5;color:var(--muted)}
+.birth-person-name{overflow-wrap:anywhere;word-break:normal}
+.rename-birth{margin:0 0 22px;min-height:44px;align-items:center}
+.birth-copy .lead,.birth-waiting .lead{font-size:17px;line-height:1.95}
+.birth-facts{padding:24px 0;display:grid;gap:22px}
+.birth-facts>div{align-items:flex-start;margin:0;gap:14px;min-width:0}
+.birth-facts svg{margin-top:5px;width:21px;height:21px}
+.birth-facts>div>span{min-width:0;font-size:14px;line-height:1.8}
+.birth-facts strong{font-size:18px;font-weight:500;line-height:1.7;margin-top:5px;overflow-wrap:anywhere}
+.birth-chance{display:block;font-size:14px;line-height:1.8;margin-top:5px}
+.birth-randomizer>span,.birth-randomizer>small{font-size:14px;line-height:1.85}
+.birth-randomizer>.btn{font-size:15px;gap:10px}
+.birth-background{gap:14px;padding:20px}
+.birth-background>div{min-width:0}
+.birth-background span{font-size:17px}
+.birth-background p,.birth-background small{font-size:14px;line-height:1.9}
+.birth-empty-fields dt,.birth-empty-fields dd{font-size:15px}
+.birth-draw-note,.birth-draw-error{font-size:14px;line-height:1.9}
+.birth-draw{font-size:17px;min-height:56px}
+.family-origin-heading{flex-wrap:wrap;gap:9px 12px}
+.family-origin-heading h3{font-size:22px;line-height:1.5;flex:1;min-width:0}
+.family-origin-heading>span{font-size:13px;margin-left:0}
+.parent-work{padding:18px}
+.parent-work>span,.parent-work>small{font-size:14px}
+.parent-work .parent-full-name{display:block;font-size:19px;line-height:1.6;margin:5px 0;overflow-wrap:anywhere}
+.parent-work>strong{font-size:17px}
+.parent-work>p,.family-source p{font-size:14px;line-height:1.9}
+.family-source>summary{font-size:14px;gap:10px}
+.life-identity.game-title{display:grid;grid-template-columns:minmax(0,1fr) 112px;align-items:start;gap:20px 28px;margin-bottom:25px}
+.identity-copy{min-width:0}
+.identity-title-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin:12px 0 8px}
+.life-identity .identity-title-row h1{font-size:clamp(32px,3.3vw,48px);line-height:1.35;font-weight:500;letter-spacing:0;overflow-wrap:anywhere;min-width:0;margin:0}
+.identity-rename{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:7px;color:var(--accent);font-size:14px;line-height:1.6}
+.life-identity .identity-caption{font-size:15px;line-height:1.8;margin:0;display:block}
+.identity-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px 22px;margin:0;padding:0;grid-column:1/-1}
+.identity-facts>div{min-width:0}
+.identity-facts dt{display:flex;align-items:center;gap:8px;font-size:13px;line-height:1.7;color:var(--muted)}
+.identity-facts dt svg{color:var(--accent)}
+.identity-facts dd{font-size:17px;line-height:1.7;margin:5px 0 0;overflow-wrap:anywhere;color:var(--ink)}
+.life-identity .identity-location{font-size:14px;display:flex;align-items:flex-start;gap:8px;margin:0;grid-column:1/-1}
+.life-identity .age-display{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 9px;background:var(--soft);border-radius:14px;min-width:0}
+.life-identity .age-display>strong{font-size:54px;line-height:1.2;font-weight:400}
+.life-identity .age-display>span{font-size:16px}
+.life-identity .age-display>small{font-size:13px;color:var(--muted);line-height:1.8;white-space:normal;text-align:center}
+.birth-context{font-size:14px;gap:12px 24px;padding:16px 20px;line-height:1.8}
+.birth-context .text-link{font-size:14px}
+.event-kicker{font-size:14px;gap:14px}
+.event-card h2{font-size:30px;line-height:1.5;margin-bottom:18px}
+.event-card>p{font-size:17px;line-height:1.95}
+.choices>button{display:flex;gap:16px;font-size:17px;line-height:1.8;min-height:80px;padding:17px 19px}
+.choices>button>span{min-width:0;flex:1;overflow-wrap:anywhere}
+.choices>button>svg{flex:0 0 20px;position:static}
+.choices small{font-size:14px;line-height:1.8;margin-top:6px}
+.choice-echo>span{font-size:13px}
+.choice-echo>p{font-size:15px;line-height:1.9}
+.event-footer{font-size:14px;gap:16px;flex-wrap:wrap}
+.event-footer .text-link{font-size:16px}
+.journal-entry{gap:18px}
+.journal-entry>div{min-width:0}
+.journal-entry h4{font-size:18px;line-height:1.6}
+.journal-entry p{font-size:16px;line-height:1.95;overflow-wrap:anywhere}
+.journal-year{font-size:14px;min-width:46px;flex-shrink:0}
+.journal-year small{font-size:12px}
+.journal-entry>.icon-btn{flex-shrink:0;min-width:40px}
+.side-card>.subtle,.focus-card>.action-budget{font-size:14px}
+.side-card h3{font-size:22px}
+.stat>div:first-child{font-size:15px;gap:12px}
+.stat strong{font-size:16px;white-space:nowrap}
+.stat small{font-size:13px}
+.cash-line{gap:9px;flex-wrap:wrap;font-size:14px}
+.cash-line strong{font-size:20px}
+.focus-card>p{font-size:15px;line-height:1.85}
+.side-card select,.reflection textarea{font-size:16px}
+.save-status{font-size:13px;gap:8px}
+.daily-actions>button{font-size:14px;gap:8px;min-height:46px;line-height:1.7}
+.game-tabs>button{font-size:15px;line-height:1.6;min-height:50px}
+.game-page .person-card p,.game-page .person-card small{font-size:15px;line-height:1.9}
+.game-page .person-card .eyebrow{font-size:13px}
+.person-card h3{font-size:25px}
+.person-birth-work>strong{font-size:17px}
+.consequence-heading h3{font-size:22px}
+.consequence-heading>span,.story-threads small{font-size:13px}
+.ongoing-plans li>div{font-size:16px;flex-wrap:wrap}
+.ongoing-plans li>div>span,.ongoing-plans p,.story-threads{font-size:14px;line-height:1.9}
+.time-state,.skip-btn,.speed-group button{font-size:14px}
+.archive-info>.eyebrow,.archive-actions .btn,.archive-info>p{font-size:14px}
+.scene-tag{max-width:calc(100% - 36px);line-height:1.6;white-space:normal}
+.setup-note{gap:15px;flex-wrap:wrap}
+.button-row{flex-wrap:wrap}
+@media(max-width:1100px) and (min-width:801px){
+ .hero{gap:25px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .hero h1{font-size:58px}
+ .hero-birth-odds .prob-visual{grid-template-columns:1fr}
+ .hero-birth-odds .birth-probability{padding:22px}
+ .identity-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .game-sidebar .daily-actions{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:800px){
+ .hero{grid-template-columns:minmax(0,1fr);gap:20px;margin-top:28px}
+ .hero h1{font-size:60px;line-height:1.28}
+ .hero-copy>p{font-size:18px}
+ .hero-birth-odds{margin-top:0}
+ .hero-birth-odds .prob-visual{grid-template-columns:minmax(130px,.8fr) minmax(0,1fr)}
+ .setting-card{gap:15px}
+ .setting-card label{font-size:13px}
+ .setting-card select{font-size:16px}
+ .life-identity.game-title{grid-template-columns:minmax(0,1fr) 82px;gap:16px;margin-bottom:22px}
+ .life-identity .identity-title-row h1{font-size:34px;line-height:1.4}
+ .identity-title-row{gap:10px;margin-top:9px}
+ .life-identity .identity-caption{font-size:14px;margin-bottom:0}
+ .identity-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+ .identity-facts dd{font-size:16px}
+ .identity-facts dt{font-size:13px}
+ .life-identity .age-display>strong{font-size:42px}
+ .life-identity .age-display>small{font-size:12px}
+ .life-identity .eyebrow{font-size:12px;letter-spacing:.5px}
+ .birth-context{font-size:14px;padding:15px;gap:10px 17px}
+ .birth-context .text-link{font-size:14px}
+ .mobile-vitals small{font-size:12px}
+ .mobile-vitals strong{font-size:18px}
+ .mobile-cash strong{font-size:16px}
+ .event-card{padding:23px 20px}
+ .event-card h2{font-size:28px}
+ .event-card>p{font-size:16px;line-height:1.95}
+ .choices>button{font-size:16px;padding:16px;gap:13px}
+ .choices small{font-size:14px}
+ .event-footer{font-size:14px}
+ .event-footer .text-link{font-size:16px}
+ .mobile-sidebar-toggle{font-size:15px;gap:12px}
+ .game-tabs>button{font-size:15px}
+ .journal-entry h4{font-size:17px}
+ .journal-entry p{font-size:15px}
+ .side-card>.subtle{font-size:14px}
+ .game-sidebar .side-card{padding:20px}
+ .daily-actions>button{font-size:14px}
+ .game-page .button-row .btn{font-size:15px;min-height:48px}
+ .game-page .finance-panel>.subtle{font-size:14px}
+ .consequence-heading{display:block}
+ .consequence-heading>span{display:block;margin-top:5px}
+ .ongoing-plans li>div{font-size:16px}
+ .time-state,.skip-btn,.speed-group button{font-size:13px}
+}
+@media(max-width:520px){
+ .hero h1{font-size:52px}
+ .hero-copy{padding:16px 0 8px}
+ .hero-copy>p{font-size:17px;line-height:1.9}
+ .hero-buttons{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+ .hero-buttons .btn{width:100%;font-size:16px;min-height:54px}
+ .hero-birth-odds .prob-heading h2,.prob-heading h2{font-size:26px}
+ .hero-birth-odds .prob-visual{grid-template-columns:minmax(0,1fr)}
+ .hero-birth-odds .prob-donut{width:205px}
+ .hero-birth-odds .prob-lead,.prob-lead{font-size:15px}
+ .prob-methods>button{font-size:14px}
+ .hero-birth-odds .prob-legend>button,.hero-birth-odds .prob-legend>div{font-size:14px}
+ .feature-card h3{font-size:24px}
+ .feature-card p,.section-heading>p{font-size:16px}
+ .closing-banner{align-items:flex-start}
+ .closing-banner>div{min-width:0;flex:1}
+ .closing-banner h2{font-size:25px;line-height:1.6}
+ .closing-banner .btn{margin-left:0;font-size:16px;min-height:52px}
+ .birth-copy h1,.birth-waiting h1{font-size:36px;line-height:1.45}
+ .birth-copy h1>.birth-hello{font-size:21px}
+ .birth-copy .lead,.birth-waiting .lead{font-size:17px}
+ .birth-randomizer>.btn{font-size:15px}
+ .birth-context{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px 16px}
+ .birth-context>.text-link{grid-column:1/-1;justify-self:start}
+ .identity-rename{font-size:14px;padding:7px 10px}
+ .identity-facts{column-gap:12px}
+ .family-origin-heading>span{flex-basis:100%;padding-left:30px}
+ .game-tabs{gap:0 12px}
+ .journal-entry{gap:10px}
+ .journal-entry>.icon-btn{min-width:32px}
+ .journal-year{min-width:38px;font-size:13px}
+ .ongoing-plans li>div>span{white-space:normal}
+ .prob-all-list>div{grid-template-columns:23px minmax(0,1fr) auto;gap:5px 8px}
+}
