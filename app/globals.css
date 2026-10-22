@@ -103,6 +103,18 @@
 .birth-saving-overlay svg{color:var(--accent);margin-bottom:10px}
 .birth-saving-overlay p{margin:0 0 7px;font-size:14px;color:var(--ink)}
 .birth-saving-overlay small{font-size:11px;color:var(--muted)}
+.birth-waiting .birth-copy{padding-top:15px}
+.birth-waiting h1{font-size:46px;line-height:1.55;letter-spacing:2px;margin:16px 0 24px}
+.birth-waiting .lead{font-size:16px;line-height:2}
+.birth-empty-fields{margin:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:8px 0}
+.birth-empty-fields>div{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:13px 0}
+.birth-empty-fields dt{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--muted)}
+.birth-empty-fields dt svg{color:var(--accent);stroke-width:1.3}
+.birth-empty-fields dd{margin:0;color:#959b90;font-size:12px;letter-spacing:1px}
+.birth-draw{width:100%;min-height:52px;font-size:14px;gap:12px}
+.birth-draw-note{font-size:11px;line-height:1.9;margin:13px 0 18px;color:var(--accent)}
+.birth-draw-error{color:#a54837;font-size:12px}
+@media(max-width:520px){.birth-waiting .birth-copy{padding-top:0}.birth-waiting h1{font-size:35px;line-height:1.6}.birth-waiting .lead{font-size:14px}.birth-waiting .birth-art{display:none}.birth-empty-fields{margin:22px 0}.birth-empty-fields>div{padding:12px 0}}
 @media(max-width:520px){.birth-randomizer{padding:14px}.birth-randomizer>span{flex-basis:100%}.birth-randomizer>.btn{width:100%;font-size:12px}}
 @media(max-width:520px){.family-origins{padding:17px}.parent-work-grid{grid-template-columns:1fr}.parent-work{padding:14px}.family-source>summary{min-height:44px}.local-name-suggestion .btn{width:100%}.birth-copy h1{font-size:36px}}
 @media(max-width:800px){.birth-probability{padding:25px}.prob-visual{gap:15px;grid-template-columns:minmax(165px,.8fr) minmax(180px,1fr)}.prob-donut{width:205px}.prob-legend>button{min-height:44px}.prob-heading h2{font-size:25px}}
