@@ -257,8 +257,416 @@
       ],
       "bytes": 270426,
       "quality": 90
+    },
+    {
+      "file": "scene-09.webp",
+      "source": "../art/life-scenes/scene-09-childhood-play.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#9",
+      "source_bytes": 3714545,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 509662,
+      "quality": 86
+    },
+    {
+      "file": "thumb-09.webp",
+      "source": "../art/life-scenes/scene-09-childhood-play.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#9",
+      "source_bytes": 3714545,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 65278,
+      "quality": 80
+    },
+    {
+      "file": "scene-10.webp",
+      "source": "../art/life-scenes/scene-10-school-classroom.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#10",
+      "source_bytes": 2779481,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 266540,
+      "quality": 86
+    },
+    {
+      "file": "thumb-10.webp",
+      "source": "../art/life-scenes/scene-10-school-classroom.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#10",
+      "source_bytes": 2779481,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 36940,
+      "quality": 80
+    },
+    {
+      "file": "scene-11.webp",
+      "source": "../art/life-scenes/scene-11-craft-training.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#11",
+      "source_bytes": 3070710,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 354436,
+      "quality": 86
+    },
+    {
+      "file": "thumb-11.webp",
+      "source": "../art/life-scenes/scene-11-craft-training.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#11",
+      "source_bytes": 3070710,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 50266,
+      "quality": 80
+    },
+    {
+      "file": "scene-12.webp",
+      "source": "../art/life-scenes/scene-12-working-day.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#12",
+      "source_bytes": 2982260,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 306346,
+      "quality": 86
+    },
+    {
+      "file": "thumb-12.webp",
+      "source": "../art/life-scenes/scene-12-working-day.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#12",
+      "source_bytes": 2982260,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 43650,
+      "quality": 80
+    },
+    {
+      "file": "scene-13.webp",
+      "source": "../art/life-scenes/scene-13-small-business.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#13",
+      "source_bytes": 3767376,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 518952,
+      "quality": 86
+    },
+    {
+      "file": "thumb-13.webp",
+      "source": "../art/life-scenes/scene-13-small-business.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#13",
+      "source_bytes": 3767376,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 63200,
+      "quality": 80
+    },
+    {
+      "file": "scene-14.webp",
+      "source": "../art/life-scenes/scene-14-health-clinic.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#14",
+      "source_bytes": 2889574,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 282470,
+      "quality": 86
+    },
+    {
+      "file": "thumb-14.webp",
+      "source": "../art/life-scenes/scene-14-health-clinic.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#14",
+      "source_bytes": 2889574,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 37110,
+      "quality": 80
+    },
+    {
+      "file": "scene-15.webp",
+      "source": "../art/life-scenes/scene-15-family-evening.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#15",
+      "source_bytes": 3156507,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 362630,
+      "quality": 86
+    },
+    {
+      "file": "thumb-15.webp",
+      "source": "../art/life-scenes/scene-15-family-evening.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#15",
+      "source_bytes": 3156507,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 47188,
+      "quality": 80
+    },
+    {
+      "file": "scene-16.webp",
+      "source": "../art/life-scenes/scene-16-retirement-garden.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#16",
+      "source_bytes": 3784010,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 516568,
+      "quality": 86
+    },
+    {
+      "file": "thumb-16.webp",
+      "source": "../art/life-scenes/scene-16-retirement-garden.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#16",
+      "source_bytes": 3784010,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 66154,
+      "quality": 80
+    },
+    {
+      "file": "scene-17.webp",
+      "source": "../art/life-scenes/scene-17-birth-rural.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#17",
+      "source_bytes": 3256703,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 373496,
+      "quality": 86
+    },
+    {
+      "file": "thumb-17.webp",
+      "source": "../art/life-scenes/scene-17-birth-rural.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#17",
+      "source_bytes": 3256703,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 50346,
+      "quality": 80
+    },
+    {
+      "file": "scene-18.webp",
+      "source": "../art/life-scenes/scene-18-birth-urban.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#18",
+      "source_bytes": 2851865,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 285178,
+      "quality": 86
+    },
+    {
+      "file": "thumb-18.webp",
+      "source": "../art/life-scenes/scene-18-birth-urban.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#18",
+      "source_bytes": 2851865,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 42230,
+      "quality": 80
+    },
+    {
+      "file": "scene-19.webp",
+      "source": "../art/life-scenes/scene-19-night-study.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#19",
+      "source_bytes": 2853473,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 270054,
+      "quality": 86
+    },
+    {
+      "file": "thumb-19.webp",
+      "source": "../art/life-scenes/scene-19-night-study.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#19",
+      "source_bytes": 2853473,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 34082,
+      "quality": 80
+    },
+    {
+      "file": "scene-20.webp",
+      "source": "../art/life-scenes/scene-20-moving-station.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#20",
+      "source_bytes": 3281298,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 386376,
+      "quality": 86
+    },
+    {
+      "file": "thumb-20.webp",
+      "source": "../art/life-scenes/scene-20-moving-station.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#20",
+      "source_bytes": 3281298,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 49754,
+      "quality": 80
     }
   ],
-  "total_asset_bytes": 3158690,
-  "total_original_bytes": 24230387
+  "total_asset_bytes": 8177596,
+  "total_original_bytes": 62618189
 }

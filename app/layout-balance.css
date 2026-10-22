@@ -209,6 +209,10 @@
  .birth-context{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:18px;margin-bottom:20px}
  .birth-context>.text-link{grid-column:1/-1;justify-self:center}
  .event-card,.game-scene,.mobile-sidebar-toggle,.game-tabs,.life-consequences{border-radius:var(--panel-radius)}
+ .game-scene{order:2;height:auto;aspect-ratio:3/2;margin:0 0 16px;min-width:0}
+ .game-scene>img{height:100%;width:100%;object-fit:cover}
+ .event-card{order:3}
+ .scene-tag{max-width:calc(100% - 24px);line-height:1.6}
  .settings-layout,.ending-page{grid-template-columns:minmax(0,1fr)}
  .settings-layout .settings-block,.ending-intro{padding:24px}
  .closing-banner{padding:24px;justify-content:center;margin-top:28px}

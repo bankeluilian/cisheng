@@ -1,8 +1,9 @@
 import { env } from 'cloudflare:workers';
 import { z } from 'zod';
+import {SCENE_COUNT} from '../../../lib/scenes';
 const headers={'Cache-Control':'no-store'};
 const json=(v:unknown,status=200)=>Response.json(v,{status,headers});
-const body=z.object({name:z.string().min(1).max(30),country:z.string().min(1).max(70),birth:z.number().int().min(1850).max(2200),age:z.number().int().min(0).max(110),scene:z.number().int().min(1).max(8),summary:z.string().min(1).max(600),farewell:z.string().max(120),moments:z.array(z.object({age:z.number().int().min(0).max(110),title:z.string().max(60)})).max(5),deleteToken:z.string().uuid()});
+const body=z.object({name:z.string().min(1).max(30),country:z.string().min(1).max(70),birth:z.number().int().min(1850).max(2200),age:z.number().int().min(0).max(110),scene:z.number().int().min(1).max(SCENE_COUNT),summary:z.string().min(1).max(600),farewell:z.string().max(120),moments:z.array(z.object({age:z.number().int().min(0).max(110),title:z.string().max(60)})).max(5),deleteToken:z.string().uuid()});
 async function hash(s:string){return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(v=>v.toString(16).padStart(2,'0')).join('');}
 export async function GET(){try{if(!env.DB)return json({error:'故事服务暂未连接，请稍后再试。'},503);const r=await env.DB.prepare('SELECT s.id,s.name,s.country,s.birth,s.age,s.scene,s.summary,s.farewell,s.moments,s.created,COUNT(c.visitor) AS candles FROM stories s LEFT JOIN candles c ON c.story_id=s.id GROUP BY s.id ORDER BY s.created DESC LIMIT 60').all();return json({stories:r.results.map(r=>({...r,moments:JSON.parse(String(r.moments))}))});}catch{return json({error:'故事服务暂时不可用，你的本地人生仍然安全。'},503);}}
 export async function POST(req:Request){

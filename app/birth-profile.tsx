@@ -4,11 +4,13 @@ import {samplingDistribution,probabilityLabel} from '../lib/sampling';
 import {nameOriginNote} from '../lib/names';
 import FamilyOrigins from './family-origins';
 import BirthProbability from './birth-probability';
+import {birthSceneFor,sceneImage,sceneInfo} from '../lib/scenes';
 
 type Props={life:Life;countries:Country[];busy:boolean;ready:boolean;comparison:string;onComparison:(value:string)=>void;onReroll:()=>void;onRename:()=>void;onBegin:()=>void};
 export default function BirthProfile({life,countries,busy,ready,comparison,onComparison,onReroll,onRename,onBegin}:Props){
  const odds=samplingDistribution(countries,life.sampling).rows.find(c=>c.country.id===life.country.id);
  const tier=life.story?.family.tier==='tight'?'紧张':life.story?.family.tier==='comfortable'?'宽裕':'稳定';
+ const birthScene=birthSceneFor(life);
  const facts=[
   {label:'出生地',value:life.country.name,note:odds?`这次抽中的概率 ${probabilityLabel(odds.probability)}`:'',Icon:MapPin},
   {label:'人物身份',value:`${life.sex} · ${life.birthYear}`,note:'故事从这一年开始',Icon:UserRound},
@@ -19,7 +21,7 @@ export default function BirthProfile({life,countries,busy,ready,comparison,onCom
   <div className="birth-personal-card" role="group" aria-label="个人资料卡">
   <div className="birth-personal-heading"><span className="eyebrow">此生 · 个人资料</span><span>出生于 {life.birthYear} 年</span></div>
   <div className="birth-hero">
-   <figure className="birth-art"><img src="/images/scene-02.webp" alt="手绘婴儿床与清晨的窗"/><figcaption>故事的第一页 · {life.birthYear}</figcaption></figure>
+   <figure className="birth-art"><img src={sceneImage(birthScene)} alt={sceneInfo(birthScene).alt}/><figcaption>故事的第一页 · {life.birthYear} · 手绘生活意象</figcaption></figure>
    <div className="birth-copy birth-intro-copy"><span className="eyebrow">一次随机的出生 / 一段新的人生</span><h1 className="birth-greeting"><span className="birth-hello">你好，</span><span className="birth-person-name">{life.name}</span></h1><p className="lead">在世界的某个角落，<br/>你的第一声啼哭，开启了这一生。</p><button className="text-link rename-birth" onClick={onRename}><PencilLine size={17}/><span>起一个自己的名字</span></button><p className="birth-name-note">{nameOriginNote(life.country,life.nameOrigin)}</p></div>
   </div>
   <section className="birth-facts-panel" aria-label="出生资料卡"><div className="birth-facts-heading"><span>此生档案</span><span>命运的第一笔</span></div><dl className="birth-fact-grid">{facts.map(({label,value,note,Icon})=><div className="birth-fact-card" key={label}><dt><Icon size={19}/><span>{label}</span></dt><dd>{value}</dd><dd className="birth-fact-note">{note}</dd></div>)}</dl><p className="birth-facts-footer">起点由命运写下，故事由你继续。</p></section>
