@@ -12,6 +12,18 @@
 .hero-birth-odds{align-self:start;display:block}
 .hero-birth-odds .birth-probability{width:100%;height:auto;border-radius:var(--panel-radius)}
 .hero-birth-odds .prob-visual{grid-template-columns:minmax(130px,.8fr) minmax(0,1fr);align-items:center}
+/* On the landing page, the circle comes before explanatory copy. */
+.hero-birth-odds .birth-probability{display:flex;flex-direction:column;gap:12px}
+.hero-birth-odds .prob-heading{order:0}
+.hero-birth-odds .prob-heading h2{text-wrap:balance}
+.hero-birth-odds .prob-methods{order:1;align-self:flex-start;margin:0}
+.hero-birth-odds .prob-visual{order:2;width:100%;margin:6px 0;align-items:start}
+.hero-birth-odds .prob-donut{width:220px;max-width:100%;margin:0 auto}
+.hero-birth-odds .prob-legend>button,.hero-birth-odds .prob-legend>div{min-height:36px;padding:5px 7px}
+.hero-birth-odds .prob-lead{order:3;margin:0}
+.hero-birth-odds .prob-country-detail{order:4;margin:0}
+.hero-birth-odds .prob-all{order:5;margin:0}
+.hero-birth-odds .prob-source{order:6;margin:0}
 .start-settings{margin-top:24px;padding:24px 0}
 .setup-note{margin-top:20px;justify-content:center;text-align:center}
 .intro-section{margin-top:48px}
@@ -155,6 +167,8 @@
  .hero{grid-template-columns:minmax(0,1fr);gap:var(--layout-gap)}
  .hero-copy{padding:20px 0}
  .hero-birth-odds{margin:0}
+ .hero-birth-odds{order:-1}
+ .hero-birth-odds .prob-legend>button{min-height:44px}
  .hero-birth-odds .prob-visual{grid-template-columns:repeat(2,minmax(0,1fr))}
  .start-settings{margin-top:20px}
  .intro-section{margin-top:32px}
@@ -189,6 +203,7 @@
  .hero-buttons{grid-template-columns:minmax(0,1fr)}
  .hero-buttons .btn{width:100%}
  .hero-birth-odds .prob-visual{grid-template-columns:minmax(0,1fr)}
+ .hero-birth-odds .prob-donut{width:190px}
  .hero-birth-odds .birth-probability{padding:22px 18px}
  .birth-hero>.birth-art{height:220px}
  .birth-hero>.birth-intro-copy{padding:26px 20px}
