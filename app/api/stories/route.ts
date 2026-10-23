@@ -1,3 +1,4 @@
+import {allowedStoryOrigin} from "../../../lib/story-cors";
 import { env } from 'cloudflare:workers';
 import { z } from 'zod';
 import {SCENE_COUNT} from '../../../lib/scenes';
@@ -9,7 +10,7 @@ export async function GET(){try{if(!env.DB)return json({error:'故事服务暂�
 export async function POST(req:Request){
  try{
   if(!env.DB)return json({error:'故事服务暂未连接。'},503);
-  if(req.headers.get('origin')&&new URL(req.headers.get('origin')!).host!==new URL(req.url).host)return json({error:'请求来源不匹配'},403);
+  if(!allowedStoryOrigin(req))return json({error:'请求来源不匹配'},403);
   if(Number(req.headers.get('content-length')||0)>12000)return json({error:'内容过长'},413);
   const text=await req.text();if(text.length>12000)return json({error:'内容过长'},413);
   const parsed=body.safeParse(JSON.parse(text));if(!parsed.success)return json({error:'卡片格式不正确。'},400);
@@ -18,4 +19,4 @@ export async function POST(req:Request){
   const stored=await env.DB.prepare('SELECT id FROM stories WHERE delete_hash=?').bind(h).first();return json({id:stored!.id},201);
  }catch{return json({error:'发布失败，请稍后再试。'},503);}
 }
-export async function DELETE(req:Request){try{if(!env.DB)return json({error:'服务未连接'},503);if(req.headers.get('origin')&&new URL(req.headers.get('origin')!).host!==new URL(req.url).host)return json({error:'请求来源不匹配'},403);const b=z.object({id:z.string().uuid(),token:z.string().uuid()}).safeParse(await req.json());if(!b.success)return json({error:'格式错误'},400);const r=await env.DB.prepare('DELETE FROM stories WHERE id=? AND delete_hash=?').bind(b.data.id,await hash(b.data.token)).run();if(!r.meta.changes)return json({error:'未找到这份发布记录的删除凭证。'},403);return json({ok:true});}catch{return json({error:'删除失败，请稍后再试。'},503);}}
+export async function DELETE(req:Request){try{if(!env.DB)return json({error:'服务未连接'},503);if(!allowedStoryOrigin(req))return json({error:'请求来源不匹配'},403);const b=z.object({id:z.string().uuid(),token:z.string().uuid()}).safeParse(await req.json());if(!b.success)return json({error:'格式错误'},400);const r=await env.DB.prepare('DELETE FROM stories WHERE id=? AND delete_hash=?').bind(b.data.id,await hash(b.data.token)).run();if(!r.meta.changes)return json({error:'未找到这份发布记录的删除凭证。'},403);return json({ok:true});}catch{return json({error:'删除失败，请稍后再试。'},503);}}

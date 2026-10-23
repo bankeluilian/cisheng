@@ -1,4 +1,5 @@
 'use client';
+import {assetUrl} from "../lib/web-hosting";
 import {useState} from 'react';
 import {Globe2,ArrowUpRight,Search,MapPin} from 'lucide-react';
 import type {Country} from '../lib/engine';
@@ -22,7 +23,7 @@ export default function BirthProbability({countries,method,onMethodChange,result
    </div>
    {(chosen||resultCountry)&&<div className="prob-country-detail"><MapPin size={18}/><div><span>{chosen?.country.name||resultCountry?.name}</span>{chosen?<p>抽中概率 <strong>{probabilityLabel(chosen.probability)}</strong> · 按当前权重排序第 {ranked.indexOf(chosen)+1} / {countries.length} 位{chosen.probability>0&&<> · 约每 {Math.max(1,Math.round(1/chosen.probability)).toLocaleString('zh-CN')} 次独立抽样中出现 1 次</>}</p>:<p>这份存档的地区不在当前数据中，无法核对概率。</p>}</div></div>}
    <details className="prob-all"><summary>查看全部 {countries.length} 个经济体的概率 <ArrowUpRight size={15}/></summary><label className="prob-search"><Search size={16}/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="搜索出生地或代码" aria-label="搜索出生概率"/></label><div className="prob-all-list">{ranked.filter(r=>`${r.country.name} ${r.country.id}`.toLowerCase().includes(search.toLowerCase())).map((r)=><div key={r.country.id} className={resultCountry?.id===r.country.id?'selected':''}><span className="prob-rank">{ranked.indexOf(r)+1}</span><span>{r.country.name}</span><strong>{probabilityLabel(r.probability)}</strong><div className="prob-bar"><i style={{width:`${ranked[0]?.probability?r.probability/ranked[0].probability*100:0}%`}}/></div></div>)}{!ranked.some(r=>`${r.country.name} ${r.country.id}`.toLowerCase().includes(search.toLowerCase()))&&<p className="subtle">没有找到这个地区，试试三位代码。</p>}</div></details>
-   <p className="prob-source">{data.fallback?'缺少可用权重，当前采用等概率抽样。':'权重来自世界银行 2023 年资料；出生人数由人口和粗出生率估算。'} {resultCountry?'低概率也可能出现，每次抽样互相独立。':'查看概率不会指定出生地，也不会消耗随机数。'} <a href="/data/data-notes.json" target="_blank" rel="noreferrer">数据口径 ↗</a></p>
+   <p className="prob-source">{data.fallback?'缺少可用权重，当前采用等概率抽样。':'权重来自世界银行 2023 年资料；出生人数由人口和粗出生率估算。'} {resultCountry?'低概率也可能出现，每次抽样互相独立。':'查看概率不会指定出生地，也不会消耗随机数。'} <a href={assetUrl("/data/data-notes.json")} target="_blank" rel="noreferrer">数据口径 ↗</a></p>
   </>}
  </section>;
 }

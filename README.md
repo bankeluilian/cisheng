@@ -4,7 +4,9 @@
 
 《此生》是一款中文网页人生模拟游戏。从随机出生开始，经历成长、求学、谋生、关系与告别，最后生成可以保存的人生总结卡片。
 
-当前站点：[打开《此生》](https://cisheng-yuze-20261021.bankeliulian.chatgpt.site/#home)。站点访问范围由原有 Sites 分享设置控制，上传源码不会改变访问权限。
+**在线游玩：[打开《此生》](https://bankeluilian.github.io/cisheng/#home)**。手机、电脑均可直接在浏览器里玩。
+
+GitHub Pages 托管游戏 HTML、脚本与图片；故事广场继续连接原有公开服务。存档留在当前浏览器，不会自动跨域迁移，可用 JSON 导出和导入。
 
 ## 玩法
 
@@ -30,7 +32,7 @@ node scripts/install-ci.mjs
 node scripts/run-framework.mjs dev
 ```
 
-打开终端显示的本地地址，默认是 `http://127.0.0.1:5173/`。这是 React 全栈应用，需要启动开发服务器。
+打开终端显示的本地地址，默认是 `http://127.0.0.1:5173/`。这是 React 应用，本地开发需要启动服务器。
 
 ## 构建与检查
 
@@ -39,7 +41,7 @@ node node_modules/typescript/bin/tsc --noEmit
 node scripts/run-framework.mjs build
 ```
 
-先启动本地开发服务，再运行包含 API 集成测试的完整测试集：
+先启动本地服务，再运行测试；GitHub Pages 跨域集成测试应对构建后的 Worker 运行（例如 TEST_ORIGIN=http://127.0.0.1:5176）：
 
 ```sh
 node --test tests/*.test.mjs
@@ -78,3 +80,7 @@ API 测试只应访问本地开发服务及本地 D1 数据库。详细测试和
 生产部署使用原有 Sites/Cloudflare 配置；`.openai/hosting.json` 保留现有站点标识。复制到新项目部署时，应配置自己的站点与数据库。部署机制见模板说明。
 
 `node_modules/`、构建输出、本地数据库、环境配置和测试截图等工作目录通过 `.gitignore` 排除。
+
+## GitHub Pages 发布
+
+运行 `npm run build:pages` 生成 `dist-pages/index.html` 及全部资源。用 `node scripts/publish-pages.mjs` 将产物上传到当前仓库的 `gh-pages` 分支（需要 gh 已登录且有写权限），在仓库 Pages 设置中选择该分支根目录。资源基路径固定为 `/cisheng/`；复制到其他仓库时须同时调整 `vite.pages.config.ts`、HTML 元数据和故事服务允许的来源。

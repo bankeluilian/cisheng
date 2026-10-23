@@ -1,3 +1,4 @@
+import {assetUrl} from "./web-hosting.ts";
 import type {Life,Entry} from './engine';
 import {encounters,followups} from './encounters.ts';
 import {REGIONAL_SCENES,regionalSceneFor} from './regional-scenes.ts';
@@ -28,7 +29,7 @@ export const SCENES:ReadonlyArray<Scene>=[
 ];
 export const SCENE_COUNT=SCENES.length;
 export function sceneInfo(id:number){return SCENES.find(scene=>scene.id===id)||SCENES[6];}
-export function sceneImage(id:number,thumb=false){return `/images/${thumb?'thumb':'scene'}-${String(sceneInfo(id).id).padStart(2,'0')}.webp`;}
+export function sceneImage(id:number,thumb=false){return assetUrl(`/images/${thumb?'thumb':'scene'}-${String(sceneInfo(id).id).padStart(2,'0')}.webp`);}
 // Visual choices never advance life.rng: browsing or exporting cannot change fate.
 function variant(l:Life,ids:readonly number[],salt=0){return ids[((l.seed>>>0)+Math.max(0,l.age)+salt)%ids.length];}
 export function birthSceneFor(l:Life){return regionalSceneFor(l.country,l.birthYear)??variant({...l,age:0},[2,17,18]);}
