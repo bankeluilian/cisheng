@@ -2,10 +2,11 @@ import type {Life,Stats,Option,Decision,Entry} from './engine';
 import type {StoryState,StoryChoice,StoryResult,Encounter} from './story-types';
 import {encounters,followups} from './encounters.ts';
 import {scheduleCommitment,settleCommitments,decisionOptions} from './commitments.ts';
+import {captureEntryScene} from './scenes.ts';
 const bound=(n:number,a:number,b:number)=>Math.max(a,Math.min(b,n));
 const clamp=(n:number)=>Math.round(bound(n,0,100));
 function roll(l:Life){l.rng=(Math.imul(l.rng,1664525)+1013904223)>>>0;return l.rng/4294967296;}
-function add(l:Life,title:string,text:string,kind='ordinary'){const e={id:`${l.id}-${l.events.length}`,age:l.age,year:l.birthYear+l.age,title,text,kind};l.events.push(e);return e;}
+function add(l:Life,title:string,text:string,kind='ordinary'){const e:Entry={id:`${l.id}-${l.events.length}`,age:l.age,year:l.birthYear+l.age,title,text,kind};e.scene=captureEntryScene(l,e);l.events.push(e);return e;}
 function affect(l:Life,e:Partial<Stats>={}){for(const k of Object.keys(e) as (keyof Stats)[])l.stats[k]=clamp(l.stats[k]+(e[k]||0));}
 function transfer(l:Life,n:number){if(n>=0){l.cash+=Math.round(n);return;}const paid=Math.min(l.cash,Math.round(-n));l.cash-=paid;l.debt+=Math.round(-n)-paid;}
 export function localBaseline(l:Life){return Math.round(bound(1100*Math.pow((l.country.gdpPpp||18000)/20000,.42),480,2700));}

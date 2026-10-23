@@ -1,7 +1,9 @@
-import type {Life} from './engine';
+import type {Life,Entry} from './engine';
 import {encounters,followups} from './encounters.ts';
+import {REGIONAL_SCENES,regionalSceneFor} from './regional-scenes.ts';
+import type {Scene} from './regional-scenes';
 
-export const SCENES=[
+export const SCENES:ReadonlyArray<Scene>=[
  {id:1,label:'街巷与远方',alt:'阳光下的小镇街道与远方的海'},
  {id:2,label:'故事的第一页',alt:'晨光中的木婴儿床与窗外的海湾'},
  {id:3,label:'出发的车票',alt:'站台上的行李与等待出发的列车'},
@@ -22,13 +24,14 @@ export const SCENES=[
  {id:18,label:'城市里的第一声啼哭',alt:'城市公寓里有绿植和挂饰的婴儿床'},
  {id:19,label:'下班后的课本',alt:'夜晚台灯照亮的练习本、杯子与工作包'},
  {id:20,label:'去另一个地方',alt:'晨光里放着行李的小站与等候的列车'},
-] as const;
+ ...REGIONAL_SCENES,
+];
 export const SCENE_COUNT=SCENES.length;
 export function sceneInfo(id:number){return SCENES.find(scene=>scene.id===id)||SCENES[6];}
 export function sceneImage(id:number,thumb=false){return `/images/${thumb?'thumb':'scene'}-${String(sceneInfo(id).id).padStart(2,'0')}.webp`;}
 // Visual choices never advance life.rng: browsing or exporting cannot change fate.
 function variant(l:Life,ids:readonly number[],salt=0){return ids[((l.seed>>>0)+Math.max(0,l.age)+salt)%ids.length];}
-export function birthSceneFor(l:Life){return variant({...l,age:0},[2,17,18]);}
+export function birthSceneFor(l:Life){return regionalSceneFor(l.country,l.birthYear)??variant({...l,age:0},[2,17,18]);}
 const encounterScenes:Record<string,number>={
  'small-budget':9,'full-shelf':9,'child-fever':14,'first-neighborhood':9,'spilled-cup':9,
  'school-materials':10,'club-signup':10,'school-sport':9,'school-friend':10,'scholarship-preparation':19,
@@ -48,8 +51,22 @@ const encounterScenes:Record<string,number>={
  'ctx-evening-study-return':19,'ctx-income-bridge-return':12,'ctx-family-visits-return':20,
 };
 const titleScenes=new Map([...encounters,...Object.values(followups)].filter(e=>encounterScenes[e.id]).map(e=>[e.title,encounterScenes[e.id]]));
+for(const [title,id] of [['到了上学的年纪',10],['毕业以后，仍有一段路',10],['把时间重新安排',16],['认真照顾身体',14],['把时间留给重要的人',15],['好好休息了一会儿',16]] as const)titleScenes.set(title,id);
+export function sceneCaption(l:Life,id:number,year=l.birthYear+l.age){
+ const scene=sceneInfo(id);return scene.region?`${l.country.name} · ${year} 年 · ${year>2026?'未来情景，沿用当代意象':scene.era==='early'?'旧时光意象':'当代生活意象'}`:`${year} 年 · ${scene.label} · 生活意象`;
+}
+export function captureEntryScene(l:Life,event:Entry):number{return titleScenes.get(event.title)??(event.title==='学一点新的东西'?(event.age<6?9:event.age<18?10:19):sceneFor(l));}
+export function entrySceneFor(l:Life,event:Entry):number{
+ if(event.scene&&SCENES.some(scene=>scene.id===event.scene))return event.scene;
+ const explicit=titleScenes.get(event.title);if(explicit)return explicit;
+ if(event.title==='学一点新的东西')return event.age<6?9:event.age<18?10:19;
+ if(event.age===0)return birthSceneFor(l);
+ if(event.age<6)return 9;
+ if(event.age<18)return 10;
+ return regionalSceneFor(l.country,event.year)??variant({...l,age:event.age},event.kind==='ending'?[6,8]:[1,7]);
+}
 export function sceneFor(l:Life):number{
- if(l.ended)return l.age<2?birthSceneFor(l):l.age<18?variant(l,[9,10]):l.age>=65?variant(l,[6,16,8]):variant(l,[1,7,8]);
+ if(l.ended)return regionalSceneFor(l.country,l.birthYear+l.age)??(l.age<2?birthSceneFor(l):l.age<18?variant(l,[9,10]):l.age>=65?variant(l,[6,16,8]):variant(l,[1,7,8]));
  const encounter=l.pending?.id.match(/^encounter-(.+)-\d+$/)?.[1];
  if(encounter&&encounterScenes[encounter])return encounterScenes[encounter];
  // A completed choice keeps its scene for this year only, even after a side action.
@@ -65,6 +82,7 @@ export function sceneFor(l:Life):number{
  if(l.focus==='study')return variant(l,[19,7]);
  if((l.focus==='family'||l.age%3===0)&&l.people.some(p=>p.alive&&(p.role==='伴侣'||p.role==='孩子')))return variant(l,[4,15]);
  if(l.story?.job==='independent')return variant(l,[13,11]);
- if(l.story?.job==='unemployed')return variant(l,[5,7]);
+ if(l.story?.job==='unemployed')return regionalSceneFor(l.country,l.birthYear+l.age)??variant(l,[5,7]);
+ if(l.age%3===0){const regional=regionalSceneFor(l.country,l.birthYear+l.age);if(regional)return regional;}
  return variant(l,[12,5,11]);
 }
