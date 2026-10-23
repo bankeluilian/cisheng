@@ -1,0 +1,1556 @@
+{
+  "version": 1,
+  "format": "webp",
+  "resize_policy": "Preserve full composition and aspect ratio; scenes 1440px wide, thumbnails 500px wide, card original size.",
+  "assets": [
+    {
+      "file": "scene-01.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-01-coastal-town.png",
+      "source_bytes": 2506310,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 273762,
+      "quality": 88
+    },
+    {
+      "file": "thumb-01.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-01-coastal-town.png",
+      "source_bytes": 2506310,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 37414,
+      "quality": 84
+    },
+    {
+      "file": "scene-02.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-02-nursery.png",
+      "source_bytes": 2334784,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 225480,
+      "quality": 88
+    },
+    {
+      "file": "thumb-02.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-02-nursery.png",
+      "source_bytes": 2334784,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 35464,
+      "quality": 84
+    },
+    {
+      "file": "scene-03.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-03-railway-departure.png",
+      "source_bytes": 2506885,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 284286,
+      "quality": 88
+    },
+    {
+      "file": "thumb-03.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-03-railway-departure.png",
+      "source_bytes": 2506885,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 42954,
+      "quality": 84
+    },
+    {
+      "file": "scene-04.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-04-family-dinner.png",
+      "source_bytes": 2687208,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 285276,
+      "quality": 88
+    },
+    {
+      "file": "thumb-04.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-04-family-dinner.png",
+      "source_bytes": 2687208,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 41662,
+      "quality": 84
+    },
+    {
+      "file": "scene-05.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-05-new-city.png",
+      "source_bytes": 2988122,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 362972,
+      "quality": 88
+    },
+    {
+      "file": "thumb-05.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-05-new-city.png",
+      "source_bytes": 2988122,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 52264,
+      "quality": 84
+    },
+    {
+      "file": "scene-06.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-06-coastal-window-room.png",
+      "source_bytes": 2942155,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 322264,
+      "quality": 88
+    },
+    {
+      "file": "thumb-06.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-06-coastal-window-room.png",
+      "source_bytes": 2942155,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 45554,
+      "quality": 84
+    },
+    {
+      "file": "scene-07.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-07-writing-desk.png",
+      "source_bytes": 2914837,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 332682,
+      "quality": 88
+    },
+    {
+      "file": "thumb-07.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-07-writing-desk.png",
+      "source_bytes": 2914837,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 45426,
+      "quality": 84
+    },
+    {
+      "file": "scene-08.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-08-bicycle-by-sea.png",
+      "source_bytes": 3121071,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 438724,
+      "quality": 88
+    },
+    {
+      "file": "thumb-08.webp",
+      "source": "F:/codex project/此生/references/design-pack/此生_完整设计素材包/图片/scene-08-bicycle-by-sea.png",
+      "source_bytes": 3121071,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 62080,
+      "quality": 84
+    },
+    {
+      "file": "card-example.webp",
+      "source": "F:/codex project/此生/art/concepts/人生总结卡片-v2.png",
+      "source_bytes": 2229015,
+      "source_dimensions": [
+        1086,
+        1448
+      ],
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "bytes": 270426,
+      "quality": 90
+    },
+    {
+      "file": "scene-09.webp",
+      "source": "../art/life-scenes/scene-09-childhood-play.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#9",
+      "source_bytes": 3714545,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 509662,
+      "quality": 86
+    },
+    {
+      "file": "thumb-09.webp",
+      "source": "../art/life-scenes/scene-09-childhood-play.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#9",
+      "source_bytes": 3714545,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 65278,
+      "quality": 80
+    },
+    {
+      "file": "scene-10.webp",
+      "source": "../art/life-scenes/scene-10-school-classroom.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#10",
+      "source_bytes": 2779481,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 266540,
+      "quality": 86
+    },
+    {
+      "file": "thumb-10.webp",
+      "source": "../art/life-scenes/scene-10-school-classroom.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#10",
+      "source_bytes": 2779481,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 36940,
+      "quality": 80
+    },
+    {
+      "file": "scene-11.webp",
+      "source": "../art/life-scenes/scene-11-craft-training.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#11",
+      "source_bytes": 3070710,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 354436,
+      "quality": 86
+    },
+    {
+      "file": "thumb-11.webp",
+      "source": "../art/life-scenes/scene-11-craft-training.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#11",
+      "source_bytes": 3070710,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 50266,
+      "quality": 80
+    },
+    {
+      "file": "scene-12.webp",
+      "source": "../art/life-scenes/scene-12-working-day.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#12",
+      "source_bytes": 2982260,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 306346,
+      "quality": 86
+    },
+    {
+      "file": "thumb-12.webp",
+      "source": "../art/life-scenes/scene-12-working-day.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#12",
+      "source_bytes": 2982260,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 43650,
+      "quality": 80
+    },
+    {
+      "file": "scene-13.webp",
+      "source": "../art/life-scenes/scene-13-small-business.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#13",
+      "source_bytes": 3767376,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 518952,
+      "quality": 86
+    },
+    {
+      "file": "thumb-13.webp",
+      "source": "../art/life-scenes/scene-13-small-business.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#13",
+      "source_bytes": 3767376,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 63200,
+      "quality": 80
+    },
+    {
+      "file": "scene-14.webp",
+      "source": "../art/life-scenes/scene-14-health-clinic.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#14",
+      "source_bytes": 2889574,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 282470,
+      "quality": 86
+    },
+    {
+      "file": "thumb-14.webp",
+      "source": "../art/life-scenes/scene-14-health-clinic.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#14",
+      "source_bytes": 2889574,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 37110,
+      "quality": 80
+    },
+    {
+      "file": "scene-15.webp",
+      "source": "../art/life-scenes/scene-15-family-evening.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#15",
+      "source_bytes": 3156507,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 362630,
+      "quality": 86
+    },
+    {
+      "file": "thumb-15.webp",
+      "source": "../art/life-scenes/scene-15-family-evening.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#15",
+      "source_bytes": 3156507,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 47188,
+      "quality": 80
+    },
+    {
+      "file": "scene-16.webp",
+      "source": "../art/life-scenes/scene-16-retirement-garden.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#16",
+      "source_bytes": 3784010,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 516568,
+      "quality": 86
+    },
+    {
+      "file": "thumb-16.webp",
+      "source": "../art/life-scenes/scene-16-retirement-garden.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#16",
+      "source_bytes": 3784010,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 66154,
+      "quality": 80
+    },
+    {
+      "file": "scene-17.webp",
+      "source": "../art/life-scenes/scene-17-birth-rural.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#17",
+      "source_bytes": 3256703,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 373496,
+      "quality": 86
+    },
+    {
+      "file": "thumb-17.webp",
+      "source": "../art/life-scenes/scene-17-birth-rural.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#17",
+      "source_bytes": 3256703,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 50346,
+      "quality": 80
+    },
+    {
+      "file": "scene-18.webp",
+      "source": "../art/life-scenes/scene-18-birth-urban.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#18",
+      "source_bytes": 2851865,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 285178,
+      "quality": 86
+    },
+    {
+      "file": "thumb-18.webp",
+      "source": "../art/life-scenes/scene-18-birth-urban.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#18",
+      "source_bytes": 2851865,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 42230,
+      "quality": 80
+    },
+    {
+      "file": "scene-19.webp",
+      "source": "../art/life-scenes/scene-19-night-study.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#19",
+      "source_bytes": 2853473,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 270054,
+      "quality": 86
+    },
+    {
+      "file": "thumb-19.webp",
+      "source": "../art/life-scenes/scene-19-night-study.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#19",
+      "source_bytes": 2853473,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 34082,
+      "quality": 80
+    },
+    {
+      "file": "scene-20.webp",
+      "source": "../art/life-scenes/scene-20-moving-station.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#20",
+      "source_bytes": 3281298,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 386376,
+      "quality": 86
+    },
+    {
+      "file": "thumb-20.webp",
+      "source": "../art/life-scenes/scene-20-moving-station.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#20",
+      "source_bytes": 3281298,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 49754,
+      "quality": 80
+    },
+    {
+      "file": "scene-21.webp",
+      "source": "../art/life-scenes/scene-21-china-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#21",
+      "source_bytes": 3763026,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 517438,
+      "quality": 86
+    },
+    {
+      "file": "thumb-21.webp",
+      "source": "../art/life-scenes/scene-21-china-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#21",
+      "source_bytes": 3763026,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 63688,
+      "quality": 80
+    },
+    {
+      "file": "scene-22.webp",
+      "source": "../art/life-scenes/scene-22-china-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#22",
+      "source_bytes": 3953957,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 556806,
+      "quality": 86
+    },
+    {
+      "file": "thumb-22.webp",
+      "source": "../art/life-scenes/scene-22-china-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#22",
+      "source_bytes": 3953957,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 67446,
+      "quality": 80
+    },
+    {
+      "file": "scene-23.webp",
+      "source": "../art/life-scenes/scene-23-japan-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#23",
+      "source_bytes": 3669698,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 484688,
+      "quality": 86
+    },
+    {
+      "file": "thumb-23.webp",
+      "source": "../art/life-scenes/scene-23-japan-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#23",
+      "source_bytes": 3669698,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 57700,
+      "quality": 80
+    },
+    {
+      "file": "scene-24.webp",
+      "source": "../art/life-scenes/scene-24-japan-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#24",
+      "source_bytes": 3710575,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 495568,
+      "quality": 86
+    },
+    {
+      "file": "thumb-24.webp",
+      "source": "../art/life-scenes/scene-24-japan-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#24",
+      "source_bytes": 3710575,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 58344,
+      "quality": 80
+    },
+    {
+      "file": "scene-25.webp",
+      "source": "../art/life-scenes/scene-25-korea-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#25",
+      "source_bytes": 3860548,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 525724,
+      "quality": 86
+    },
+    {
+      "file": "thumb-25.webp",
+      "source": "../art/life-scenes/scene-25-korea-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#25",
+      "source_bytes": 3860548,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 63904,
+      "quality": 80
+    },
+    {
+      "file": "scene-26.webp",
+      "source": "../art/life-scenes/scene-26-korea-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#26",
+      "source_bytes": 3760606,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 509010,
+      "quality": 86
+    },
+    {
+      "file": "thumb-26.webp",
+      "source": "../art/life-scenes/scene-26-korea-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#26",
+      "source_bytes": 3760606,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 61354,
+      "quality": 80
+    },
+    {
+      "file": "scene-27.webp",
+      "source": "../art/life-scenes/scene-27-southeast-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#27",
+      "source_bytes": 3765448,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 518408,
+      "quality": 86
+    },
+    {
+      "file": "thumb-27.webp",
+      "source": "../art/life-scenes/scene-27-southeast-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#27",
+      "source_bytes": 3765448,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 64518,
+      "quality": 80
+    },
+    {
+      "file": "scene-28.webp",
+      "source": "../art/life-scenes/scene-28-southeast-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#28",
+      "source_bytes": 3808272,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 520950,
+      "quality": 86
+    },
+    {
+      "file": "thumb-28.webp",
+      "source": "../art/life-scenes/scene-28-southeast-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#28",
+      "source_bytes": 3808272,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 61372,
+      "quality": 80
+    },
+    {
+      "file": "scene-29.webp",
+      "source": "../art/life-scenes/scene-29-southasia-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#29",
+      "source_bytes": 3749365,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 512036,
+      "quality": 86
+    },
+    {
+      "file": "thumb-29.webp",
+      "source": "../art/life-scenes/scene-29-southasia-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#29",
+      "source_bytes": 3749365,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 62512,
+      "quality": 80
+    },
+    {
+      "file": "scene-30.webp",
+      "source": "../art/life-scenes/scene-30-southasia-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#30",
+      "source_bytes": 3743399,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 516798,
+      "quality": 86
+    },
+    {
+      "file": "thumb-30.webp",
+      "source": "../art/life-scenes/scene-30-southasia-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#30",
+      "source_bytes": 3743399,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 61240,
+      "quality": 80
+    },
+    {
+      "file": "scene-31.webp",
+      "source": "../art/life-scenes/scene-31-middleeast-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#31",
+      "source_bytes": 3898086,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 555866,
+      "quality": 86
+    },
+    {
+      "file": "thumb-31.webp",
+      "source": "../art/life-scenes/scene-31-middleeast-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#31",
+      "source_bytes": 3898086,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 63534,
+      "quality": 80
+    },
+    {
+      "file": "scene-32.webp",
+      "source": "../art/life-scenes/scene-32-middleeast-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#32",
+      "source_bytes": 3580503,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 470912,
+      "quality": 86
+    },
+    {
+      "file": "thumb-32.webp",
+      "source": "../art/life-scenes/scene-32-middleeast-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#32",
+      "source_bytes": 3580503,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 55832,
+      "quality": 80
+    },
+    {
+      "file": "scene-33.webp",
+      "source": "../art/life-scenes/scene-33-africa-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#33",
+      "source_bytes": 3959864,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 560298,
+      "quality": 86
+    },
+    {
+      "file": "thumb-33.webp",
+      "source": "../art/life-scenes/scene-33-africa-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#33",
+      "source_bytes": 3959864,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 67352,
+      "quality": 80
+    },
+    {
+      "file": "scene-34.webp",
+      "source": "../art/life-scenes/scene-34-africa-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#34",
+      "source_bytes": 3621534,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 495544,
+      "quality": 86
+    },
+    {
+      "file": "thumb-34.webp",
+      "source": "../art/life-scenes/scene-34-africa-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#34",
+      "source_bytes": 3621534,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 61602,
+      "quality": 80
+    },
+    {
+      "file": "scene-35.webp",
+      "source": "../art/life-scenes/scene-35-europe-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#35",
+      "source_bytes": 3868755,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 542494,
+      "quality": 86
+    },
+    {
+      "file": "thumb-35.webp",
+      "source": "../art/life-scenes/scene-35-europe-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#35",
+      "source_bytes": 3868755,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 65334,
+      "quality": 80
+    },
+    {
+      "file": "scene-36.webp",
+      "source": "../art/life-scenes/scene-36-europe-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#36",
+      "source_bytes": 3785533,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 520660,
+      "quality": 86
+    },
+    {
+      "file": "thumb-36.webp",
+      "source": "../art/life-scenes/scene-36-europe-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#36",
+      "source_bytes": 3785533,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 63434,
+      "quality": 80
+    },
+    {
+      "file": "scene-37.webp",
+      "source": "../art/life-scenes/scene-37-centralasia-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#37",
+      "source_bytes": 3704968,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 491574,
+      "quality": 86
+    },
+    {
+      "file": "thumb-37.webp",
+      "source": "../art/life-scenes/scene-37-centralasia-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#37",
+      "source_bytes": 3704968,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 60080,
+      "quality": 80
+    },
+    {
+      "file": "scene-38.webp",
+      "source": "../art/life-scenes/scene-38-centralasia-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#38",
+      "source_bytes": 3741091,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 509166,
+      "quality": 86
+    },
+    {
+      "file": "thumb-38.webp",
+      "source": "../art/life-scenes/scene-38-centralasia-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#38",
+      "source_bytes": 3741091,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 63250,
+      "quality": 80
+    },
+    {
+      "file": "scene-39.webp",
+      "source": "../art/life-scenes/scene-39-latin-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#39",
+      "source_bytes": 3783402,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 515512,
+      "quality": 86
+    },
+    {
+      "file": "thumb-39.webp",
+      "source": "../art/life-scenes/scene-39-latin-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#39",
+      "source_bytes": 3783402,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 61370,
+      "quality": 80
+    },
+    {
+      "file": "scene-40.webp",
+      "source": "../art/life-scenes/scene-40-latin-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#40",
+      "source_bytes": 3810442,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 543546,
+      "quality": 86
+    },
+    {
+      "file": "thumb-40.webp",
+      "source": "../art/life-scenes/scene-40-latin-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#40",
+      "source_bytes": 3810442,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 66600,
+      "quality": 80
+    },
+    {
+      "file": "scene-41.webp",
+      "source": "../art/life-scenes/scene-41-northamerica-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#41",
+      "source_bytes": 3973208,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 565816,
+      "quality": 86
+    },
+    {
+      "file": "thumb-41.webp",
+      "source": "../art/life-scenes/scene-41-northamerica-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#41",
+      "source_bytes": 3973208,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 68892,
+      "quality": 80
+    },
+    {
+      "file": "scene-42.webp",
+      "source": "../art/life-scenes/scene-42-northamerica-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#42",
+      "source_bytes": 3978196,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 559890,
+      "quality": 86
+    },
+    {
+      "file": "thumb-42.webp",
+      "source": "../art/life-scenes/scene-42-northamerica-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#42",
+      "source_bytes": 3978196,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 69832,
+      "quality": 80
+    },
+    {
+      "file": "scene-43.webp",
+      "source": "../art/life-scenes/scene-43-oceania-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#43",
+      "source_bytes": 3907175,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 546012,
+      "quality": 86
+    },
+    {
+      "file": "thumb-43.webp",
+      "source": "../art/life-scenes/scene-43-oceania-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#43",
+      "source_bytes": 3907175,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 66978,
+      "quality": 80
+    },
+    {
+      "file": "scene-44.webp",
+      "source": "../art/life-scenes/scene-44-oceania-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#44",
+      "source_bytes": 4020386,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 563838,
+      "quality": 86
+    },
+    {
+      "file": "thumb-44.webp",
+      "source": "../art/life-scenes/scene-44-oceania-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#44",
+      "source_bytes": 4020386,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 67178,
+      "quality": 80
+    },
+    {
+      "file": "scene-45.webp",
+      "source": "../art/life-scenes/scene-45-pacific-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#45",
+      "source_bytes": 3892080,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 538324,
+      "quality": 86
+    },
+    {
+      "file": "thumb-45.webp",
+      "source": "../art/life-scenes/scene-45-pacific-early.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#45",
+      "source_bytes": 3892080,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 66838,
+      "quality": 80
+    },
+    {
+      "file": "scene-46.webp",
+      "source": "../art/life-scenes/scene-46-pacific-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#46",
+      "source_bytes": 3843154,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        1440,
+        960
+      ],
+      "bytes": 531316,
+      "quality": 86
+    },
+    {
+      "file": "thumb-46.webp",
+      "source": "../art/life-scenes/scene-46-pacific-modern.png",
+      "generation_method": "image_gen built-in",
+      "prompt_ref": "docs/scene-art-prompts.json#46",
+      "source_bytes": 3843154,
+      "source_dimensions": [
+        1536,
+        1024
+      ],
+      "dimensions": [
+        500,
+        333
+      ],
+      "bytes": 66786,
+      "quality": 80
+    }
+  ],
+  "total_asset_bytes": 23502760,
+  "total_original_bytes": 161771460
+}

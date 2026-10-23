@@ -1,0 +1,14 @@
+{
+  "version": "local-example-names-v1",
+  "catalog": "Authored small fictional name catalogs in lib/names.ts",
+  "purpose": "Birthplace-appropriate fictional examples, not identity or ethnicity inference",
+  "formattingReference": "https://www.unicode.org/reports/tr35/tr35-personNames.html",
+  "referenceScope": "CLDR describes name parts and ordering, not the accuracy or frequency of this authored catalog",
+  "notes": [
+    "All 217 economies resolve to an explicit birthplace mapping or a labelled regional fallback.",
+    "Some countries use multiple example traditions. Selection within the catalog is a game rule, not a population-frequency estimate.",
+    "Chinese, Japanese and Korean profiles use native writing; other profiles use native writing or readable transliteration.",
+    "The catalogs do not cover every language, ethnicity, religion, generation or naming tradition in a country.",
+    "Old save names are retained until the player explicitly saves a replacement. Name previews do not consume fate RNG."
+  ]
+}
