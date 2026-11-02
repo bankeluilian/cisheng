@@ -2,6 +2,7 @@ import {MapPin,UserRound,Heart,Wallet,RefreshCw,ArrowRight,PencilLine} from 'luc
 import type {Life,Country} from '../lib/engine';
 import {samplingDistribution,probabilityLabel} from '../lib/sampling';
 import {nameOriginNote} from '../lib/names';
+import TextileIcon from './textile-icon';
 import FamilyOrigins from './family-origins';
 import BirthProbability from './birth-probability';
 import {birthSceneFor,sceneImage,sceneInfo,sceneCaption} from '../lib/scenes';
@@ -24,7 +25,7 @@ export default function BirthProfile({life,countries,busy,ready,comparison,onCom
    <figure className="birth-art"><img src={sceneImage(birthScene)} alt={sceneInfo(birthScene).alt}/><figcaption>{sceneCaption(life,birthScene,life.birthYear)}</figcaption></figure>
    <div className="birth-copy birth-intro-copy"><span className="eyebrow">一次随机的出生 / 一段新的人生</span><h1 className="birth-greeting"><span className="birth-hello">你好，</span><span className="birth-person-name">{life.name}</span></h1><p className="lead">在世界的某个角落，<br/>你的第一声啼哭，开启了这一生。</p><button className="text-link rename-birth" onClick={onRename}><PencilLine size={17}/><span>起一个自己的名字</span></button><p className="birth-name-note">{nameOriginNote(life.country,life.nameOrigin)}</p></div>
   </div>
-  <section className="birth-facts-panel" aria-label="出生资料卡"><div className="birth-facts-heading"><span>此生档案</span><span>命运的第一笔</span></div><dl className="birth-fact-grid">{facts.map(({label,value,note,Icon})=><div className="birth-fact-card" key={label}><dt><Icon size={19}/><span>{label}</span></dt><dd>{value}</dd><dd className="birth-fact-note">{note}</dd></div>)}</dl><p className="birth-facts-footer">起点由命运写下，故事由你继续。</p></section>
+  <section className="birth-facts-panel" aria-label="出生资料卡"><div className="birth-facts-heading"><span>此生档案</span><span>命运的第一笔</span></div><dl className="birth-fact-grid">{facts.map(({label,value,note,Icon},index)=><div className="birth-fact-card" key={label}><dt><TextileIcon name={(['globe','calendar','heart','wallet'] as const)[index]}/><span>{label}</span></dt><dd>{value}</dd><dd className="birth-fact-note">{note}</dd></div>)}</dl><p className="birth-facts-footer">起点由命运写下，故事由你继续。</p></section>
   <div className="birth-support-note"><p>家中支持会影响求学时能够得到的帮助、可承受的费用与后续机会。家庭条件为游戏抽样，不代表出生地的每个人。</p></div>
   <FamilyOrigins life={life}/>
   </div>

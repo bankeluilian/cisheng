@@ -1,12 +1,12 @@
 'use client';
 import {assetUrl} from "../lib/web-hosting";
-import {useState} from 'react';
+import {useId,useState} from 'react';
 import {Globe2,ArrowUpRight,Search,MapPin} from 'lucide-react';
 import type {Country} from '../lib/engine';
 import {samplingDistribution,probabilityLabel} from '../lib/sampling';
-const colors=['#7f9178','#a4b296','#8faab3','#bca786','#b2a1ac','#9ea5bf','#d7d9cc'];
+const colors=['#b96b42','#4a8792','#8e944f','#b5a485','#9c8c9c','#8d9ba5','#bdb8ab'];
 export default function BirthProbability({countries,method,onMethodChange,resultCountry}:{countries:Country[];method:string;onMethodChange?:(m:string)=>void;resultCountry?:Country}){
- const [preview,setPreview]=useState(''),[search,setSearch]=useState('');
+ const [preview,setPreview]=useState(''),[search,setSearch]=useState('');const stitchId=useId();
  const data=samplingDistribution(countries,method),ranked=[...data.rows].sort((a,b)=>b.probability-a.probability);
  const chosen=ranked.find(r=>r.country.id===(resultCountry?.id||preview));
  const top=ranked.slice(0,6);if(resultCountry&&chosen&&!top.some(r=>r.country.id===resultCountry.id)){top.pop();top.push(chosen);}
@@ -18,7 +18,7 @@ export default function BirthProbability({countries,method,onMethodChange,result
   <p className="prob-lead">{resultCountry?'这次出生由随机抽签决定。你可以看看，这个起点在全部可能中占多少。':'不同地方的出生人数和人口并不相同。每次独立抽取，概率大的地方更常遇到，概率小的地方也有机会。'}</p>
   {onMethodChange?<div className="prob-methods" role="group" aria-label="图表与出生抽样方式"><button aria-pressed={method==='births'} onClick={()=>onMethodChange('births')}>按出生人数</button><button aria-pressed={method==='population'} onClick={()=>onMethodChange('population')}>按现有人口</button></div>:<span className="prob-basis">这次的抽样方式：{method==='population'?'按现有人口':'按年度出生人数'}</span>}
   {!countries.length?<p className="subtle">正在准备出生地分布……</p>:<>
-   <div className="prob-visual"><div className="prob-donut"><svg viewBox="0 0 200 200" role="img" aria-label={`${method==='population'?'人口':'出生人数'}权重概率分布，详细百分比见旁边列表`}><circle cx="100" cy="100" r="73" fill="none" stroke="var(--soft)" strokeWidth="22"/>{sections.map(s=>{const start=offset;offset+=s.value;return <circle key={s.id} cx="100" cy="100" r="73" fill="none" stroke={s.color} strokeWidth="22" strokeDasharray={`${s.value*circumference} ${circumference}`} strokeDashoffset={-start*circumference} transform="rotate(-90 100 100)"><title>{s.name}：{probabilityLabel(s.value)}</title></circle>;})}</svg><div className="prob-center"><small>{resultCountry?'这次出生于':'可能的起点'}</small><strong className={resultCountry?'country-name':''}>{resultCountry?.name||countries.length}</strong><span>{resultCountry&&chosen?probabilityLabel(chosen.probability):'个经济体'}</span></div></div>
+   <div className="prob-visual"><div className="prob-donut"><svg viewBox="0 0 200 200" role="img" aria-label={`${method==='population'?'人口':'出生人数'}权重概率分布，详细百分比见旁边列表`}><defs><pattern id={stitchId} width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(38)"><path d="M0 0V3" stroke="#fff8e8" strokeWidth=".65"/><path d="M1.8 0V3" stroke="#382a20" strokeWidth=".25"/></pattern></defs><circle cx="100" cy="100" r="73" fill="none" stroke="var(--soft)" strokeWidth="22"/>{sections.map(s=>{const start=offset;offset+=s.value;return <circle key={s.id} cx="100" cy="100" r="73" fill="none" stroke={s.color} strokeWidth="22" strokeDasharray={`${s.value*circumference} ${circumference}`} strokeDashoffset={-start*circumference} transform="rotate(-90 100 100)"><title>{s.name}：{probabilityLabel(s.value)}</title></circle>;})}<circle cx="100" cy="100" r="73" fill="none" stroke={`url(#${stitchId})`} strokeWidth="22" opacity=".55"/></svg><div className="prob-center"><small>{resultCountry?'这次出生于':'可能的起点'}</small><strong className={resultCountry?'country-name':''}>{resultCountry?.name||countries.length}</strong><span>{resultCountry&&chosen?probabilityLabel(chosen.probability):'个经济体'}</span></div></div>
     <div className="prob-legend">{sections.map(s=>s.id!=='others'&&!resultCountry?<button key={s.id} className={preview===s.id?'selected':''} onClick={()=>setPreview(s.id)} aria-label={`查看${s.name}的出生概率`}><i style={{background:s.color}}/><span>{s.name}</span><strong>{probabilityLabel(s.value)}</strong></button>:<div key={s.id} className={resultCountry?.id===s.id?'selected':''}><i style={{background:s.color}}/><span>{s.name}</span><strong>{probabilityLabel(s.value)}</strong></div>)}</div>
    </div>
    {(chosen||resultCountry)&&<div className="prob-country-detail"><MapPin size={18}/><div><span>{chosen?.country.name||resultCountry?.name}</span>{chosen?<p>抽中概率 <strong>{probabilityLabel(chosen.probability)}</strong> · 按当前权重排序第 {ranked.indexOf(chosen)+1} / {countries.length} 位{chosen.probability>0&&<> · 约每 {Math.max(1,Math.round(1/chosen.probability)).toLocaleString('zh-CN')} 次独立抽样中出现 1 次</>}</p>:<p>这份存档的地区不在当前数据中，无法核对概率。</p>}</div></div>}

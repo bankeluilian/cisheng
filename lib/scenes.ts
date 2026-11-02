@@ -29,7 +29,8 @@ export const SCENES:ReadonlyArray<Scene>=[
 ];
 export const SCENE_COUNT=SCENES.length;
 export function sceneInfo(id:number){return SCENES.find(scene=>scene.id===id)||SCENES[6];}
-export function sceneImage(id:number,thumb=false){return assetUrl(`/images/${thumb?'thumb':'scene'}-${String(sceneInfo(id).id).padStart(2,'0')}.webp`);}
+const embroideredScenes:Record<number,string>={2:'birth',3:'station',4:'family',6:'garden',10:'school',11:'work',15:'family',16:'garden',17:'birth',18:'birth',20:'station'};
+export function sceneImage(id:number,thumb=false){const scene=sceneInfo(id);const textile=embroideredScenes[scene.id];return assetUrl(textile?`/images/textile/${textile}.webp`:`/images/${thumb?'thumb':'scene'}-${String(scene.id).padStart(2,'0')}.webp`);}
 // Visual choices never advance life.rng: browsing or exporting cannot change fate.
 function variant(l:Life,ids:readonly number[],salt=0){return ids[((l.seed>>>0)+Math.max(0,l.age)+salt)%ids.length];}
 export function birthSceneFor(l:Life){return regionalSceneFor(l.country,l.birthYear)??variant({...l,age:0},[2,17,18]);}
