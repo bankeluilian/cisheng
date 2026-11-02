@@ -35,6 +35,7 @@ export function sceneImage(id:number,thumb=false){const scene=sceneInfo(id);cons
 function variant(l:Life,ids:readonly number[],salt=0){return ids[((l.seed>>>0)+Math.max(0,l.age)+salt)%ids.length];}
 export function birthSceneFor(l:Life){return regionalSceneFor(l.country,l.birthYear)??variant({...l,age:0},[2,17,18]);}
 const encounterScenes:Record<string,number>={
+ 'thread-letter':10,'thread-letter-return':4,'thread-chair':11,'thread-chair-return':6,'thread-mentor':12,'thread-mentor-return':11,
  'small-budget':9,'full-shelf':9,'child-fever':14,'first-neighborhood':9,'spilled-cup':9,
  'school-materials':10,'club-signup':10,'school-sport':9,'school-friend':10,'scholarship-preparation':19,
  'school-income-pressure':13,'exam-week':10,'thin-school-resources':10,'good-school-project':10,'higher-education-or-work':10,

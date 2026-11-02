@@ -1,3 +1,4 @@
+import {narrativeEncounters,narrativeFollowups} from './narrative-encounters.ts';
 import type {Life, Stats} from './engine';
 import {contextEncounters,contextFollowups} from './context-encounters.ts';
 import type {Encounter, StoryChoice, StoryOption} from './story-types';
@@ -484,5 +485,5 @@ const baseFollowups:Record<string,Encounter> = {
   },
 };
 
-export const encounters:Encounter[]=[...baseEncounters,...contextEncounters];
-export const followups:Record<string,Encounter>={...baseFollowups,...contextFollowups};
+export const encounters:Encounter[]=[...baseEncounters,...contextEncounters,...narrativeEncounters];
+export const followups:Record<string,Encounter>={...baseFollowups,...contextFollowups,...narrativeFollowups};

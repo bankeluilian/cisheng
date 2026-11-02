@@ -1,3 +1,4 @@
+import {birthOpening} from '../lib/narrative';
 import {MapPin,UserRound,Heart,Wallet,RefreshCw,ArrowRight,PencilLine} from 'lucide-react';
 import type {Life,Country} from '../lib/engine';
 import {samplingDistribution,probabilityLabel} from '../lib/sampling';
@@ -11,11 +12,11 @@ type Props={life:Life;countries:Country[];busy:boolean;ready:boolean;comparison:
 export default function BirthProfile({life,countries,busy,ready,comparison,onComparison,onReroll,onRename,onBegin}:Props){
  const odds=samplingDistribution(countries,life.sampling).rows.find(c=>c.country.id===life.country.id);
  const tier=life.story?.family.tier==='tight'?'紧张':life.story?.family.tier==='comfortable'?'宽裕':'稳定';
- const birthScene=birthSceneFor(life);
+ const birthScene=birthSceneFor(life),opening=birthOpening(life);
  const facts=[
   {label:'出生地',value:life.country.name,note:odds?`这次抽中的概率 ${probabilityLabel(odds.probability)}`:'',Icon:MapPin},
   {label:'人物身份',value:`${life.sex} · ${life.birthYear}`,note:'故事从这一年开始',Icon:UserRound},
-  {label:'家人的心愿',value:'愿你平安，愿你有自己的路。',note:'有人认真期待你的到来',Icon:Heart},
+  {label:'家人的心愿',value:opening.promise,note:'有人认真期待你的到来',Icon:Heart},
   {label:'出生家庭',value:tier,note:life.story?`家中支持 ${life.story.family.support}/100`:'家庭资料已记录',Icon:Wallet},
  ];
  return <section className="birth-layout birth-revealed" aria-label="已经揭晓的出生档案">
@@ -25,6 +26,7 @@ export default function BirthProfile({life,countries,busy,ready,comparison,onCom
    <figure className="birth-art"><img src={sceneImage(birthScene)} alt={sceneInfo(birthScene).alt}/><figcaption>{sceneCaption(life,birthScene,life.birthYear)}</figcaption></figure>
    <div className="birth-copy birth-intro-copy"><span className="eyebrow">一次随机的出生 / 一段新的人生</span><h1 className="birth-greeting"><span className="birth-hello">你好，</span><span className="birth-person-name">{life.name}</span></h1><p className="lead">在世界的某个角落，<br/>你的第一声啼哭，开启了这一生。</p><button className="text-link rename-birth" onClick={onRename}><PencilLine size={17}/><span>起一个自己的名字</span></button><p className="birth-name-note">{nameOriginNote(life.country,life.nameOrigin)}</p></div>
   </div>
+  <section className="birth-opening" aria-label="这一生的开场"><TextileIcon name="book"/><div><span className="eyebrow">序章 · 第一声啼哭之后</span><h2>{opening.title}</h2><p>{opening.text}</p></div></section>
   <section className="birth-facts-panel" aria-label="出生资料卡"><div className="birth-facts-heading"><span>此生档案</span><span>命运的第一笔</span></div><dl className="birth-fact-grid">{facts.map(({label,value,note,Icon},index)=><div className="birth-fact-card" key={label}><dt><TextileIcon name={(['globe','calendar','heart','wallet'] as const)[index]}/><span>{label}</span></dt><dd>{value}</dd><dd className="birth-fact-note">{note}</dd></div>)}</dl><p className="birth-facts-footer">起点由命运写下，故事由你继续。</p></section>
   <div className="birth-support-note"><p>家中支持会影响求学时能够得到的帮助、可承受的费用与后续机会。家庭条件为游戏抽样，不代表出生地的每个人。</p></div>
   <FamilyOrigins life={life}/>

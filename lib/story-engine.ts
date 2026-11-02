@@ -1,3 +1,4 @@
+import {narrativeOutcome} from './narrative-encounters.ts';
 import type {Life,Stats,Option,Decision,Entry} from './engine';
 import type {StoryState,StoryChoice,StoryResult,Encounter} from './story-types';
 import {encounters,followups} from './encounters.ts';
@@ -108,6 +109,7 @@ export function applyStoryChoice(l:Life,o:Option,event:Entry,before?:Life){
  const keepsakes:Record<string,string>={'school-friendship':'一张写着同学名字的纸条','scholarship-prepared':'一份修改了很多次的申请稿','training-enrolled':'一张课程报名单','business-open':'第一本进货账本','moved-for-work':'一张出发的车票','training-placed':'一封新岗位的录用通知'};
  for(const [flag,name] of Object.entries(keepsakes))if(s.flags.includes(flag)&&!before?.story?.flags.includes(flag)&&!l.keepsakes.some(k=>k.name===name))l.keepsakes.push({name,eventId:event.id});
  if(o.partner&&!l.keepsakes.some(k=>k.name==='一页关于未来的约定'))l.keepsakes.push({name:'一页关于未来的约定',eventId:event.id});
+ result=narrativeOutcome(o.id)||result;
  const text=result+(changes.length?`（${changes.join('，')}）`:'');
  event.text=`你选择了：${o.label}。${text}`;s.lastOutcome={title:event.title,text,age:l.age};
 }
