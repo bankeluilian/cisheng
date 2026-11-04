@@ -1,3 +1,4 @@
+import {keepsakeKind} from './story-artifacts';
 import {sceneFor,summary} from './engine';
 import {sceneImage} from './scenes';
 import {textileAsset} from './textile';
@@ -18,7 +19,7 @@ export async function exportCard(l:Life,farewell:string){
  c.strokeStyle='#bcae95';c.lineWidth=1.5;c.setLineDash([5,5]);c.strokeRect(76,321,928,438);c.setLineDash([]);
  const a=summary(l);let y=wrap(a.line,70,823,940,28)+20;c.strokeStyle='#cabb9f';c.setLineDash([4,6]);c.beginPath();c.moveTo(70,y);c.lineTo(1010,y);c.stroke();c.setLineDash([]);y+=58;text('这一生，记得这些时刻',70,y,26,'#a66841');y+=55;
  for(const e of a.moments){text(`${e.age} 岁`,70,y,23,'#68766c');c.fillStyle='#8e944f';c.beginPath();c.arc(168,y-8,5,0,Math.PI*2);c.fill();const next=wrap(e.title,200,y,800,26,'#123f42',40);if(e!==a.moments.at(-1)){c.strokeStyle='#cabb9f';c.setLineDash([3,4]);c.beginPath();c.moveTo(168,y+5);c.lineTo(168,next+9);c.stroke();c.setLineDash([]);}y=next+22;}
- if(l.keepsakes.length){y+=10;c.strokeStyle='#d4c6ae';c.setLineDash([5,5]);c.strokeRect(70,y,940,132);c.setLineDash([]);c.drawImage(ticket,85,y+28,60,60);text('留下的小物',170,y+40,22,'#a66841');y=wrap(l.keepsakes.at(-1)!.name,170,y+83,805,26)+38;}
+ if(l.keepsakes.length){y+=10;c.strokeStyle='#d4c6ae';c.setLineDash([5,5]);c.strokeRect(70,y,940,132);c.setLineDash([]);if(keepsakeKind(l.keepsakes.at(-1)!.name)==='letter'){c.fillStyle='#eadcc0';c.fillRect(88,y+41,55,37);c.strokeStyle='#9c643d';c.lineWidth=2;c.strokeRect(88,y+41,55,37);c.beginPath();c.moveTo(88,y+41);c.lineTo(115.5,y+61);c.lineTo(143,y+41);c.stroke();}else c.drawImage(keepsakeKind(l.keepsakes.at(-1)!.name)==='ticket'?ticket:flower,85,y+28,60,60);text('留下的小物',170,y+40,22,'#a66841');y=wrap(l.keepsakes.at(-1)!.name,170,y+83,805,26)+38;}
  if(farewell.trim())y=wrap(`“${farewell.trim().slice(0,80)}”`,70,y+34,940,28)+20;
  const height=Math.min(2600,Math.max(1620,y+170));text('有些日子很平常，但它们只属于你。',70,height-105,24,'#68766c');text('此生 · 虚构人生模拟',70,height-62,18,'#68766c');
  c.strokeStyle='#b4a07e';c.lineWidth=1.5;c.setLineDash([5,5]);c.beginPath();rounded(35,35,1010,height-70,24);c.stroke();c.setLineDash([]);
