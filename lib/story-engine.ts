@@ -41,9 +41,10 @@ export function nextStoryEncounter(l:Life):Decision|null{
   }
  }
  const candidates=encounters.filter(e=>eligible(e,l,s));if(!candidates.length)return null;
- const chance=l.age<4?.68:l.age<18?.88:l.age<65?.90:.78;
- const last=s.seen['_last-encounter']??Math.max(0,...l.events.filter(e=>e.kind==='choice').map(e=>e.age));
- if(l.age-last<3&&roll(l)>chance)return null;
+ const last=s.seen['_last-encounter']??l.events.findLast(e=>e.kind==='choice')?.age??-2;
+ const gap=l.age-last;
+ // Give ordinary choices room to breathe. Due consequences above can arrive sooner.
+ if(gap<2||(gap===2&&roll(l)>.6))return null;
  const weightOf=(e:Encounter)=>e.weight*(s.job==='unemployed'&&e.options(l,s).some(o=>o.story?.job==='employed'||o.story?.risk?.success.job==='employed')?2.5:1)*(l.focus==='study'&&/study|training|scholarship/.test(e.id)?1.5:1);
  let weight=roll(l)*candidates.reduce((n,e)=>n+weightOf(e),0);
  const selected=candidates.find(e=>(weight-=weightOf(e))<=0)||candidates[candidates.length-1];return materialize(selected,l);
@@ -75,8 +76,8 @@ export function advanceStoryYear(source:Life):Life{
  const exp=(l.sex==='女'?l.country.lifeFemale:l.country.lifeMale)||72;
  const risk=l.age<5?.0008:l.age<40?.00025:bound(.0013*Math.exp((l.age-40)/Math.max(7,(exp-40)/4.7))*(1+(65-l.stats.health)/65),0,.65);
  if(roll(l)<risk||l.age>=110||l.stats.health<=0){l.ended=true;l.pending=null;l.cause=l.age>=65?'生命走到了终点':'一次突如其来的疾病';add(l,'此生，在这里落下句点','那些曾经努力解决的难题、作出的决定与牵挂的人，都成为了这段人生的一部分。','ending');return l;}
- if([5,15,30,50,70].includes(l.age)){s.seen[`reflection-${l.age}`]=l.age;l.pending={id:`reflection-${l.age}`,title:`给${l.age}岁的自己`,text:'看看现在的生活。如果把这个阶段留成一句话，你最想记住什么？可以在私人笔记中写下，也可以留白。',options:[{id:'reflect',label:'记下这一刻，继续',hint:'不会自动公开私人笔记',effects:{}}]};}
- else l.pending=nextStoryEncounter(l);
+ if([5,15,30,50,70].includes(l.age))add(l,`给${l.age}岁的自己`,'这一页留给你。想写点什么，可以打开私人笔记。','reflection');
+ l.pending=nextStoryEncounter(l);
  if(!l.pending)quietYear(l);
  for(const p of l.peers){p.age=l.age;p.role=l.age<6?'正在长大':l.age<18?'正在学习':l.age<25?'寻找方向':l.age<65?['工作与生活','照顾家人','在新城市生活','学习新的事物'][l.peers.indexOf(p)]:'慢慢生活';}
  return l;

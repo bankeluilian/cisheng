@@ -26,15 +26,22 @@ export const SCENES:ReadonlyArray<Scene>=[
  {id:19,label:'下班后的课本',alt:'夜晚台灯照亮的练习本、杯子与工作包'},
  {id:20,label:'去另一个地方',alt:'晨光里放着行李的小站与等候的列车'},
  ...REGIONAL_SCENES,
+ {id:47,label:'河岸上的风筝',alt:'孩子和家人在有风的河岸放红风筝'},
+ {id:48,label:'留下来的线轴',alt:'窗边摆着收起的红风筝和木线轴'},
+ {id:49,label:'雨中的站棚',alt:'两位朋友在雨天的车站用相机合影'},
+ {id:50,label:'旧合影',alt:'桌上的旧相机与一叠纸质相片'},
+ {id:51,label:'街角早餐铺',alt:'清晨的小店柜台递出一碗热早餐'},
+ {id:52,label:'小铺关门那天',alt:'街角小铺最后一晚亮着暖灯'},
 ];
 export const SCENE_COUNT=SCENES.length;
 export function sceneInfo(id:number){return SCENES.find(scene=>scene.id===id)||SCENES[6];}
-const embroideredScenes:Record<number,string>={2:'birth',3:'station',4:'family',6:'garden',10:'school',11:'work',15:'family',16:'garden',17:'birth',18:'birth',20:'station'};
+const embroideredScenes:Record<number,string>={47:'kite-river',48:'kite-window',49:'rain-stop',50:'old-photographs',51:'breakfast-counter',52:'shop-farewell',2:'birth',3:'station',4:'family',6:'garden',10:'school',11:'work',15:'family',16:'garden',17:'birth',18:'birth',20:'station'};
 export function sceneImage(id:number,thumb=false){const scene=sceneInfo(id);const textile=embroideredScenes[scene.id];return assetUrl(textile?`/images/textile/${textile}.webp`:`/images/${thumb?'thumb':'scene'}-${String(scene.id).padStart(2,'0')}.webp`);}
 // Visual choices never advance life.rng: browsing or exporting cannot change fate.
 function variant(l:Life,ids:readonly number[],salt=0){return ids[((l.seed>>>0)+Math.max(0,l.age)+salt)%ids.length];}
 export function birthSceneFor(l:Life){return regionalSceneFor(l.country,l.birthYear)??variant({...l,age:0},[2,17,18]);}
 const encounterScenes:Record<string,number>={
+ 'thread-kite':47,'thread-kite-return':48,'thread-photo':49,'thread-photo-return':50,'thread-shop':51,'thread-shop-return':52,
  'thread-letter':10,'thread-letter-return':4,'thread-chair':11,'thread-chair-return':6,'thread-mentor':12,'thread-mentor-return':11,
  'small-budget':9,'full-shelf':9,'child-fever':14,'first-neighborhood':9,'spilled-cup':9,
  'school-materials':10,'club-signup':10,'school-sport':9,'school-friend':10,'scholarship-preparation':19,

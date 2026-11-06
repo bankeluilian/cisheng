@@ -7,7 +7,7 @@ import {SCENES,sceneImage} from '../lib/scenes.ts';
 const countries=[{id:'JPN',name:'日本',population:1000,births:10,lifeFemale:84,lifeMale:80,gdpPpp:40000}];
 const make=()=>createLife(countries,{seed:1234,year:1980,mode:'past',sampling:'births',pace:30});
 test('every scene and archive thumbnail in the expanded catalogue has a bundled file',()=>{
- assert.equal(SCENES.length,46);
+ assert.equal(SCENES.length,52);
  for(const scene of SCENES)for(const thumbnail of [false,true])assert.ok(existsSync(new URL('../public'+sceneImage(scene.id,thumbnail),import.meta.url)),`Missing asset for scene ${scene.id}`);
 });
 test('life stages have distinct scenes outside China, with deterministic visual variation and no fate mutation',()=>{

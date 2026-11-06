@@ -14,8 +14,8 @@ test('opening and chapters use this life without changing fate or inventing a pa
  assert.deepEqual(storyThreads(l),[]);assert.deepEqual(l,before);
  const old=structuredClone(l);delete old.story;delete old.people[0].birthWork;assert.ok(birthOpening(old).text);assert.ok(storyRetrospective(old).line);assert.equal(old.story,undefined);
 });
-test('all three story arcs have distinct branches, persisted consequences and a due-year followup',()=>{
- assert.equal(narrativeEncounters.length,3);
+test('each story arc has distinct branches, persisted consequences and a due-year followup',()=>{
+ assert.equal(narrativeEncounters.length,6);
  for(const e of narrativeEncounters){
   let l=make();l.age=e.min;l.story.job='employed';l.cash=10000;
   assert.equal(e.when?.(l,l.story)??true,true);

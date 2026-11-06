@@ -533,3 +533,7 @@ input,textarea,select { border-radius:10px; }
 @media(max-width:520px){.story-envelope>summary{padding:22px;min-height:255px}.envelope-stamp{right:20px;top:20px;padding:9px}.envelope-postmark{display:none}.envelope-seal{left:22px}.envelope-address{max-width:100%;margin-top:75px}.envelope-address>strong{font-size:25px}.letter-paper{margin:12px 0 0;padding:22px 18px}.letter-paper p{font-size:17px}.story-ticket{grid-template-columns:minmax(0,1fr) 70px}.ticket-main{padding:18px 15px}.ticket-route{gap:6px;margin:20px 0}.ticket-route strong{font-size:18px}.ticket-stub>strong{font-size:22px}.ticket-stub>i{width:44px}.ticket-main>header>small{margin-left:0}}
 [data-large=true] .letter-paper p{font-size:21px}[data-large=true] .envelope-address>span,[data-large=true] .ticket-main>footer{font-size:16px}
 @media print{.story-envelope>summary{box-shadow:none}.story-envelope .letter-paper{display:block}.envelope-toggle{display:none}}
+
+.game-scene.story-illustration{height:auto;aspect-ratio:9/4}
+.event-footer .btn{flex-shrink:0}
+@media(max-width:520px){.event-footer:has(.btn){display:grid;gap:12px}.event-footer .btn{width:100%}}

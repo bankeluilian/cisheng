@@ -54,6 +54,11 @@ export function createLife(countries:Country[],o:{seed:number;year:number;mode:s
   return enriched;
 }
 export function advanceYear(source:Life):Life{return advanceStoryYear(source);}
+export function advanceToNextDecision(source:Life):Life{
+ let life=source;
+ for(let years=0;years<110&&!life.pending&&!life.ended;years++)life=advanceYear(life);
+ return life;
+}
 export function choose(source:Life,id:string,command:string):Life{
   if(source.ended||!source.pending||source.commands.includes(command))return source;
   const option=decisionOptions(source).find(o=>o.id===id);if(!option||(option.cost||0)>source.cash||!canScheduleOption(source,option))return source;

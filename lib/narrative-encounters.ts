@@ -22,8 +22,44 @@ export const narrativeEncounters:Encounter[]=[
    option('thread-mentor-note','认真记下，再做一遍给对方看','知识 +5 · 6 年后，这页笔记会有下文',{knowledge:5},{flag:'thread-mentor-started',queue:{after:6,id:'thread-mentor-return'}},'一页写着做事顺序的笔记'),
    option('thread-mentor-rest','道过谢，今天先回去好好休息','健康 +4 · 幸福 +2',{health:4,happiness:2},{flag:'thread-mentor-rested'}),
   ]},
+ {id:'thread-kite',min:4,max:8,weight:14,once:true,when:l=>!!relative(l),title:'风把线扯得很紧',
+  text:l=>`风筝刚升起来，线就在你手心里打了个结。${relative(l)!.fullName||relative(l)!.name}蹲下来问：“我替你解，还是我们一起试试？”`,
+  options:()=>[
+   option('thread-kite-learn','一起把结解开，自己收好线轴','知识 +4 · 10 年后，线轴还有故事',{knowledge:4},{flag:'thread-kite-started',queue:{after:10,id:'thread-kite-return'}},'一个磨出凹痕的风筝线轴'),
+   option('thread-kite-watch','请家人帮忙，再一起放一会儿','幸福 +5 · 人际 +2',{happiness:5,social:2}),
+  ]},
+ {id:'thread-photo',min:12,max:18,weight:12,once:true,title:'雨停之前，拍一张吧',
+  text:()=> '末班车还没来，你和朋友挤在站棚下躲雨。朋友举起相机，问要不要把这狼狈的一天也留一张。',
+  options:()=>[
+   option('thread-photo-take','拍一张，洗两份照片','人际 +4 · 6 年后再看到这张照片',{social:4},{flag:'thread-photo-started',queue:{after:6,id:'thread-photo-return'}},'雨天站棚下的合影'),
+   option('thread-photo-wait','把相机收好，聊聊车来了要去哪','幸福 +4 · 人际 +2',{happiness:4,social:2}),
+  ]},
+ {id:'thread-shop',min:38,max:60,weight:12,once:true,title:'早餐铺今天少一个人',
+  text:()=> '熟悉的小铺开门迟了。老板一边招呼客人一边找围裙，看到你便笑了：“能帮我把这碗端出去吗？”',
+  options:()=>[
+   option('thread-shop-help','挽起袖子，帮忙过完这个早晨','人际 +5 · 7 年后，小铺还有下文',{social:5},{flag:'thread-shop-started',queue:{after:7,id:'thread-shop-return'}},'一张手写的早餐菜单'),
+   option('thread-shop-order','买一份早餐，改天再来看他','幸福 +3',{happiness:3}),
+  ]},
 ];
 export const narrativeFollowups:Record<string,Encounter>={
+ 'thread-kite-return':{id:'thread-kite-return',min:14,max:21,weight:1,once:true,when:(_l,s)=>s.flags.includes('thread-kite-started'),title:'线轴还在抽屉里',
+  text:()=> '找东西时，那只线轴从抽屉最里面滚出来。木头上已经磨出一道凹痕。你捏着它，想起那天自己是怎么把结解开的。',
+  options:()=>[
+   option('thread-kite-fly','换一根线，找个有风的下午再试一次','幸福 +5 · 健康 +2',{happiness:5,health:2},{flag:'thread-kite-flew'}),
+   option('thread-kite-save','把它留在桌边，给来访的人讲讲那天','人际 +4 · 幸福 +2',{social:4,happiness:2},{flag:'thread-kite-told'}),
+  ]},
+ 'thread-photo-return':{id:'thread-photo-return',min:18,max:27,weight:1,once:true,when:(_l,s)=>s.flags.includes('thread-photo-started'),title:'雨天的照片又出现了',
+  text:()=> '朋友寄来一张翻印的照片。照片上，你们的鞋都湿了，背后还有一盏亮着的站灯。照片背面只写了一句：“那天怎么还能笑成这样？”',
+  options:()=>[
+   option('thread-photo-meet','发个日期，这次找个晴天见面','人际 +6 · 幸福 +2',{social:6,happiness:2},{flag:'thread-photo-met'}),
+   option('thread-photo-frame','把合影印出来，放到常看得见的地方','幸福 +5',{happiness:5},{flag:'thread-photo-framed'}),
+  ]},
+ 'thread-shop-return':{id:'thread-shop-return',min:45,max:70,weight:1,once:true,when:(_l,s)=>s.flags.includes('thread-shop-started'),title:'早餐铺的最后一个早晨',
+  text:()=> '小铺要关了。老板从柜台下面抽出一本卷边的菜单，说：“你帮忙那天，差点把粥送到了隔壁桌。要不要再坐一会儿？”',
+  options:()=>[
+   option('thread-shop-learn','请他教你做那碗常点的粥','知识 +4 · 幸福 +3',{knowledge:4,happiness:3},{flag:'thread-shop-cooked'}),
+   option('thread-shop-farewell','留下来吃完最后一份早餐','幸福 +5 · 人际 +2',{happiness:5,social:2},{flag:'thread-shop-remembered'}),
+  ]},
  'thread-letter-return':{id:'thread-letter-return',min:18,max:29,weight:1,once:true,when:(_l,s)=>s.flags.includes('thread-letter-started'),title:'多年后的回信',
   text:()=> '一封转了几次地址的信到了你手里。开头还是当年的称呼，后面写着这些年换过的住处和工作。末尾只有一句：不知道你现在，过得怎么样。',
   options:()=>[
@@ -45,6 +81,18 @@ export const narrativeFollowups:Record<string,Encounter>={
 };
 
 const outcomes:Record<string,string>={
+ 'thread-kite-learn':'最后一道结是你解开的。回去时，你把线轴握在手里，走了很久也没有放下。',
+ 'thread-kite-watch':'有人替你理好线，你们一直放到风变小，才慢慢往回走。',
+ 'thread-kite-fly':'风筝又摇摇晃晃地升起来。这回线打了结，你笑着停下来，把它一点点解开。',
+ 'thread-kite-save':'你把线轴摆在台灯旁。再有人问起那道凹痕，你就从河边那场风讲起。',
+ 'thread-photo-take':'相机响了一声。后来洗出来的两张照片，水洼里都映着同一盏灯。',
+ 'thread-photo-wait':'车来了。你们的话还没说完，便坐到最后一排继续聊。',
+ 'thread-photo-meet':'你们定下一个晴天。临到出门，还是都习惯性地带了伞。',
+ 'thread-photo-frame':'新印的照片有点模糊。你擦干相框，还是一眼就认出照片里那个笑得很用力的自己。',
+ 'thread-shop-help':'手忙脚乱地送完几碗粥，店里终于空下来。老板给你留了一份，还记得你喜欢少放一点盐。',
+ 'thread-shop-order':'你把热早餐拎走，临出门回头打了声招呼。熟悉的香气一路跟到街角。',
+ 'thread-shop-learn':'你在菜单背面写下做法。回去照着煮了一锅，尝起来还是差一点，于是决定下次再试。',
+ 'thread-shop-farewell':'你把那份早餐吃得很慢。出门时，和老板一起把门口那张小桌收了进去。',
  'thread-letter-write':'你把地址写了两遍，把自己的那张夹进书里。临走时，你们都没有再说很多话。',
  'thread-letter-bye':'你们比平常走得慢了一点。路还是那条路，只是明天，身边会空出一个位置。',
  'thread-letter-reply':'你把近况写了好几页，最后问了一个能见面的日子。写完才发现，这些年攒下了很多想说的话。',
