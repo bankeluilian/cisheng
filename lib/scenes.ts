@@ -1,6 +1,7 @@
 import {assetUrl} from "./web-hosting.ts";
 import type {Life,Entry} from './engine';
 import {encounters,followups} from './encounters.ts';
+import {openingEncounters} from './life-turns.ts';
 import {REGIONAL_SCENES,regionalSceneFor} from './regional-scenes.ts';
 import type {Scene} from './regional-scenes';
 
@@ -41,6 +42,8 @@ export function sceneImage(id:number,thumb=false){const scene=sceneInfo(id);cons
 function variant(l:Life,ids:readonly number[],salt=0){return ids[((l.seed>>>0)+Math.max(0,l.age)+salt)%ids.length];}
 export function birthSceneFor(l:Life){return regionalSceneFor(l.country,l.birthYear)??variant({...l,age:0},[2,17,18]);}
 const encounterScenes:Record<string,number>={
+ 'thread-opening-rent':1,'thread-opening-rent-return':9,'thread-opening-shift':4,'thread-opening-shift-return':9,
+ 'thread-opening-sunday':9,'thread-opening-sunday-return':7,'turn-closed-bridge':1,'turn-power-outage':15,
  'thread-kite':47,'thread-kite-return':48,'thread-photo':49,'thread-photo-return':50,'thread-shop':51,'thread-shop-return':52,
  'thread-letter':10,'thread-letter-return':4,'thread-chair':11,'thread-chair-return':6,'thread-mentor':12,'thread-mentor-return':11,
  'small-budget':9,'full-shelf':9,'child-fever':14,'first-neighborhood':9,'spilled-cup':9,
@@ -60,7 +63,7 @@ const encounterScenes:Record<string,number>={
  'ctx-study-circle-return':10,'ctx-weekend-work-return':13,'ctx-order-trial-return':13,
  'ctx-evening-study-return':19,'ctx-income-bridge-return':12,'ctx-family-visits-return':20,
 };
-const titleScenes=new Map([...encounters,...Object.values(followups)].filter(e=>encounterScenes[e.id]).map(e=>[e.title,encounterScenes[e.id]]));
+const titleScenes=new Map([...openingEncounters,...encounters,...Object.values(followups)].filter(e=>encounterScenes[e.id]).map(e=>[e.title,encounterScenes[e.id]]));
 for(const [title,id] of [['到了上学的年纪',10],['毕业以后，仍有一段路',10],['把时间重新安排',16],['认真照顾身体',14],['把时间留给重要的人',15],['好好休息了一会儿',16]] as const)titleScenes.set(title,id);
 export function sceneCaption(l:Life,id:number,year=l.birthYear+l.age){
  const scene=sceneInfo(id);return scene.region?`${l.country.name} · ${year} 年 · ${year>2026?'未来情景，沿用当代意象':scene.era==='early'?'旧时光意象':'当代生活意象'}`:`${year} 年 · ${scene.label} · 生活意象`;

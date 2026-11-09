@@ -1,4 +1,5 @@
 import {narrativeOutcome} from './narrative-encounters.ts';
+import {lifeTurnOutcome,openingEncounters} from './life-turns.ts';
 import type {Life,Stats,Option,Decision,Entry} from './engine';
 import type {StoryState,StoryChoice,StoryResult,Encounter} from './story-types';
 import {encounters,followups} from './encounters.ts';
@@ -40,14 +41,20 @@ export function nextStoryEncounter(l:Life):Decision|null{
    if(e)add(l,`原先的安排有了变化：${e.title}`,'这几年，生活条件已经改变。原先约好的这件事最终没能继续，你重新安排了下一步。','followup');
   }
  }
+ if(l.age===1&&s.seen['_last-encounter']===undefined&&!l.events.some(e=>e.kind==='choice')){
+  const opening=openingEncounters.find(e=>eligible(e,l,s));
+  if(opening)return materialize(opening,l);
+ }
  const candidates=encounters.filter(e=>eligible(e,l,s));if(!candidates.length)return null;
  const last=s.seen['_last-encounter']??l.events.findLast(e=>e.kind==='choice')?.age??-2;
  const gap=l.age-last;
  // Give ordinary choices room to breathe. Due consequences above can arrive sooner.
  if(gap<2||(gap===2&&roll(l)>.6))return null;
+ const unseen=candidates.filter(e=>s.seen[e.id]===undefined);
+ const pool=unseen.length?unseen:candidates;
  const weightOf=(e:Encounter)=>e.weight*(s.job==='unemployed'&&e.options(l,s).some(o=>o.story?.job==='employed'||o.story?.risk?.success.job==='employed')?2.5:1)*(l.focus==='study'&&/study|training|scholarship/.test(e.id)?1.5:1);
- let weight=roll(l)*candidates.reduce((n,e)=>n+weightOf(e),0);
- const selected=candidates.find(e=>(weight-=weightOf(e))<=0)||candidates[candidates.length-1];return materialize(selected,l);
+ let weight=roll(l)*pool.reduce((n,e)=>n+weightOf(e),0);
+ const selected=pool.find(e=>(weight-=weightOf(e))<=0)||pool[pool.length-1];return materialize(selected,l);
 }
 function quietYear(l:Life){const s=l.story!;const recent=new Set(l.events.slice(-10).map(e=>e.title));
  const young:[string,string][]=[['窗边的第一场雨','你伸手去碰玻璃上的水珠。家人第一次发现，你会认真观察这个世界。'],['旧衣服，新个头','去年的衣服已经短了一截。家里翻出针线，把衣角重新放长。'],['记住一条回家的路','你开始认得家附近的路，知道哪扇门后面有人在等你。'],['第一次把话说清楚','家人终于听懂了你反复说的那个词。你很得意，又说了好几遍。']];
@@ -110,7 +117,7 @@ export function applyStoryChoice(l:Life,o:Option,event:Entry,before?:Life){
  const keepsakes:Record<string,string>={'school-friendship':'一张写着同学名字的纸条','scholarship-prepared':'一份修改了很多次的申请稿','training-enrolled':'一张课程报名单','business-open':'第一本进货账本','moved-for-work':'一张出发的车票','training-placed':'一封新岗位的录用通知'};
  for(const [flag,name] of Object.entries(keepsakes))if(s.flags.includes(flag)&&!before?.story?.flags.includes(flag)&&!l.keepsakes.some(k=>k.name===name))l.keepsakes.push({name,eventId:event.id});
  if(o.partner&&!l.keepsakes.some(k=>k.name==='一页关于未来的约定'))l.keepsakes.push({name:'一页关于未来的约定',eventId:event.id});
- result=narrativeOutcome(o.id)||result;
+ result=lifeTurnOutcome(o.id)||narrativeOutcome(o.id)||result;
  const text=result+(changes.length?`（${changes.join('，')}）`:'');
  event.text=`你选择了：${o.label}。${text}`;s.lastOutcome={title:event.title,text,age:l.age};
 }
